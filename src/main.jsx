@@ -6,7 +6,8 @@ import Index from './Pages'
 import Nosotros from './Pages/Nosotros'
 import Blog from './Pages/Blog'
 import Administrador from './components/administrador'
-
+import Contacto from './Pages/Contacto'
+import Tienda from './Pages/Tienda'
 import './index.css'
 
 
@@ -33,6 +34,16 @@ const router = createBrowserRouter ([
     {
       path: "/blog",
       element: <Blog/>
+     
+    },
+    {
+      path: "/Contacto",
+      element: <Contacto/>
+     
+    },
+    {
+      path: "/tienda",
+      element: <Tienda/>
      
     }
  
