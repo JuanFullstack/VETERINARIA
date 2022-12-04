@@ -5,9 +5,10 @@ import Layout from './components/Layout'
 import Index from './Pages'
 import Nosotros from './Pages/Nosotros'
 import Blog from './Pages/Blog'
-import Administrador from './components/administrador'
+import Administrador from './Pages/Administrador'
 import Contacto from './Pages/Contacto'
 import Tienda from './Pages/Tienda'
+import Carrito from './components/Carrito'
 import './index.css'
 
 
@@ -44,6 +45,11 @@ const router = createBrowserRouter ([
     {
       path: "/tienda",
       element: <Tienda/>
+     
+    },
+    {
+      path: "/carrito",
+      element: <Carrito/>
      
     }
  
