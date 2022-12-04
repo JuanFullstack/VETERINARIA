@@ -1,0 +1,66 @@
+:root {
+    /* Colores */
+    --btn-hover-back: rgb(255,255,255,0.6);
+    --btn-hover-color: rgb(116, 0, 0);
+    --btn-border: rgb(202, 195, 191);
+    --btn-active-color:rgb(255, 255, 255);
+    --btn-active-back:rgb(110, 0, 133);
+    --btn-disable-color: rgb(0, 0, 0);
+    --btn-disable-back: rgb(125, 125, 125);
+}
+
+
+.gallery {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.items-gallery {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.cont-paginator {
+    margin-top: 2em;
+}
+
+.paginationBtns{
+
+    width: 80%;
+    height: 40px;
+    list-style: none;
+    display: flex;
+    justify-content: center;
+  }
+  
+  
+  .paginationBtns a {
+     padding: 10px;
+     margin: 1px;
+     border: 1px;
+     border-style: solid;
+     border-color: var(--btn-border);
+     border-radius: 15px;
+     width: 50px;
+     color: var(--btn-active-color);
+     cursor: pointer;
+  }
+  
+  
+  .paginationBtns a:hover {
+    color: var(--btn-hover-color);
+    background-color: var(--btn-hover-back);
+  }
+  
+  .paginationActive > a {
+    color: var(--btn-active-color);
+    background-color: var(--btn-active-back);
+  
+  }
+  
+  .paginationDisabled a{
+    color: var(--btn-disable-color);
+    background-color: var(--btn-disable-back);  
+  }

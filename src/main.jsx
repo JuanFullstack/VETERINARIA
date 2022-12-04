@@ -10,6 +10,7 @@ import Contacto from './Pages/Contacto'
 import Tienda from './Pages/Tienda'
 import Carrito from './components/Carrito'
 import './index.css'
+import Gallery from './Pages/Gallery'
 
 
 const router = createBrowserRouter ([ 
@@ -50,6 +51,11 @@ const router = createBrowserRouter ([
     {
       path: "/carrito",
       element: <Carrito/>
+     
+    },
+    {
+      path: "/gallery",
+      element: <Gallery/>
      
     }
  

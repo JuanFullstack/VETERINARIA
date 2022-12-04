@@ -7,7 +7,7 @@
     "dev": "vite",
     "build": "vite build",
     "preview": "vite preview",
-    "server": "json-server --watch ./src/assets/data/mock_data_gallery.json"
+    "server": "json-server --watch ./src/data/mock_data_gallery.json"
   },
   "dependencies": {
     "json-server": "^0.17.1",
