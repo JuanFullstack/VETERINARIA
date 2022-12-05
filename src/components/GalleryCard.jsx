@@ -1,4 +1,4 @@
-import './Card.css';
+import './GalleryCard.css';
 import imgDefault from '../assets/img/images.png'
 import Swal from 'sweetalert2';
 
