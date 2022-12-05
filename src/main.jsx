@@ -10,6 +10,8 @@ import Contacto from './Pages/Contacto'
 import Tienda from './Pages/Tienda'
 import Carrito from './components/Carrito'
 import './index.css'
+// You can specify which plugins you need
+
 
 
 const router = createBrowserRouter ([ 
