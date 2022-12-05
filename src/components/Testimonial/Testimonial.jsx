@@ -16,7 +16,7 @@ const Testimonial = () => {
   
 
 <div class="testimonial-area" style={{backgroundImage: `url(${fondo})` , backgroundPosition: 'center',
-  backgroundSize: '100% auto' , backgroundRepeat: 'no-repeat'
+  backgroundSize: 'cover' , backgroundRepeat: 'no-repeat'
   }}>
       <div class="container">
         <div class="row">

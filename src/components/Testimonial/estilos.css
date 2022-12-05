@@ -49,7 +49,7 @@
     margin-top: 15px;
   }
   .testimonial-area {
-    
+    background-image: './imagenes/fondo.jpg' ;
     background-size: cover;
     background-position: center;
   }
