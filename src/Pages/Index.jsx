@@ -3,8 +3,7 @@ import Testimonial from '../components/Testimonial/Testimonial'
 
 function Index() {
   return (
-    <div>index hola index
-
+    <div>
      <Testimonial/>
     </div>
    
