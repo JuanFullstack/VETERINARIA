@@ -1,8 +1,9 @@
-
+import React from 'react'
+import NosotrosComponente from '../components/Nosotros/NosotrosComponente'
 
 function Nosotros() {
   return (
-    <div>desde Nosotros</div>
+    <NosotrosComponente/>
   )
 }
 
