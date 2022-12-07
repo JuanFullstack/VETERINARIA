@@ -12,7 +12,6 @@ import Carrito from './components/Carrito'
 import './index.css'
 import Gallery from './Pages/Gallery'
 
-
 const router = createBrowserRouter ([ 
   {
   path:"/",
