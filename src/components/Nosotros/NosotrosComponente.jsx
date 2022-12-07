@@ -49,7 +49,7 @@ const NosotrosComponente = () => {
               <div
                 className={
                   toggleTab === 1
-                    ? "contenidoNosotros active-content"
+                    ? "contenidoNosotros contenido-activo"
                     : "contenidoNosotros"
                 }
               >
@@ -73,7 +73,7 @@ const NosotrosComponente = () => {
                 {/* contenido about */}
                 <div className={
                   toggleTab === 2
-                    ? "contenidoNosotros active-content"
+                    ? "contenidoNosotros contenido-activo"
                     : "contenidoNosotros"
                 }>
                   <h2>Servicios</h2>
@@ -162,11 +162,11 @@ const NosotrosComponente = () => {
                 <div
                   className={
                     toggleTab === 3
-                      ? "contenidoNosotros active-content"
+                      ? "contenidoNosotros contenido-activo"
                       : "contenidoNosotros"
                   }
                 >
-                  <div className="exp-column">
+                  <div className="especialidades-column">
                     <h5>Anestesiología</h5>
                     <span>Dr. Marco Velasquez</span>
                   
@@ -174,14 +174,14 @@ const NosotrosComponente = () => {
                 
 
                
-                  <div className="exp-column mt-2">
+                  <div className="especialidades-column mt-2">
                     <h5>Ecografía</h5>
                     <span>Dr. Jose Ramirez</span>
                   
                   </div>
                 
 
-                  <div className="exp-column mt-2">
+                  <div className="especialidades-column mt-2">
                     <h5>Odontología</h5>
                     <span>Dr. Luis Roca</span>
                  
@@ -191,7 +191,7 @@ const NosotrosComponente = () => {
                 
 
                
-                  <div className="exp-column mt-2">
+                  <div className="especialidades-column mt-2">
                     <h5>Cirugía General</h5>
                     <span>Dr. Luis Roca</span>
                  
@@ -201,7 +201,7 @@ const NosotrosComponente = () => {
                 
 
                 
-                  <div className="exp-column mt-2">
+                  <div className="especialidades-column mt-2">
                     <h5>Patología</h5>
                     <span>Dr. Cesar Palacios</span>
                  
@@ -211,7 +211,7 @@ const NosotrosComponente = () => {
             
 
                
-                  <div className="exp-column mt-2">
+                  <div className="especialidades-column mt-2">
                     <h5>Traumatología y ortopedia</h5>
                     <span>Dr. Ricardo Rojas - Dr. Giuseppe Granados</span>
                  

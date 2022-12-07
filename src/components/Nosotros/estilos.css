@@ -52,7 +52,7 @@
    display:none;
 }
 
-.active-content {
+.contenido-activo {
    display:block;
 }
 
@@ -154,13 +154,13 @@
 /*Experiencia*/
 
 
-.exp-column span {
+.especialidades-column span {
    font-weight: 500;
    color: #FF46A2;
 
 }
 
-.exp-column p {
+.especialidades-column p {
    margin-top: 10px;
 }
 
