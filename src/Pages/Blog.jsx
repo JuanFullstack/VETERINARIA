@@ -1,9 +1,16 @@
-
+import TodaContendio from "../hooks/TodaContendio";
+import Mascotas from "../components/Mascotas";
 
 function Blog() {
+  const { perros } = TodaContendio();
+
   return (
-    <div>Blog</div>
-  )
+    <div className="p-5">
+      <div className="col-xs col-sm col-md col-xl-12">
+        <Mascotas perros={perros} />
+      </div>
+    </div>
+  );
 }
 
-export default Blog
+export default Blog;
