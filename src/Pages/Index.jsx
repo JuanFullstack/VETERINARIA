@@ -1,8 +1,12 @@
 import React from 'react'
+import Testimonial from '../components/Testimonial/Testimonial'
 
 function Index() {
   return (
-    <div>index</div>
+    <div>
+     <Testimonial/>
+    </div>
+   
   )
 }
 

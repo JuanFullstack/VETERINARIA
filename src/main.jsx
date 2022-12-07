@@ -2,7 +2,7 @@ import React from 'react'
 import ReactDOM from 'react-dom/client'
 import { createBrowserRouter , RouterProvider } from "react-router-dom "
 import Layout from './components/Layout'
-import Index from './Pages'
+import Index from './Pages/Index'
 import Nosotros from './Pages/Nosotros'
 import Blog from './Pages/Blog'
 import Administrador from './Pages/Administrador'
@@ -10,6 +10,8 @@ import Contacto from './Pages/Contacto'
 import Tienda from './Pages/Tienda'
 import Carrito from './components/Carrito'
 import './index.css'
+// You can specify which plugins you need
+
 
 
 const router = createBrowserRouter ([ 
