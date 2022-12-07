@@ -230,7 +230,7 @@ background: linear-gradient(180deg, rgba(244,211,244,1) 0%, rgba(251,249,255,1) 
    
 
    
-  }
+  
   .links.active{
     width: 100%;
     display: block;
@@ -276,6 +276,7 @@ background: linear-gradient(180deg, rgba(244,211,244,1) 0%, rgba(251,249,255,1) 
    background: linear-gradient(180deg, #f6def7 50%, rgba(217,164,217,1) 90%);
    font-size: 3rem;
    color: red;
+   z-index: 1 ;
    @media(max-width: 1280px){
     background:none;
     padding: 0rem;
@@ -289,15 +290,12 @@ background: linear-gradient(180deg, rgba(244,211,244,1) 0%, rgba(251,249,255,1) 
 
         @media(max-width: 1280px){
           display: none;
-      } 
-
-      
-    
+      }
      
       
     
     }
-      z-index: 1;
+      
         
   }
 
