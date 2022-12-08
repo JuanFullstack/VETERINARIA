@@ -47,7 +47,7 @@
    background-repeat:no-repeat;
    background-size:cover;
    background-position: center center;
-   height: auto;
+   height: 35rem;
    width: 100%;
 
 }
@@ -220,4 +220,33 @@
    }
 
 
+}
+
+
+.INTERNAMIENTO {
+   width:95%;
+}
+
+
+
+.MOVILIDAD{
+   width:85%;
+}
+
+.ECOGRAFÍA {
+   width:90%;
+}
+
+
+.URGENCIAS{
+   width: 100%;
+}
+
+
+.CLINICA{
+   width:90%;
+}
+
+.INTERCONSULTAS{
+   width:95;
 }

@@ -5,7 +5,7 @@ function Nosotros() {
   return (
 
     <div>
-        <NosotrosComponente   style={{zIndex:-1000}}/>
+        <NosotrosComponente />
       
     </div>
     

@@ -13,30 +13,11 @@ const NosotrosComponente = () => {
   return (
     <div >
       <section className="nosotros" >
-        <div className="container" >
+        <div className="container" data-aos="fade-down" >
           <div className="row ">
             <div className="column">
-           {/* <div className="nosotros-img"></div>  */}
+           <div className="nosotros-img"></div> 
 
-
-               <div id="carouselExampleSlidesOnly" className="carousel slide" data-bs-ride="carousel">
-                <div className="carousel-inner">
-                  <div className="carousel-item active">
-
-                  <img src={Imagen1} className="d-block w-100  imagen-slider" alt="..."/>
-                    
-
-                  </div>
-                  <div className="carousel-item">
-                  <img src={Imagen2} className="d-block w-100  imagen-slider" alt="..."/>
-
-                  </div>
-                  <div className="carousel-item">
-                  <img src={Imagen3} className="d-block w-100  imagen-slider" alt="..."/>
-
-                  </div>
-                </div>
-              </div> 
             </div>
 
             <div className="column">
@@ -111,8 +92,8 @@ const NosotrosComponente = () => {
                         <div className="progress-wrap">
                           <h3>INTERNAMIENTO</h3>
                           <div className="progress">
-                            <div className="progress-bar">
-                              <span>80%</span>
+                            <div className="progress-bar INTERNAMIENTO">
+                              <span>95%</span>
                             </div>
                           </div>
                         </div>
@@ -124,8 +105,8 @@ const NosotrosComponente = () => {
                         <div className="progress-wrap">
                           <h3>MOVILIDAD</h3>
                           <div className="progress">
-                            <div className="progress-bar">
-                              <span>90%</span>
+                            <div className="progress-bar  MOVILIDAD">
+                              <span>85%</span>
                             </div>
                           </div>
                         </div>
@@ -135,7 +116,7 @@ const NosotrosComponente = () => {
                         <div className="progress-wrap">
                           <h3>ECOGRAFÍA Y RAYOS X</h3>
                           <div className="progress">
-                            <div className="progress-bar">
+                            <div className="progress-bar ECOGRAFÍA">
                               <span>90%</span>
                             </div>
                           </div>
@@ -146,8 +127,8 @@ const NosotrosComponente = () => {
                         <div className="progress-wrap">
                           <h3>URGENCIAS</h3>
                           <div className="progress">
-                            <div className="progress-bar">
-                              <span>90%</span>
+                            <div className="progress-bar URGENCIAS">
+                              <span>100%</span>
                             </div>
                           </div>
                         </div>
@@ -157,7 +138,7 @@ const NosotrosComponente = () => {
                         <div className="progress-wrap">
                           <h3>CLINICA GENERAL</h3>
                           <div className="progress">
-                            <div className="progress-bar">
+                            <div className="progress-bar CLINICA ">
                               <span>90%</span>
                             </div>
                           </div>
@@ -168,8 +149,8 @@ const NosotrosComponente = () => {
                         <div className="progress-wrap">
                           <h3>INTERCONSULTAS</h3>
                           <div className="progress">
-                            <div className="progress-bar">
-                              <span>90%</span>
+                            <div className="progress-bar INTERCONSULTAS">
+                              <span>95%</span>
                             </div>
                           </div>
                         </div>
