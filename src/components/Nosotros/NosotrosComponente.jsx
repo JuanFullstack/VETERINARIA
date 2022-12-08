@@ -1,6 +1,9 @@
 import React, { useState } from "react";
 import "./estilos.css";
 import Equipo from "../Equipo/Equipo"
+import Imagen1 from "../Nosotros/imagenes/veterinaria.jpg"
+import Imagen2 from "../Nosotros/imagenes/veterinario2.jpg";
+import Imagen3 from "../Nosotros/imagenes/veterinario3.jpg";
 
 const NosotrosComponente = () => {
   const [toggleTab, setToggleTab] = useState(1);
@@ -9,29 +12,31 @@ const NosotrosComponente = () => {
   };
   return (
     <div >
-      <section className="nosotros" data-aos="fade-down">
-        <div className="container">
-          <div className="row">
+      <section className="nosotros" >
+        <div className="container" >
+          <div className="row ">
             <div className="column">
-              {/* <div className="nosotros-img"></div> */}
+           {/* <div className="nosotros-img"></div>  */}
 
 
-              <div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel">
-                <div class="carousel-inner">
-                  <div class="carousel-item active">
-                    <div className="nosotros-img"></div>
+               <div id="carouselExampleSlidesOnly" className="carousel slide" data-bs-ride="carousel">
+                <div className="carousel-inner">
+                  <div className="carousel-item active">
 
-                  </div>
-                  <div class="carousel-item">
-                    <div className="nosotros-img2"></div>
+                  <img src={Imagen1} className="d-block w-100  imagen-slider" alt="..."/>
+                    
 
                   </div>
-                  <div class="carousel-item">
-                    <div className="nosotros-img3"></div>
+                  <div className="carousel-item">
+                  <img src={Imagen2} className="d-block w-100  imagen-slider" alt="..."/>
+
+                  </div>
+                  <div className="carousel-item">
+                  <img src={Imagen3} className="d-block w-100  imagen-slider" alt="..."/>
 
                   </div>
                 </div>
-              </div>
+              </div> 
             </div>
 
             <div className="column">

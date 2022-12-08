@@ -34,13 +34,20 @@
 
 }
 
+.imagen-slider{
+
+   height:40rem;
+   width: 100%;
+
+}
+
 .nosotros-img{
    position:relative;
    background-image: url("./imagenes/veterinaria.jpg") ;
    background-repeat:no-repeat;
    background-size:cover;
    background-position: center center;
-   height: 600px;
+   height: auto;
    width: 100%;
 
 }

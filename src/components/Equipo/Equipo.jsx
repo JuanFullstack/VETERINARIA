@@ -1,6 +1,11 @@
 import React, { useState, useEffect } from "react";
 import "./estilos.css";
 import vet1 from "./imagenes/vet1.jpg";
+import vet2 from "./imagenes/vet2.jpg";
+import vet3 from "./imagenes/vet3.jpg";
+import vet4 from "./imagenes/vet4.jpg";
+
+import Veterinario from "./Veterinario/Veterinario"
 
 const Equipo = () => {
   useEffect(() => {
@@ -10,9 +15,24 @@ const Equipo = () => {
     });
   });
 
+  const [data, setData] = useState( [{id:1, nombre: "Veterinario1" , especialidad : "Cardiologia" , foto : vet1},{id:2, nombre: "Veterinario2" , especialidad : "Oftalmologia" , foto : vet2},
+  {id:3, nombre: "Veterinario3" , especialidad : "Nefrologia" , foto : vet3} ,   {id:4, nombre: "Veterinario4" , especialidad : "Oncologia" , foto : vet4} ]
+);
+
+
+  
+  const resultado = 
+  data.map(({id, nombre , especialidad , foto}) => {
+    return (
+
+      <Veterinario key={id} nombre = {nombre}  especialidad = {especialidad}  foto = {foto} />
+    )
+  })
+
+
   return (
     <div className="contenedorSeccion">
-      <div class="container" data-aos="fade-up">
+      <div className="container" data-aos="fade-up">
         <div className="section-title p-5">
           <h2>Nuestro Equipo</h2>
           <p>
@@ -22,241 +42,13 @@ const Equipo = () => {
 
           </p>
         </div>
-        <div class="row">
-          <div class="col-md-4 col-sm-6 col-xs-12">
-            <div class="single-team" data-aos="fade-up" data-aos-delay="200">
-              <div class="img-area">
-                <img
-                  src={vet1}
-                  class="img-responsive"
-                  alt=""
-                />
-                <div class="social">
-                  <ul class="list-inline">
-                    <li>
-                      <a href="#">
-                      <i class="fa-brands fa-facebook"></i>
-                      </a>
-                    </li>
-                    <li>
-                      <a href="#">
-                      <i class="fa-brands fa-twitter"></i>
-                      </a>
-                    </li>
-                    <li>
-                      <a href="#">
-                      <i class="fa-solid fa-envelope"></i>
-                      </a>
-                    </li>
-                    <li>
-                      <a href="#">
-                      <i class="fa-brands fa-linkedin"></i>
-                      </a>
-                    </li>
-                  </ul>
-                </div>
-              </div>
-              <div class="img-text">
-                <h4>John Doe</h4>
-                <h5>Web Designer</h5>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-4 col-sm-6 col-xs-12">
-            <div class="single-team" >
-              <div class="img-area">
-                <img
-                  src="https://1.bp.blogspot.com/-cISC5xoywEA/YRleZqupHzI/AAAAAAAACZE/w7jfz6BTGf4IJv9kV-ijNP3kKxW3JpZXQCNcBGAsYHQ/s0/3%2B%25282%2529.jpg"
-                  class="img-responsive"
-                  alt=""
-                />
-                <div class="social">
-                  <ul class="list-inline">
-                    <li>
-                      <a href="#">
-                        <i class="fa fa-facebook"></i>
-                      </a>
-                    </li>
-                    <li>
-                      <a href="#">
-                        <i class="fa fa-twitter"></i>
-                      </a>
-                    </li>
-                    <li>
-                      <a href="#">
-                        <i class="fa fa-pinterest"></i>
-                      </a>
-                    </li>
-                    <li>
-                      <a href="#">
-                        <i class="fa fa-linkedin"></i>
-                      </a>
-                    </li>
-                  </ul>
-                </div>
-              </div>
-              <div class="img-text">
-                <h4>Alex Wood</h4>
-                <h5>Apps Developer</h5>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-4 col-sm-6 col-xs-12">
-            <div class="single-team" data-aos="fade-up" data-aos-delay="400">
-              <div class="img-area">
-                <img
-                  src="https://1.bp.blogspot.com/-cGZY1xJjPNc/YRleZmEbEHI/AAAAAAAACZA/P-WOeYZegAQdUCF66C0E1ZF4zMEzaUvggCNcBGAsYHQ/s0/3%2B%25281%2529.jpg"
-                  class="img-responsive"
-                  alt=""
-                />
-                <div class="social">
-                  <ul class="list-inline">
-                    <li>
-                      <a href="#">
-                        <i class="fa fa-facebook"></i>
-                      </a>
-                    </li>
-                    <li>
-                      <a href="#">
-                        <i class="fa fa-twitter"></i>
-                      </a>
-                    </li>
-                    <li>
-                      <a href="#">
-                        <i class="fa fa-pinterest"></i>
-                      </a>
-                    </li>
-                    <li>
-                      <a href="#">
-                        <i class="fa fa-linkedin"></i>
-                      </a>
-                    </li>
-                  </ul>
-                </div>
-              </div>
-              <div class="img-text">
-                <h4>Rosie Meg</h4>
-                <h5>Game Developer</h5>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-4 col-sm-6 col-xs-12">
-            <div class="single-team" data-aos="fade-up" data-aos-delay="400">
-              <div class="img-area">
-                <img
-                  src="https://1.bp.blogspot.com/-cGZY1xJjPNc/YRleZmEbEHI/AAAAAAAACZA/P-WOeYZegAQdUCF66C0E1ZF4zMEzaUvggCNcBGAsYHQ/s0/3%2B%25281%2529.jpg"
-                  class="img-responsive"
-                  alt=""
-                />
-                <div class="social">
-                  <ul class="list-inline">
-                    <li>
-                      <a href="#">
-                        <i class="fa fa-facebook"></i>
-                      </a>
-                    </li>
-                    <li>
-                      <a href="#">
-                        <i class="fa fa-twitter"></i>
-                      </a>
-                    </li>
-                    <li>
-                      <a href="#">
-                        <i class="fa fa-pinterest"></i>
-                      </a>
-                    </li>
-                    <li>
-                      <a href="#">
-                        <i class="fa fa-linkedin"></i>
-                      </a>
-                    </li>
-                  </ul>
-                </div>
-              </div>
-              <div class="img-text">
-                <h4>Rosie Meg</h4>
-                <h5>Game Developer</h5>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-4 col-sm-6 col-xs-12">
-            <div class="single-team" data-aos="fade-up" data-aos-delay="400">
-              <div class="img-area">
-                <img
-                  src="https://1.bp.blogspot.com/-cGZY1xJjPNc/YRleZmEbEHI/AAAAAAAACZA/P-WOeYZegAQdUCF66C0E1ZF4zMEzaUvggCNcBGAsYHQ/s0/3%2B%25281%2529.jpg"
-                  class="img-responsive"
-                  alt=""
-                />
-                <div class="social">
-                  <ul class="list-inline">
-                    <li>
-                      <a href="#">
-                        <i class="fa fa-facebook"></i>
-                      </a>
-                    </li>
-                    <li>
-                      <a href="#">
-                        <i class="fa fa-twitter"></i>
-                      </a>
-                    </li>
-                    <li>
-                      <a href="#">
-                        <i class="fa fa-pinterest"></i>
-                      </a>
-                    </li>
-                    <li>
-                      <a href="#">
-                        <i class="fa fa-linkedin"></i>
-                      </a>
-                    </li>
-                  </ul>
-                </div>
-              </div>
-              <div class="img-text">
-                <h4>Rosie Meg</h4>
-                <h5>Game Developer</h5>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-4 col-sm-6 col-xs-12">
-            <div class="single-team" data-aos="fade-up" data-aos-delay="400">
-              <div class="img-area">
-                <img
-                  src="https://1.bp.blogspot.com/-cGZY1xJjPNc/YRleZmEbEHI/AAAAAAAACZA/P-WOeYZegAQdUCF66C0E1ZF4zMEzaUvggCNcBGAsYHQ/s0/3%2B%25281%2529.jpg"
-                  class="img-responsive"
-                  alt=""
-                />
-                <div class="social">
-                  <ul class="list-inline">
-                    <li>
-                      <a href="#">
-                        <i class="fa fa-facebook"></i>
-                      </a>
-                    </li>
-                    <li>
-                      <a href="#">
-                        <i class="fa fa-twitter"></i>
-                      </a>
-                    </li>
-                    <li>
-                      <a href="#">
-                        <i class="fa fa-pinterest"></i>
-                      </a>
-                    </li>
-                    <li>
-                      <a href="#">
-                        <i class="fa fa-linkedin"></i>
-                      </a>
-                    </li>
-                  </ul>
-                </div>
-              </div>
-              <div class="img-text">
-                <h4>Rosie Meg</h4>
-                <h5>Game Developer</h5>
-              </div>
-            </div>
-          </div>
+        <div className="row">
+        
+        
+              {resultado}
+
+        
+          
         </div>
       </div>
 

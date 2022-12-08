@@ -3,7 +3,12 @@ import NosotrosComponente from '../components/Nosotros/NosotrosComponente'
 
 function Nosotros() {
   return (
-    <NosotrosComponente/>
+
+    <div>
+        <NosotrosComponente   style={{zIndex:-1000}}/>
+      
+    </div>
+    
   )
 }
 
