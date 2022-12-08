@@ -57,7 +57,7 @@
 }
 
 .active-tab{
-   background: #FF46A2;
+   background: #FB2576;
    position:relative;
 }
 
@@ -76,7 +76,7 @@
       height:0;
       border-style:solid;
       border-width: 5px 5px 0 5px;
-      border-color: #FF46A2 transparent transparent transparent;
+      border-color: #FB2576 transparent transparent transparent;
 
 }
 .contenidoNosotros h2{
@@ -134,7 +134,7 @@
 .progress-bar{
    width: 60%;
    height: 8px;
-   background: #FF46A2;
+   background:#FB2576;
    line-height:1.2;
    position:relative;
    border-radius: 2px;
@@ -147,7 +147,7 @@
    right:0;
    font-size:16px;
    font-weight: 400;
-   color: #FF46A2;
+   color: #FB2576;
 }
 
 
@@ -156,7 +156,7 @@
 
 .especialidades-column span {
    font-weight: 500;
-   color: #FF46A2;
+   color: #FB2576;
 
 }
 

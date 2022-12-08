@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import "./estilos.css";
+import Equipo from "../Equipo/Equipo"
 
 const NosotrosComponente = () => {
   const [toggleTab, setToggleTab] = useState(1);
@@ -7,8 +8,8 @@ const NosotrosComponente = () => {
     setToggleTab(index);
   };
   return (
-    <div>
-      <section className="nosotros">
+    <div >
+      <section className="nosotros" data-aos="fade-down">
         <div className="container">
         <div className="row">
           <div className="column">
@@ -230,6 +231,7 @@ const NosotrosComponente = () => {
         </div>
         </div>
       </section>
+      <Equipo/>
     </div>
   );
 };
