@@ -5,11 +5,12 @@ import Layout from './components/Layout'
 import Index from './Pages/Index'
 import Nosotros from './Pages/Nosotros'
 import Blog from './Pages/Blog'
-import Administrador from './Pages/Administrador'
 import Contacto from './Pages/Contacto'
 import Tienda from './Pages/Tienda'
 import Carrito from './components/Carrito'
 import './index.css'
+import Login from './components/Login/Login'
+import Register from './components/Login/Register'
 // You can specify which plugins you need
 
 
@@ -27,11 +28,6 @@ const router = createBrowserRouter ([
     {
       path: "/nosotros",
       element: <Nosotros/>
-     
-    },
-    {
-      path: "/administrador",
-      element: <Administrador/>
      
     },
     {
@@ -53,9 +49,21 @@ const router = createBrowserRouter ([
       path: "/carrito",
       element: <Carrito/>
      
+    },
+    {
+      path: "/Login",
+      element: <Login/>
+     
+    },
+    {
+      path: "/registro",
+      element: <Register/>
+     
     }
+
  
   ]}
+ 
 
 
 ])

@@ -1,10 +1,12 @@
 import React, { useState, useEffect ,createContext} from 'react';
 
+
 const Contenido = createContext();
 
-function VeterProvider({children}) {
 
- 
+function VeterProvider({children}) {
+   
+
 
   const [clicked, setClicked] = useState(false)
 
@@ -23,7 +25,8 @@ function VeterProvider({children}) {
     <Contenido.Provider
             value={{
               clicked,
-              handleClick
+              handleClick,
+
             }}>
             {children}
         </Contenido.Provider>
@@ -32,4 +35,5 @@ function VeterProvider({children}) {
 
 
 export {VeterProvider};
+
 export default Contenido;

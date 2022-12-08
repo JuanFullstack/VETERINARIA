@@ -1,6 +1,6 @@
-import React, { useState } from 'react'
+
 import styled from 'styled-components'
-import BurguerButton from './BurguerButton '
+import BurguerButton from '../BurguerButton '
 import { Link , useLocation  } from "react-router-dom "
 import pets from "/pets.png"
 import animal from "/animal.jpg"
@@ -9,22 +9,23 @@ import cart from "/cart.svg"
 import login from "/login.svg"
 import divi from "/divi.svg"
 import NavbarDos from './NavbarDos'
-import TodaContendio from '../hooks/TodaContendio'
+import TodaContendio from '../../hooks/TodaContendio'
 
-function Navbar() {
 
-  const location = useLocation()
+
+
+function NavbarLogin() {
+
+    const location = useLocation()
   
-  const { clicked , handleClick} = TodaContendio()
- 
+    const { clicked , handleClick} = TodaContendio()
 
 
-  
   return (
-    <>
-      
 
-      <NavContainer>
+<>
+
+<NavContainer>
         <Logo >
          <img src={pets} />
         <h2> My <span>Pets</span></h2>
@@ -54,9 +55,6 @@ function Navbar() {
           <Link className={ ` ${ location.pathname ==='/carrito' ? 'modificado' : ' normal' }  `}to="/carrito"> 
           <img  className='cart' onClick={handleClick} src={cart} /> </Link>
           
-          <img className='divi' src={divi}/>
-          <Link className={ ` ${ location.pathname ==='/login' ? 'modificado' : ' normal' }  `}to="/login"> 
-          <img  className='login' onClick={handleClick} src={login} /> </Link>
           
         </div>
 
@@ -79,11 +77,24 @@ function Navbar() {
 
 
 
-    </>
+
+
+
+
+
+
+
+</>
+
+
+
+
+    
   )
 }
 
-export default Navbar
+export default NavbarLogin
+
 
 const Navptes = styled.div `
    
