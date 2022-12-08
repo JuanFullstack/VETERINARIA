@@ -45,6 +45,28 @@
 
 }
 
+
+.nosotros-img2{
+   position:relative;
+   background-image: url("./imagenes/veterinario2.jpg") ;
+   background-repeat:no-repeat;
+   background-size:cover;
+   background-position: center center;
+   height: 600px;
+   width: 100%;
+
+}
+
+.nosotros-img3{
+   position:relative;
+   background-image: url("./imagenes/veterinario3.jpg") ;
+   background-repeat:no-repeat;
+   background-size:cover;
+   background-position: center center;
+   height: 600px;
+   width: 100%;
+
+}
             
 .contenidoNosotros {
    padding-top: 1.5rem;
