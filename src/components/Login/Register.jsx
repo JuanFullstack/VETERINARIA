@@ -1,24 +1,86 @@
 import React from 'react'
 import styled from 'styled-components'
 import pets from "/pets.png"
-
+import  { useState, useEffect } from 'react';
+import Error from '../Error';
+import TodaContendio from '../../hooks/TodaContendio';
+import { getAuth , createUserWithEmailAndPassword  } from 'firebase/auth';
+import { app } from '../Firebase/Firebase';
 
 function Register() {
 
+    const { guardargatos , mensaje2 , setmensaje2 } = TodaContendio()
+     
+    const [nombre, setnombre] = useState('');
+    const [apellido, setapellido] = useState('');
+    const [email, setemail] = useState('');
+    const [constraseña , setcontraseña] = useState('')
+    const [id, setid] = useState('')
+   
+    
 
+
+   
+
+
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        if ([nombre, apellido, email,constraseña].includes('')) {
+          setmensaje2('Todos los campos son obligatorios ');
+          
+          setTimeout(() => {
+            setmensaje2('');
+          }, 2000);
+
+          return;
+        }
+        guardargatos({ nombre, apellido, email , constraseña});
+         
+        app
+        const auth = getAuth();
+        createUserWithEmailAndPassword(auth, email, constraseña)
+        .then((userCredential) => {
+          // Signed in 
+          const user = userCredential.user;
+          console.log(user)
+        })
+        .catch((error) => {
+          const errorCode = error.code;
+          const errorMessage = error.message;
+          // ..
+        });
+
+      
+      };
 
 
   return (
       <>
           <EstilosDiv>
-              <form action='enviar.php' method='post'>
+              <form 
+              onSubmit={handleSubmit}
+              >
                   <h2> Registro </h2>
-                  <input type='text' name='nombre' placeholder='Nombre' required />
-                  <input type='text' name='apellidos' placeholder='Apellidos' required />
-                  <input type='text' name='correo' placeholder='Correo' required />
-                  <input type='password' name='password' placeholder='password' required />
-                  <input type='text' name='telefono' placeholder='Teléfono' required />
+                  {mensaje2 && <Error> {mensaje2} </Error> }
+                  <input 
+                  value={nombre}
+                  onChange={(e) => setnombre(e.target.value)}
+                  type='text' name='nombre' placeholder='Nombre'  />
+                  <input  type='text' name='apellidos' placeholder='Apellidos' 
+                  value={apellido}
+                  onChange={(e) => setapellido(e.target.value)}
+                   />
+                  <input type='text'  name='correo'   placeholder='Correo' 
+                   value={email}
+                   onChange={(e) => setemail(e.target.value)}
+                  />
+                  <input 
+                  type='password' name='password' placeholder='password'
+                  value={constraseña}
+                   onChange={(e) => setcontraseña(e.target.value)}
+                  />
                   <input type='submit' value='ENVIAR' id='boton' />
+                  
               </form>
           </EstilosDiv>
       </>

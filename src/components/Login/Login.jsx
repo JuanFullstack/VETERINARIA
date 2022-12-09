@@ -4,32 +4,44 @@ import google from "/google.svg"
 import email from "/email.svg"
 import pets from "/pets.png"
 import { Link , useLocation  } from "react-router-dom "
-import { auth }   from "../Firebase/Firebase"
-import { GoogleAuthProvider, signInWithPopup } from "firebase/auth";
+import { useState } from 'react'
+import TodaContendio from '../../hooks/TodaContendio'
+import { app } from '../Firebase/Firebase'
+import { getAuth, signInWithEmailAndPassword , signInWithPopup} from "firebase/auth";
+
+import { GoogleAuthProvider } from "firebase/auth";
 
 
 function Login() {
 
+  const [email, setemail] = useState('');
+  const [constraseña , setcontraseña] = useState('')
 
-  const handleOnclick = ()=>{
-    const googleProvider = new GoogleAuthProvider();
-    const signInWithGoogle = async () => {
-      try {
-        const res = await signInWithPopup(auth, googleProvider);
-        console.log(res)
-        if (res) {
-          registerNewUser(res.user);
-          
+  const { mensaje2 , setmensaje2 } = TodaContendio()
 
-        }
-      } catch (err) {
-        console.error(err);
-        //alert(err.message);
-      }
-    };
-    signInWithGoogle();
-  }
-   
+const handleSubmit = (e) => {
+  e.preventDefault();
+  
+ 
+  app
+  const auth = getAuth();
+  signInWithEmailAndPassword(auth, email, constraseña)
+  .then((userCredential) => {
+    // Signed in 
+    const user = userCredential.user;
+    console.log("iniciaste sesion correctamente")
+  })
+  .catch((error) => {
+    const errorCode = error.code;
+    const errorMessage = error.message;
+    // ..
+  });
+
+
+};
+
+
+
 
   return (
       <>  
@@ -37,15 +49,20 @@ function Login() {
               <div className='contenedor'>
                   <div className='card'>
                       <h1 className='card-title text-center mb-4'>Inicia sesión</h1>
-                      <form action='#' method='POST' className='card-body'>
+                      <form 
+                      
+                      onSubmit={handleSubmit}
+                      className='card-body'>
                           <div className='form-group'>
                               <input
-                                  type='email'
+                                  type='text'
                                   name='email'
                                   id='email'
                                   className='form-control'
                                   placeholder='Correo electrónico'
-                                  required
+                                  value={email}
+                                  onChange={(e) => setemail(e.target.value)}
+                                  
                               />
                           </div>
                           <div className='form-group'>
@@ -55,7 +72,9 @@ function Login() {
                                   id='password'
                                   className='form-control'
                                   placeholder='Contraseña'
-                                  required
+                                  value={constraseña}
+                                  onChange={(e) => setcontraseña(e.target.value)}
+                                  
                               />
                           </div>
                           <div className='form-group text-center pt-4'>
@@ -75,20 +94,7 @@ function Login() {
                              
                               </Link>
                           </p>
-                          <div className='iconred'>
-                              <Link>
-                                  <img src={fb} />
-                              </Link>
-                              <Link>
-                                  <img src={google} 
-                                  onClick ={ handleOnclick}
-                                  
-                                  />
-                              </Link>
-                              <Link to="/registro" >
-                                  <img src={email} />
-                              </Link>
-                          </div>
+                          
                       </div>
                   </div>
                   <div className='acompañar'>
@@ -134,25 +140,7 @@ font-weight: 700;
   max-width: 30rem;
   height: auto;
   
-  & .iconred {
-    display: flex;
-    justify-content: center;
-    gap: 3rem;
-    margin-top: 2rem;
-     & img {
-        width: 4rem;
-       padding: 0.5rem;
-        border: 0.1rem solid #CED5D5;
-        border-radius : 100% ;
-        
-        
-        @media(max-width: 780px){
-            width: 2.5rem;
-            
-
-        } 
-     }   
-  }
+  
  
 }
 
