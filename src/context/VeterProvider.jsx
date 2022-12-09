@@ -1,7 +1,10 @@
 import React, { useState, useEffect ,createContext} from 'react';
+import { useNavigate } from "react-router-dom";
 import { generarID } from '../data/helpes';
 import { formatearFecha } from '../data/helpes';
-import { app, auth } from '../components/Firebase/Firebase';
+import { app } from '../components/Firebase/Firebase';
+import { getAuth, signInWithEmailAndPassword , signInWithPopup, signOut , onAuthStateChanged } from "firebase/auth";
+
 
 
 const Contenido = createContext();
@@ -9,6 +12,10 @@ const Contenido = createContext();
 
 function VeterProvider({children}) {
    
+
+  app
+  const auth = getAuth();
+
 
 // var navbar 
   const [clicked, setClicked] = useState(false)
@@ -21,14 +28,88 @@ function VeterProvider({children}) {
         } }
 
 // funcion datos 
-
+const navigate = useNavigate();
 const [datos ,setdatos] = useState([])
 const [mensaje2, setmensaje2] = useState('');
 
+// inicioSesion
+
+const [emailIS, setemailIS] = useState('');
+const [constraseñaIS , setconstraseñaIS] = useState('')
+const [ estado , setestado ] = useState("")
+
+const InisionSesion = (e) => {
+  e.preventDefault();
+  const {email,constraseña } = datos
+  signInWithEmailAndPassword(auth, emailIS, constraseñaIS)
+  .then((userCredential) => {
+    // Signed in 
+    const user = userCredential.user;
+    console.log("iniciaste sesion correctamente")
+    setestado("conectado")
+  })
+  .catch((error) => {
+    const errorCode = error.code;
+    const errorMessage = error.message;
+    // ..
+  });
+  
+   
+};
 
 
 
 
+
+//  estado de la sesion 
+
+
+useEffect(() => {
+  onAuthStateChanged(auth, (user) => {
+    if (user) {
+      // User is signed in, see docs for a list of available properties
+      // https://firebase.google.com/docs/reference/js/firebase.User
+      const uid = user.uid;
+      console.log("usurio conectado")
+      // ...
+    } else {
+      // User is signed out
+      // ...
+      console.log("desconectado")
+    
+      
+    }
+  });
+}, [estado]);
+
+
+
+
+
+//<-- Fin Analisis sesion
+
+
+//<-- cerrar sesion 
+
+const CerrarSeccion = (e) => {
+  e.preventDefault();
+  
+  signOut(auth).then(() => {
+    setestado("desconectado")
+    navigate("/")
+  }).catch((error) => {
+   console.log("hubo un error" , error )
+  });
+  
+  return
+
+}
+  
+   
+
+
+
+//<-- Fin Analisis sesion
 
 
 
@@ -53,6 +134,9 @@ const guardargatos = (Referencia) => {
 
 
 
+
+
+
   return (
     <Contenido.Provider
             value={{
@@ -60,7 +144,15 @@ const guardargatos = (Referencia) => {
               handleClick,
               guardargatos,
               mensaje2,
-              setmensaje2
+              setmensaje2,
+              InisionSesion,
+              estado,
+              emailIS,
+              setemailIS,
+              constraseñaIS,
+              setconstraseñaIS,
+              CerrarSeccion
+              
 
             }}>
             {children}

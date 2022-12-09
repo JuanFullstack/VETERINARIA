@@ -6,42 +6,13 @@ import pets from "/pets.png"
 import { Link , useLocation  } from "react-router-dom "
 import { useState } from 'react'
 import TodaContendio from '../../hooks/TodaContendio'
-import { app } from '../Firebase/Firebase'
-import { getAuth, signInWithEmailAndPassword , signInWithPopup} from "firebase/auth";
 
-import { GoogleAuthProvider } from "firebase/auth";
 
 
 function Login() {
 
-  const [email, setemail] = useState('');
-  const [constraseña , setcontraseña] = useState('')
-
-  const { mensaje2 , setmensaje2 } = TodaContendio()
-
-const handleSubmit = (e) => {
-  e.preventDefault();
-  
+  const { InisionSesion ,setemailIS ,setconstraseñaIS ,constraseñaIS , emailIS  } = TodaContendio()
  
-  app
-  const auth = getAuth();
-  signInWithEmailAndPassword(auth, email, constraseña)
-  .then((userCredential) => {
-    // Signed in 
-    const user = userCredential.user;
-    console.log("iniciaste sesion correctamente")
-  })
-  .catch((error) => {
-    const errorCode = error.code;
-    const errorMessage = error.message;
-    // ..
-  });
-
-
-};
-
-
-
 
   return (
       <>  
@@ -51,7 +22,7 @@ const handleSubmit = (e) => {
                       <h1 className='card-title text-center mb-4'>Inicia sesión</h1>
                       <form 
                       
-                      onSubmit={handleSubmit}
+                      onSubmit={InisionSesion}
                       className='card-body'>
                           <div className='form-group'>
                               <input
@@ -60,8 +31,8 @@ const handleSubmit = (e) => {
                                   id='email'
                                   className='form-control'
                                   placeholder='Correo electrónico'
-                                  value={email}
-                                  onChange={(e) => setemail(e.target.value)}
+                                  value={emailIS}
+                                  onChange={(e) => setemailIS(e.target.value)}
                                   
                               />
                           </div>
@@ -72,8 +43,8 @@ const handleSubmit = (e) => {
                                   id='password'
                                   className='form-control'
                                   placeholder='Contraseña'
-                                  value={constraseña}
-                                  onChange={(e) => setcontraseña(e.target.value)}
+                                  value={constraseñaIS}
+                                  onChange={(e) => setconstraseñaIS(e.target.value)}
                                   
                               />
                           </div>

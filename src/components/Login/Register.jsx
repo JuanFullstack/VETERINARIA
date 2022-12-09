@@ -36,7 +36,6 @@ function Register() {
         }
         guardargatos({ nombre, apellido, email , constraseña});
          
-        app
         const auth = getAuth();
         createUserWithEmailAndPassword(auth, email, constraseña)
         .then((userCredential) => {

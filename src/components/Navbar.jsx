@@ -15,7 +15,7 @@ function Navbar() {
 
   const location = useLocation()
   
-  const { clicked , handleClick} = TodaContendio()
+  const { clicked , handleClick , CerrarSeccion } = TodaContendio()
  
 
 
@@ -55,8 +55,14 @@ function Navbar() {
           <img  className='cart' onClick={handleClick} src={cart} /> </Link>
           
           <img className='divi' src={divi}/>
+
           <Link className={ ` ${ location.pathname ==='/login' ? 'modificado' : ' normal' }  `}to="/login"> 
-          <img  className='login' onClick={handleClick} src={login} /> </Link>
+        
+          <button className='iniciosesion' onClick={handleClick}  > <span> ✓ </span> iniciar sesion  </button>
+          
+          </Link>
+         
+          <button className='cerrarsesion' onClick={CerrarSeccion} > <span> X </span>cerrar sesion </button>
           
         </div>
 
@@ -196,18 +202,7 @@ background: linear-gradient(180deg, rgba(244,211,244,1) 0%, rgba(251,249,255,1) 
       } 
     }
 
-    & .login {
-      width: 4rem;
-      align-items: center;
-      @media(max-width: 780px){
-         padding-top: 2rem;
-         margin: 0 auto;
-         display: block;
-         
-
-      } 
-     
-      } 
+  
 
       @media(max-width: 400px){
          margin-top: 2rem;
@@ -268,6 +263,37 @@ background: linear-gradient(180deg, rgba(244,211,244,1) 0%, rgba(251,249,255,1) 
     }
   }
 
+.iniciosesion {
+font-size: 1.2rem;
+background-color: #00379F;
+color: white;
+padding: 0.6rem;
+border-radius: 0.5rem;
+font-weight:600;
+
+}
+
+.iniciosesion:hover {
+  background-color: #86DCFA;
+  color: black;
+
+}
+
+.cerrarsesion {
+font-size: 1.2rem;
+background-color: #D20000;
+color: white;
+padding: 0.6rem;
+border-radius: 0.5rem;
+font-weight:600;
+
+}
+
+.cerrarsesion:hover {
+  background-color: #FDB4B4;
+  color: black;
+
+}
 
 
   .modificado {
