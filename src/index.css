@@ -74,3 +74,9 @@ img {
   color: red;
   font-size: 2rem;
 }
+
+/*Imagenes cards mascotas*/
+
+.imagen-card {
+  width: 100%;
+}
