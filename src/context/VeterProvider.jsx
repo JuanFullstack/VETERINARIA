@@ -6,7 +6,7 @@ function VeterProvider({ children }) {
   const [perros, setPerros] = useState([]);
 
   //Url con todos los datos raw.
-  const URL = "http://localhost:3000/articulos";
+  const URL = "http://localhost:3004/articulos";
 
   //Funcion que trae toda la info 'personajes'
   const fetchMascotas = (url) => {
