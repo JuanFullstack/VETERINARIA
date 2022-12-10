@@ -130,21 +130,24 @@ section{
    display: inline-block;
    text-align: center;
    border-radius: 50%;
-   background: #000;
+   background: rgb(99, 236, 172);
    width: 60px;
    height: 60px;
    transition: all 0.3s ease-in-out;
 }
 
+
+
+
 .row .one .icon{
-   background: ;
+   background-color: #717cff;
 
 }
 .row .icon i{
 
    font-size: 38px;
    line-height: 1.1;
-   color: #fff
+   color: #fff !important
 }
 
 .row .icon_box :hover .icon{

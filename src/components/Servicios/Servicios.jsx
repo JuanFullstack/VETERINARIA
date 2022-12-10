@@ -1,8 +1,18 @@
 
 import "./css/estilos.css";
+import React, { useEffect } from 'react';
 
 
 function Servicios() {
+
+    
+       useEffect(() => {
+          window.AOS.init({
+             // Initialization
+            duration: 2000,
+          });
+        });
+      
   return (
     <section class="services">
       <div class="container" data-aos="fade-down">
@@ -14,11 +24,19 @@ function Servicios() {
         <div class="row">
           <div class="col-lg-4 col-md-6 d-flex aling-item-center mb-5">
             <div class="icon_box one">
+            <i class="fa-solid fa-house-medical text-white"></i>
               <div class="icon">
-                <i class="far fa-desktopfas fa-desktop"></i>
+              <i class="fa fa-hospital-o  text-white" aria-hidden="true" ></i>
+              
               </div>
               <h4 class="title">Consultorio Veterinario las 24hs</h4>
               <p class="description">
+              <span style={{fontSize: "3em" , color: "red"}}>
+              <i class="fa fa-hospital-o" aria-hidden="true" style={{color: "red"}}></i>
+
+              <i class="fa-solid fa-house-medical "></i>
+              </span>
+            
                 Gracias a nuestra disponibilidad 24 horas los 365 días al año,
                 también podemos ofrecerte el servicio de internación. En
                 nuestras instalaciones tenemos espacios diferenciados para cada
