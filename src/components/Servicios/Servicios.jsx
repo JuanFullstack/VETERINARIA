@@ -1,18 +1,16 @@
-
 import "./css/estilos.css";
-import React, { useEffect } from 'react';
+import React, { useEffect } from "react";
 
+import icono1 from "../Servicios/imagenes/icono1.png";
 
 function Servicios() {
+  useEffect(() => {
+    window.AOS.init({
+      // Initialization
+      duration: 2000,
+    });
+  });
 
-    
-       useEffect(() => {
-          window.AOS.init({
-             // Initialization
-            duration: 2000,
-          });
-        });
-      
   return (
     <section class="services">
       <div class="container" data-aos="fade-down">
@@ -24,19 +22,11 @@ function Servicios() {
         <div class="row">
           <div class="col-lg-4 col-md-6 d-flex aling-item-center mb-5">
             <div class="icon_box one">
-            <i class="fa-solid fa-house-medical text-white"></i>
-              <div class="icon">
-              <i class="fa fa-hospital-o  text-white" aria-hidden="true" ></i>
-              
+              <div class="icon ">
+                <img src={icono1} alt="" />
               </div>
               <h4 class="title">Consultorio Veterinario las 24hs</h4>
               <p class="description">
-              <span style={{fontSize: "3em" , color: "red"}}>
-              <i class="fa fa-hospital-o" aria-hidden="true" style={{color: "red"}}></i>
-
-              <i class="fa-solid fa-house-medical "></i>
-              </span>
-            
                 Gracias a nuestra disponibilidad 24 horas los 365 días al año,
                 también podemos ofrecerte el servicio de internación. En
                 nuestras instalaciones tenemos espacios diferenciados para cada
@@ -46,15 +36,85 @@ function Servicios() {
                 Contamos con un espacio separado del resto para la internación
                 de pacientes infecto-contagiosos; con enfermedades como
                 parvovirus, moquillo o vif y vilef. Espacio exclusivo Cat
-                Friendly para espera, consulta e internación.
+                Friendly para espera, consulta e internación.{" "}
+                <i class="fa fa-address-book" aria-hidden="true"></i>
               </p>
             </div>
           </div>
 
           <div class="col-lg-4 col-md-6 d-flex aling-item-center mb-5">
+            <div class="icon_box one">
+              <div class="icon ">
+                <img src={icono1} alt="" />
+              </div>
+              <h4 class="title">Consultorio Veterinario las 24hs</h4>
+              <p class="description">
+                Gracias a nuestra disponibilidad 24 horas los 365 días al año,
+                también podemos ofrecerte el servicio de internación. En
+                nuestras instalaciones tenemos espacios diferenciados para cada
+                necesidad, como ser: oxigenoterapia, Unidad de Cuidados
+                Intensivos (UCI) con espacios de internación para la comodidad
+                de tu mascota. Nuestro objetivo es que se sienta como en casa.
+                Contamos con un espacio separado del resto para la internación
+                de pacientes infecto-contagiosos; con enfermedades como
+                parvovirus, moquillo o vif y vilef. Espacio exclusivo Cat
+                Friendly para espera, consulta e internación.{" "}
+                <i class="fa fa-address-book" aria-hidden="true"></i>
+              </p>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6 d-flex aling-item-center mb-5">
+            <div class="icon_box one">
+              <div class="icon ">
+                <img src={icono1} alt="" />
+              </div>
+              <h4 class="title">Consultorio Veterinario las 24hs</h4>
+              <p class="description">
+                Gracias a nuestra disponibilidad 24 horas los 365 días al año,
+                también podemos ofrecerte el servicio de internación. En
+                nuestras instalaciones tenemos espacios diferenciados para cada
+                necesidad, como ser: oxigenoterapia, Unidad de Cuidados
+                Intensivos (UCI) con espacios de internación para la comodidad
+                de tu mascota. Nuestro objetivo es que se sienta como en casa.
+                Contamos con un espacio separado del resto para la internación
+                de pacientes infecto-contagiosos; con enfermedades como
+                parvovirus, moquillo o vif y vilef. Espacio exclusivo Cat
+                Friendly para espera, consulta e internación.{" "}
+                <i class="fa fa-address-book" aria-hidden="true"></i>
+              </p>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6 d-flex aling-item-center mb-5">
+            <div class="icon_box one">
+              <div class="icon ">
+                <img src={icono1} alt="" />
+              </div>
+              <h4 class="title">Consultorio Veterinario las 24hs</h4>
+              <p class="description">
+                Gracias a nuestra disponibilidad 24 horas los 365 días al año,
+                también podemos ofrecerte el servicio de internación. En
+                nuestras instalaciones tenemos espacios diferenciados para cada
+                necesidad, como ser: oxigenoterapia, Unidad de Cuidados
+                Intensivos (UCI) con espacios de internación para la comodidad
+                de tu mascota. Nuestro objetivo es que se sienta como en casa.
+                Contamos con un espacio separado del resto para la internación
+                de pacientes infecto-contagiosos; con enfermedades como
+                parvovirus, moquillo o vif y vilef. Espacio exclusivo Cat
+                Friendly para espera, consulta e internación.{" "}
+                <i class="fa fa-address-book" aria-hidden="true"></i>
+              </p>
+            </div>
+          </div>
+
+          {/*         
+          <div class="col-lg-4 col-md-6 d-flex aling-item-center mb-5">
             <div class="icon_box two">
               <div class="icon">
-                <i class="far fa-desktop"></i>
+                
+            
+                
               </div>
               <h4 class="title">Especialistas</h4>
               <p class="description">
@@ -67,8 +127,8 @@ function Servicios() {
                 darle todas las atenciones a tu mascotas en el mismo lugar.
               </p>
             </div>
-          </div>
-
+          </div> */}
+          {/* 
           <div class="col-lg-4 col-md-6 d-flex aling-item-center mb-5">
             <div class="icon_box three">
               <div class="icon">
@@ -85,9 +145,9 @@ function Servicios() {
                 apariencia de tu mejor amigo.
               </p>
             </div>
-          </div>
+          </div> */}
 
-          <div class="col-lg-4 col-md-6 d-flex aling-item-center mb-5">
+          {/* <div class="col-lg-4 col-md-6 d-flex aling-item-center mb-5">
             <div class="icon_box four">
               <div class="icon">
                 <i class="far fa-desktopfas fa-desktop"></i>
@@ -98,9 +158,9 @@ function Servicios() {
                 Contamos con todo lo que tu mascota necesita para su salud.
               </p>
             </div>
-          </div>
+          </div> */}
 
-          <div class="col-lg-4 col-md-6 d-flex aling-item-center mb-5">
+          {/* <div class="col-lg-4 col-md-6 d-flex aling-item-center mb-5">
             <div class="icon_box five">
               <div class="icon">
                 <i class="far fa-desktopfas fa-desktop"></i>
@@ -111,9 +171,9 @@ function Servicios() {
                 Productos con gran variedad de precio y la mejor calidad.
               </p>
             </div>
-          </div>
+          </div> */}
 
-          <div class="col-lg-4 col-md-6 d-flex aling-item-center mb-5">
+          {/* <div class="col-lg-4 col-md-6 d-flex aling-item-center mb-5">
             <div class="icon_box six">
               <div class="icon">
                 <i class="far fa-desktopfas fa-desktop"></i>
@@ -128,7 +188,7 @@ function Servicios() {
                 llevamos a donde quieras.
               </p>
             </div>
-          </div>
+          </div> */}
         </div>
       </div>
     </section>

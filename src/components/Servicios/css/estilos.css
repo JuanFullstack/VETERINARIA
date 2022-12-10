@@ -1,6 +1,5 @@
-
 /*google font link*/
-/* @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@1,900&display=swap');  */
+
 
 /*global styling start*/
 *{
@@ -86,7 +85,7 @@ section{
 }
 .row .one ::before{
 
-   background: #ee5959;
+   background: #59eebc;
 }
 
 .row .two ::before  {
@@ -130,24 +129,36 @@ section{
    display: inline-block;
    text-align: center;
    border-radius: 50%;
-   background: rgb(99, 236, 172);
+   background: #000;
    width: 60px;
    height: 60px;
    transition: all 0.3s ease-in-out;
+  
 }
-
-
-
 
 .row .one .icon{
-   background-color: #717cff;
+   background: #717cff;
+   
+   overflow:hidden;
+ 
 
 }
+
+.row .one .icon img {
+    width:2.2em;
+    height:auto;
+    margin:0 auto;
+ filter: invert(100%) sepia(100%) saturate(2%) hue-rotate(254deg) brightness(106%) contrast(101%);
+
+}
+
+
 .row .icon i{
 
    font-size: 38px;
    line-height: 1.1;
-   color: #fff !important
+   background-image: url("../imagenes/icono1.png");
+   color: #fff
 }
 
 .row .icon_box :hover .icon{
@@ -179,5 +190,6 @@ section{
 .row .icon_box :hover .description{
    color: #fff;
 }
+
 
 
