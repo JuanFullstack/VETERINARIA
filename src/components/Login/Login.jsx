@@ -3,27 +3,31 @@ import fb from "/fb.svg"
 import google from "/google.svg"
 import email from "/email.svg"
 import pets from "/pets.png"
+import medico from "/medico.webp"
 import { Link , useLocation  } from "react-router-dom "
 import { useState } from 'react'
 import TodaContendio from '../../hooks/TodaContendio'
-
+import Error from '../Error'
 
 
 function Login() {
 
-  const { InisionSesion ,setemailIS ,setconstraseñaIS ,constraseñaIS , emailIS  } = TodaContendio()
- 
+  const { clicked , InisionSesion ,setemailIS ,setconstraseñaIS ,constraseñaIS , emailIS , mensaje2    } = TodaContendio()
+          
 
   return (
-      <>  
+      <>    
           <EstilosDiv>
+            
               <div className='contenedor'>
+              
                   <div className='card'>
                       <h1 className='card-title text-center mb-4'>Inicia sesión</h1>
                       <form 
                       
                       onSubmit={InisionSesion}
                       className='card-body'>
+                        {  <Error>{mensaje2}</Error>  }
                           <div className='form-group'>
                               <input
                                   type='text'
@@ -74,7 +78,6 @@ function Login() {
                   </div>
               </div>
           </EstilosDiv>
-        
       </>
   );
 }
@@ -87,8 +90,9 @@ const EstilosDiv = styled.div`
 
 .contenedor{
     display: flex;
-    margin-top: 5rem;
+    padding-top: 5rem;
     justify-content: center;
+
 
     @media(max-width: 780px){
           margin-top: rem;
@@ -166,3 +170,4 @@ footer {
 }
   
 `
+

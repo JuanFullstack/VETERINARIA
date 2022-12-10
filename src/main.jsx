@@ -11,6 +11,8 @@ import Carrito from './components/Carrito'
 import './index.css'
 import Login from './components/Login/Login'
 import Register from './components/Login/Register'
+import CrudTurnos from './components/Login/admin/CrudTurnos'
+
 // You can specify which plugins you need
 
 
@@ -58,6 +60,11 @@ const router = createBrowserRouter ([
     {
       path: "/registro",
       element: <Register/>
+     
+    },
+    {
+      path: "/abmturnos",
+      element: <CrudTurnos/>
      
     }
 

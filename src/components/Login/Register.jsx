@@ -92,14 +92,14 @@ export default Register
 
 const EstilosDiv = styled.div`
 
-margin-top: 2rem;
+padding-top: 4rem;
 background-image:url("../../../public/animal.jpg") ;
 background-size: cover;
 background-repeat:no-repeat;
 
 
 @media (max-width:480px) {
-  margin-top: 1rem;
+  padding-top: 1rem;
   margin-bottom: 2rem;
   background-image:none;
 }

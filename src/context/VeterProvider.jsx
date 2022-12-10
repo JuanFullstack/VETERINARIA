@@ -19,6 +19,7 @@ function VeterProvider({children}) {
 
 // var navbar 
   const [clicked, setClicked] = useState(false)
+
   const handleClick = () => {
     //cuando esta true lo pasa a false y vice versa
     if(( window.innerWidth) > 1280 ){
@@ -32,11 +33,15 @@ const navigate = useNavigate();
 const [datos ,setdatos] = useState([])
 const [mensaje2, setmensaje2] = useState('');
 
+
+
+
+
 // inicioSesion
 
 const [emailIS, setemailIS] = useState('');
 const [constraseñaIS , setconstraseñaIS] = useState('')
-const [ estado , setestado ] = useState("")
+const [ estado , setestado ] = useState(false)
 
 const InisionSesion = (e) => {
   e.preventDefault();
@@ -46,11 +51,22 @@ const InisionSesion = (e) => {
     // Signed in 
     const user = userCredential.user;
     console.log("iniciaste sesion correctamente")
-    setestado("conectado")
+   
   })
   .catch((error) => {
     const errorCode = error.code;
     const errorMessage = error.message;
+   
+    if ((emailIS =="")|(constraseñaIS == "")){
+      setmensaje2("Todos los campos son obligatorios")
+      setTimeout(()=>setmensaje2("") , 3000)
+    }else {
+      console.log("datos incorrecatos")
+      setmensaje2("Datos incorrectos")
+      setTimeout(()=>setmensaje2("") , 3000)
+    }
+
+ 
     // ..
   });
   
@@ -71,12 +87,13 @@ useEffect(() => {
       // https://firebase.google.com/docs/reference/js/firebase.User
       const uid = user.uid;
       console.log("usurio conectado")
+      setestado(true)
       // ...
     } else {
       // User is signed out
       // ...
       console.log("desconectado")
-    
+      setestado(false)
       
     }
   });
@@ -95,7 +112,7 @@ const CerrarSeccion = (e) => {
   e.preventDefault();
   
   signOut(auth).then(() => {
-    setestado("desconectado")
+   
     navigate("/")
   }).catch((error) => {
    console.log("hubo un error" , error )

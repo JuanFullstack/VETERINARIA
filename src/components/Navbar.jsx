@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+
 import styled from 'styled-components'
 import BurguerButton from './BurguerButton '
 import { Link , useLocation  } from "react-router-dom "
@@ -8,6 +8,7 @@ import petssvg from "/petssvg.svg"
 import cart from "/cart.svg"
 import login from "/login.svg"
 import divi from "/divi.svg"
+import  agenda from "/agenda.svg"
 import NavbarDos from './NavbarDos'
 import TodaContendio from '../hooks/TodaContendio'
 
@@ -15,7 +16,7 @@ function Navbar() {
 
   const location = useLocation()
   
-  const { clicked , handleClick , CerrarSeccion } = TodaContendio()
+  const { clicked , handleClick , CerrarSeccion , estado } = TodaContendio()
  
 
 
@@ -50,19 +51,25 @@ function Navbar() {
           <Link className={ ` ${ location.pathname ==='/tienda' ? 'modificado' : ' normal' }  `}to="/tienda"> 
           <img className='icon' src={petssvg}/> 
           <span className="etiqueta" onClick={handleClick}> Tienda</span></Link>
-
+         
           <Link className={ ` ${ location.pathname ==='/carrito' ? 'modificado' : ' normal' }  `}to="/carrito"> 
           <img  className='cart' onClick={handleClick} src={cart} /> </Link>
+
+          <Link className={ ` ${ location.pathname ==='/abmturnos' ? 'modificado' : ' normal' }  `}to="/abmturnos"> 
+          <img  className={ estado ? 'agenda':'desconectado' }  onClick={handleClick} src={agenda} /> </Link>
           
           <img className='divi' src={divi}/>
 
-          <Link className={ ` ${ location.pathname ==='/login' ? 'modificado' : ' normal' }  `}to="/login"> 
+          <Link to="/login"> 
         
-          <button className='iniciosesion' onClick={handleClick}  > <span> ✓ </span> iniciar sesion  </button>
+          <button className={ estado ? 'desconectado':'iniciosesion' }
+          
+          onClick={handleClick}  > <span> ✓ </span> iniciar sesion  </button>
           
           </Link>
          
-          <button className='cerrarsesion' onClick={CerrarSeccion} > <span> X </span>cerrar sesion </button>
+          <button className={ estado ? 'cerrarsesion' : 'desconectado'  } onClick={CerrarSeccion} > <span> X </span>cerrar sesion </button>
+          
           
         </div>
 
@@ -92,6 +99,8 @@ function Navbar() {
 export default Navbar
 
 const Navptes = styled.div `
+
+
    
    .prueba {
 
@@ -154,6 +163,13 @@ background: linear-gradient(180deg, rgba(244,211,244,1) 0%, rgba(251,249,255,1) 
     text-decoration: none;
     margin-right: 1rem;
     z-index: 2;
+    
+
+    @media(max-width: 400px){
+         margin-left: 5rem;
+
+      } 
+
 
   }
   a{
@@ -195,12 +211,35 @@ background: linear-gradient(180deg, rgba(244,211,244,1) 0%, rgba(251,249,255,1) 
     }
     & .cart {
       width: 2.5rem;
-   
-      @media(max-width: 780px){
-         margin-top: 1rem;
+       margin: 0 auto ;
+      @media(max-width: 1279px){
+         margin-top: 2rem;
+         margin-left: 8rem;
+         width: 5rem;
+      } 
+
+      @media(max-width: 400px){
+        width: 3.5rem;
+        margin-left: 5.2rem;
 
       } 
     }
+
+    & .agenda {
+       width: 2.5rem;
+       margin: 0 auto ;
+       margin-left:2rem;
+      @media(max-width: 1279px){
+         margin-top: 2rem;
+         width: 5rem;
+      } 
+
+      @media(max-width: 400px){
+        width: 3.5rem;
+
+      } 
+    }
+
 
   
 
@@ -229,11 +268,12 @@ background: linear-gradient(180deg, rgba(244,211,244,1) 0%, rgba(251,249,255,1) 
   .links.active{
     width: 100%;
     display: block;
+    z-index: 2;
    ;
     position: absolute;
     margin-left: auto;
     margin-right: auto;
-    top: 30%;
+    top: 15%;
     left: 0;
     right: 0;
     text-align: center;
@@ -242,6 +282,7 @@ background: linear-gradient(180deg, rgba(244,211,244,1) 0%, rgba(251,249,255,1) 
       left: -10rem;
       right: 8rem;
     }
+
     a .etiqueta{
       font-size: 2rem;
       margin-top: 1rem;
@@ -251,9 +292,20 @@ background: linear-gradient(180deg, rgba(244,211,244,1) 0%, rgba(251,249,255,1) 
     }
   }
   .burguer{
+    z-index: 2;
+  
+    @media(max-width: 450px){
+      
+      
+    }
+    
+
     @media(min-width: 1280px){
+      width: 10rem;
       display: none;
     }
+
+    
   }
 
   .normal .icon {
@@ -265,36 +317,65 @@ background: linear-gradient(180deg, rgba(244,211,244,1) 0%, rgba(251,249,255,1) 
 
 .iniciosesion {
 font-size: 1.2rem;
-background-color: #00379F;
+border-radius: 15px;
+background: #356ad4;
+box-shadow: inset -24px -24px 48px #20407f,
+            inset 24px 24px 48px #4a94ff;
 color: white;
 padding: 0.6rem;
-border-radius: 0.5rem;
 font-weight:600;
+@media(max-width: 1280px){
+      margin: 0 auto;
+      
+    }
+
+@media(max-width: 1279px){
+  display: block;
+      margin-top:4rem;  
+      
+    }
+
+@media(max-width: 400px){
+      display: block;
+      margin-top: 2rem;
+    }
+
 
 }
 
 .iniciosesion:hover {
-  background-color: #86DCFA;
+  border-radius: 15px;
+background: #a3d6f5;
+box-shadow: inset -24px -24px 48px #80caf8,
+            inset 24px 24px 48px #e4ffff;
   color: black;
 
 }
 
 .cerrarsesion {
 font-size: 1.2rem;
-background-color: #D20000;
+padding: 0.5rem;
+border-radius: 15px;
+background: #a7020b;
+box-shadow: inset -24px -24px 48px #dd0813,
+            inset 24px 24px 48px #aa0a55;
 color: white;
-padding: 0.6rem;
 border-radius: 0.5rem;
 font-weight:600;
 
 }
 
 .cerrarsesion:hover {
-  background-color: #FDB4B4;
+  background: #eb7f84;
+box-shadow: inset -24px -24px 48px #e01c8e,
+            inset 24px 24px 48px #eb2380;
   color: black;
 
 }
 
+.desconectado {
+  display: none;
+}
 
   .modificado {
     padding: 1rem;
@@ -307,6 +388,7 @@ font-weight:600;
     background:none;
     padding: 0rem;
     font-size: 1rem;
+   
 
       } 
 
@@ -316,11 +398,8 @@ font-weight:600;
 
         @media(max-width: 1280px){
           display: none;
-      }
-     
+      }}
       
-    
-    }
       
         
   }
@@ -362,7 +441,7 @@ const BgDiv = styled.div`
   left: -1000px;
   width: 100%;
   height: 100%;
-  z-index: -1;
+  z-index: 1;
   transition: all .6s ease ;
 
   
@@ -379,3 +458,5 @@ const BgDiv = styled.div`
 }
 
 `
+
+
