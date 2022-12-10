@@ -51,7 +51,7 @@ const InisionSesion = (e) => {
     // Signed in 
     const user = userCredential.user;
     console.log("iniciaste sesion correctamente")
-   
+    navigate("/abmturnos")
   })
   .catch((error) => {
     const errorCode = error.code;

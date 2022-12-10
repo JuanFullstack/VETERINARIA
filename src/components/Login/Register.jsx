@@ -1,4 +1,4 @@
-import React from 'react'
+
 import styled from 'styled-components'
 import pets from "/pets.png"
 import  { useState, useEffect } from 'react';
@@ -34,8 +34,7 @@ function Register() {
 
           return;
         }
-        guardargatos({ nombre, apellido, email , constraseña});
-         
+        
         const auth = getAuth();
         createUserWithEmailAndPassword(auth, email, constraseña)
         .then((userCredential) => {
@@ -135,7 +134,10 @@ input {
     font-size: 17px;
     border: none;
     border-radius: 0.5rem;
+
 }
+
+
 
 textarea {
     min-height: 100px;

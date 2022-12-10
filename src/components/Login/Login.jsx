@@ -93,6 +93,17 @@ const EstilosDiv = styled.div`
     padding-top: 5rem;
     justify-content: center;
 
+    & input:invalid {
+  animation: shake .3s;
+  color: red;
+}
+
+@keyframes shake {
+  25% { transform: translateX(6px ) }
+  50% { transform: translateX(-6px ) }
+  75% { transform: translateX(6px ) }
+}
+
 
     @media(max-width: 780px){
           margin-top: rem;
@@ -105,6 +116,8 @@ const EstilosDiv = styled.div`
 font-weight: 700;
 
 }
+
+
 
 .panel {
   background-color: #fff;
