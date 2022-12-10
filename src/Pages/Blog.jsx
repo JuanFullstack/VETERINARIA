@@ -5,7 +5,7 @@ function Blog() {
   const { perros } = TodaContendio();
 
   return (
-    <div className="p-5">
+    <div className="p-5 Blog">
       <div className="col-xs col-sm col-md col-xl-12">
         <Mascotas perros={perros} />
       </div>
