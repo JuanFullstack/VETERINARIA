@@ -1,0 +1,252 @@
+
+.nosotros{
+   padding: 5rem 3rem 3rem 3rem;
+   background: #f8f8f8;
+}
+
+.row{
+   display:flex;
+   justify-content: space-around;
+}
+
+.row .column {
+   width:40%;
+}
+
+.column .tabs{
+   display: flex;
+}
+
+.single-tab {
+   background: white;
+   margin-right: 10px;
+   cursor: pointer;
+
+}
+
+.single-tab h2{
+   display:block;
+   padding: 10px 16px;
+   border-radius: 4px;
+   color: #3c3c3c;
+   font-size: 14px;
+   font-weight: 600;
+
+}
+
+.imagen-slider{
+
+   height:40rem;
+   width: 100%;
+
+}
+
+.nosotros-img{
+   position:relative;
+   background-image: url("./imagenes/veterinaria.jpg") ;
+   background-repeat:no-repeat;
+   background-size:cover;
+   background-position: center center;
+   height: 35rem;
+   width: 100%;
+
+}
+
+
+.nosotros-img2{
+   position:relative;
+   background-image: url("./imagenes/veterinario2.jpg") ;
+   background-repeat:no-repeat;
+   background-size:cover;
+   background-position: center center;
+   height: 600px;
+   width: 100%;
+
+}
+
+.nosotros-img3{
+   position:relative;
+   background-image: url("./imagenes/veterinario3.jpg") ;
+   background-repeat:no-repeat;
+   background-size:cover;
+   background-position: center center;
+   height: 600px;
+   width: 100%;
+
+}
+            
+.contenidoNosotros {
+   padding-top: 1.5rem;
+   padding-bottom: 1.5rem;
+   display:none;
+}
+
+.contenido-activo {
+   display:block;
+}
+
+.active-tab{
+   background: #FB2576;
+   position:relative;
+}
+
+.active-tab h2{
+   color:white;
+}
+
+.active-tab::before {
+
+      position:absolute;
+      bottom: -5px;
+      left: 50%;
+      transform: trasnlateX(-50%);
+      content: '';
+      width:0;
+      height:0;
+      border-style:solid;
+      border-width: 5px 5px 0 5px;
+      border-color: #FB2576 transparent transparent transparent;
+
+}
+.contenidoNosotros h2{
+   font-size: 40px;
+   font-weight: 700;
+   line-height: 1.4;
+   margin-bottom: 1rem;
+}
+
+.contenidoNosotros p {
+   padding-bottom:1rem;
+   font-size:16px;
+   line-height: 1.8;
+   font-weight: 400;
+   color: #999;
+}
+
+
+.single-content h3 {
+
+   font-size:1.5rem;
+   font-weight: 700;
+   line-height: 1.5;
+   margin-bottom: 1rem;
+   
+}
+
+
+.servicios-row{
+   margin-top: 2rem;
+   display:grid;
+   grid-template-columns: 1fr 1fr;
+
+}
+
+.servicios-column{
+   margin-bottom:30px;
+   margin-right: 20px;
+}
+
+.progress-wrap h3{
+   font-size: 14px !important;
+   margin-bottom: 10px;
+   font-weight: 700;
+   text-transform: uppercase;
+   
+}
+
+.progress {
+   height: 8px;
+   background: rba(0,0,0,.05);
+   overflow: visible;
+}
+
+.progress-bar{
+   width: 60%;
+   height: 8px;
+   background:#FB2576;
+   line-height:1.2;
+   position:relative;
+   border-radius: 2px;
+
+}
+
+.progress-bar span {
+   position:absolute;
+   top: -30px;
+   right:0;
+   font-size:16px;
+   font-weight: 400;
+   color: #FB2576;
+}
+
+
+/*Experiencia*/
+
+
+.especialidades-column span {
+   font-weight: 500;
+   color: #FB2576;
+
+}
+
+.especialidades-column p {
+   margin-top: 10px;
+}
+
+
+@media screen and (max-width:768px){
+   .nosotros{
+      padding: 2rem 1rem 3rem 1rem;
+   }
+   .row {
+      display:flex;
+      flex-direction:column;
+   }
+
+   .nosotros-img{
+      height: 500px;
+   }
+
+   .row .column{
+      width: 100%;
+   }
+
+   .tabs{
+      padding-top: 3rem;
+   }
+
+   .servicios-row{
+      grid-template-columns: 1fr;
+   }
+
+
+}
+
+
+.INTERNAMIENTO {
+   width:95%;
+}
+
+
+
+.MOVILIDAD{
+   width:85%;
+}
+
+.ECOGRAFÍA {
+   width:90%;
+}
+
+
+.URGENCIAS{
+   width: 100%;
+}
+
+
+.CLINICA{
+   width:90%;
+}
+
+.INTERCONSULTAS{
+   width:95;
+}
