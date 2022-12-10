@@ -1,11 +1,11 @@
 
-import 
+import "./css/estilos.css";
 
 
 function Servicios() {
   return (
     <section class="services">
-      <div class="container">
+      <div class="container" data-aos="fade-down">
         <div class="heading">
           <h2>Servicios</h2>
           <p>Nuestros Servicios</p>
