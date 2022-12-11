@@ -8,18 +8,17 @@ function Layout() {
 
 
   return (
-    
-    <>
-    <VeterProvider>
-    <Header/>
-    <Outlet/>
-    <Footer/>
-    </VeterProvider>
-
-    </>
-    
-
-  )
+      <>
+         
+              <VeterProvider>
+                  <Header />
+                  <Outlet />
+                  <Footer />
+              </VeterProvider>
+            
+          
+      </>
+  );
 }
 
 export default Layout

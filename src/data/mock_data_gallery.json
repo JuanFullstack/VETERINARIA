@@ -2,43 +2,45 @@
   "articulos": [
     {
       "id": 1,
-      "link": "#",
       "image": "https://cdn.pixabay.com/photo/2016/01/05/17/51/maltese-1123016__340.jpg",
       "category": "Cuidados",
       "title": "Tips para encantar a tu mascota.",
-      "intro": "Viajar no es únicamente utilizar un medio de transporte, es también asumir los cambios de rutina, la adaptación a las nuevas circunstancias."
+      "intro": "Por suerte, hay muchas maneras de premiar a tu mascota sin la necesidad de usar comida. Un masaje en el vientre o acariciarlo detrás de las orejas puede ser una forma de decir “te quiero” tanto como darle un premio o snack. Es más, si quieres hacer algo todavía más especial ¡cómprale un juguete nuevo! Le va a encantar."
     },
     {
-      "link": "#",
       "image": "https://images.pexels.com/photos/9329774/pexels-photo-9329774.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load",
       "category": "Consejos",
       "title": "Cómo jugar con tu perro en el parque.",
-      "intro": "Viajar no es únicamente utilizar un medio de transporte, es también asumir los cambios de rutina, la adaptación a las nuevas circunstancias.",
+      "intro": "El juego eleva los niveles de serotonina y dopamina, lo que contribuye a que tu perro se mantenga relajado. Entre los juegos preferidos por los perros, se encuentran aquellos que implican la búsqueda de objetos, utilizando el olfato, tirar de cuerdas, perseguir objetos como pelotas o frisbees, persecuciones y lucha libre.",
       "id": 2
     },
     {
-      "link": "#",
       "image": "https://images.pexels.com/photos/8625096/pexels-photo-8625096.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load",
       "category": "Psicologia",
       "title": "¿Los animales tienen sentimientos?",
-      "intro": "Viajar no es únicamente utilizar un medio de transporte, es también asumir los cambios de rutina, la adaptación a las nuevas circunstancias.",
+      "intro": "Está demostrado que los animales también pueden experimentar sensación de hambre, de dolor, de frío o calor, pero también de sentimientos complejos como la alegría, el duelo, tristeza o incluso melancolía.",
       "id": 3
     },
     {
-      "link": "#",
-      "image": "https://images.pexels.com/photos/7268578/pexels-photo-7268578.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load",
+      "image": "https://images.pexels.com/photos/1440387/pexels-photo-1440387.jpeg?auto=compress&cs=tinysrgb&w=400",
       "category": "Psicologia",
-      "title": "Covid-19 y Home office, ¿Cómo entretener a tu mascota?",
-      "intro": "Viajar no es únicamente utilizar un medio de transporte, es también asumir los cambios de rutina, la adaptación a las nuevas circunstancias.",
+      "title": "Home office, ¿Cómo entretener a tu mascota?",
+      "intro": "Ayudarles con juegos mentales puede ser muy divertido. Esconder sus juguetes, la comida o enseñarles a buscar objetos puede tener una doble ventaja. La primera es mantenerlos entretenidos y la segunda es la de reforzar su educación. ",
       "id": 4
     },
     {
-      "link": "#",
-      "image": "https://images.pexels.com/photos/10632673/pexels-photo-10632673.jpeg?auto=compress&cs=tinysrgb&w=600",
-      "category": "Consejos",
-      "title": "Juegos y chicos, precauciones a tener en cuenta",
-      "intro": "Viajar no es únicamente utilizar un medio de transporte, es también asumir los cambios de rutina, la adaptación a las nuevas circunstancias.",
+      "image": "https://images.pexels.com/photos/5877547/pexels-photo-5877547.jpeg?auto=compress&cs=tinysrgb&w=400",
+      "category": "Cuidados",
+      "title": "Juegos y chicos, ideas para pasarla a lo grande",
+      "intro": "Alguno de los juegos que tus hijos pueden practicar con su amigo de cuatro patas son: olfatear una de sus golosinas y esconderla en una caja, sin que este le vea, para que la busque, mini carrera de obstaculos, gatear a través de un tunel montado para niños, y todos los que se te ocurran los harán felices.",
       "id": 5
+    },
+    {
+      "image": "https://images.pexels.com/photos/3628100/pexels-photo-3628100.jpeg?auto=compress&cs=tinysrgb&w=400",
+      "category": "Psicologia",
+      "title": "Tu mascota te habla con sus acciones, aprende a conocerlo mejor",
+      "intro": "Utiliza refuerzos positivos para cuando quieras que aprendan algún comportamiento o responda correctamente a algunas de tus órdenes. Pero mira bien cuando tienen éstas acciones: bostezar, estornudar, mirar fijamente a los ojos, lamerse los labios o ponerse rigido.",
+      "id": 6
     }
   ],
   "testimony": [

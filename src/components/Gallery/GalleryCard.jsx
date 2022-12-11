@@ -1,9 +1,9 @@
-import './GalleryCard.css';
-import imgDefault from '../assets/img/images.png'
+import './css/GalleryCard.css';
+import imgDefault from './img/images.png';
 import Swal from 'sweetalert2';
 
 
-export default function GalleyCard(props) {
+export default function GalleyCard({item}) {
     // Funcion que llama al sweetalert con la info de la Card
     const handleClick = (params) => {
         Swal.fire({
@@ -22,15 +22,15 @@ export default function GalleyCard(props) {
     }
 
     return (
-        <div key={props.item.id} className="card card_w">
-            <img src={props.item.url} className="card-img-top" alt={props.item.title} />
+        <div key={item.id} className="card card_w">
+            <img src={item.url} className="card-img-top" alt={item.title} />
             <div className="card-body card-title-h">
-                <h5 className="card-title">{props.item.title}</h5>
+                <h5 className="card-title">{item.title}</h5>
             </div>
             <div className="card-body">
                 <button className='btn btn-dark'
                     onClick={() => {
-                        handleClick(props.item)
+                        handleClick(item)
                     }}>
                     Descripcion
                 </button>
