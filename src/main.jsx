@@ -10,7 +10,7 @@ import Contacto from './Pages/Contacto'
 import Tienda from './Pages/Tienda'
 import Carrito from './components/Carrito'
 import './index.css'
-import Gallery from './Pages/Gallery'
+import Gallery from './components/Gallery/Gallery'
 
 const router = createBrowserRouter ([ 
   {

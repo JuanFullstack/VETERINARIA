@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
-import GalleryCard from '../components/GalleryCard';
-import './Gallery.css';
+import GalleryCard from './GalleryCard';
+import './css/Gallery.css';
 import ReactPaginate from 'react-paginate';
 // import Data from "../data/mock_data_gallery.json"
 
