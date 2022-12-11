@@ -18,9 +18,9 @@
   .contenedordos {
     flex-direction: row;
     justify-content: space-between;
-
     margin: 0 5rem;
   }
+  
 }
 
 .navegaciondos {
@@ -52,7 +52,26 @@
   .Articulo {
     justify-content: center;
     z-index: -5;
+    border-bottom: solid rgb(128, 128, 128);
   }
+
+  .Articulo>.card>.card-body{
+  font-size: 1.2rem;
+  }
+
+  .Titulo-articulo{
+  font-size: 1.8rem;
+  font-family: 'Latto';
+}
+
+.Titulo-blog{
+  font-size: 3rem;
+}
+
+.Subtitulo-blog{
+  font-size: .6rem;
+  font-family: 'Latto', sans-serif;
+}
 }
 
 img {
@@ -77,15 +96,56 @@ img {
 
 /*Imagenes cards mascotas*/
 
+.Blog {
+  background-image: url('./assets/img/fondo.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  position: relative;
+  z-index: -5;
+}
+
 .imagen-card {
   width: 100%;
 }
 
+.Categoria-articulo {
+  text-align: left !important;
+  padding: 10px 0 10px 5px;
+  background-color: #dcdcdc;
+}
+
+.Articulo > .card > img {
+  border-radius: 20px 20px 0 0 !important;
+}
+
+.Articulo > .card > .card-body {
+  border-radius: 20px !important;
+}
+
+.Articulo {
+  max-height: fit-content;
+}
+
+.Articulo > div {
+  background-color: transparent;
+}
+
+.Titulo-articulo{
+  font-size: 1.8rem;
+  font-family: 'Latto';
+}
+
+.Titulo-blog, h2{
+  font-size: 5rem;
+}
+
+.Subtitulo-blog, h5{
+  font-size: 2rem;
+  font-family: 'Latto', sans-serif;
+}
 
 /* estilos footer*/
-
-
-
 .footer{
   /* position: fixed ; */
   left:0;
@@ -171,9 +231,5 @@ img {
   .social span i {
       font-size: 18px;
       line-height: 36px;
-
   }
-
-
-
 }

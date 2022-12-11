@@ -32,7 +32,7 @@ section{
    margin: 0  15px 10px 0;
 }
 
-.heading p{} ::after{
+.heading p ::after{
    margin: 0  0 10px 15px;
 
 }
