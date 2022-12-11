@@ -5,13 +5,30 @@ import { formatearFecha } from '../data/helpes';
 import { app } from '../components/Firebase/Firebase';
 import { getAuth, signInWithEmailAndPassword , signInWithPopup, signOut , onAuthStateChanged } from "firebase/auth";
 
-
-
 const Contenido = createContext();
-
 
 function VeterProvider({children}) {
    
+  const [perros, setPerros] = useState([]);
+
+  //Url con todos los datos raw.
+  const URL = "http://localhost:3004/articulos";
+
+  //Funcion que trae toda la info 'personajes'
+  const fetchMascotas = (url) => {
+    fetch(url)
+      .then((response) => response.json())
+      .then((data) => {
+        console.log(data)
+        setPerros(data);
+      })
+      .catch((error) => console.log(error));
+  };
+
+  //Se ejecuta por defecto por primera vez al renderizar el componente y en cada updateting.
+  useEffect(() => {
+    fetchMascotas(URL);
+  }, []);
 
   app
   const auth = getAuth();
@@ -72,12 +89,7 @@ const InisionSesion = (e) => {
   
    
 };
-
-
-
-
-
-//  estado de la sesion 
+ estado de la sesion 
 
 
 useEffect(() => {
@@ -100,13 +112,7 @@ useEffect(() => {
 }, [estado]);
 
 
-
-
-
-//<-- Fin Analisis sesion
-
-
-//<-- cerrar sesion 
+  const [clicked, setClicked] = useState(false);
 
 const CerrarSeccion = (e) => {
   e.preventDefault();
@@ -121,16 +127,6 @@ const CerrarSeccion = (e) => {
   return
 
 }
-  
-   
-
-
-
-//<-- Fin Analisis sesion
-
-
-
-
 
 const guardargatos = (Referencia) => {
   if (datos.some((comparacion) => comparacion.id === Referencia.id)) {
@@ -146,13 +142,6 @@ const guardargatos = (Referencia) => {
     setdatos([...datos, Referencia]);
   }
 };
-
-
-
-
-
-
-
 
   return (
     <Contenido.Provider

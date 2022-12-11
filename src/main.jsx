@@ -9,13 +9,10 @@ import Contacto from './Pages/Contacto'
 import Tienda from './Pages/Tienda'
 import Carrito from './components/Carrito'
 import './index.css'
+import Gallery from './components/Gallery/Gallery'
 import Login from './components/Login/Login'
 import Register from './components/Login/Register'
 import CrudTurnos from './components/Login/admin/CrudTurnos'
-
-// You can specify which plugins you need
-
-
 
 const router = createBrowserRouter ([ 
   {
@@ -53,6 +50,10 @@ const router = createBrowserRouter ([
      
     },
     {
+      path: "/gallery",
+      element: <Gallery/>
+    },
+    {
       path: "/Login",
       element: <Login/>
      
@@ -60,19 +61,12 @@ const router = createBrowserRouter ([
     {
       path: "/registro",
       element: <Register/>
-     
     },
     {
       path: "/abmturnos",
       element: <CrudTurnos/>
-     
     }
-
- 
   ]}
- 
-
-
 ])
 
 
