@@ -1,0 +1,195 @@
+/*google font link*/
+
+
+/*global styling start*/
+*{
+   margin: 0;
+   padding: 0;
+   box-sizing: border-box;
+}
+body{
+   color: #444;
+   font-family: 'Poppins', sans-serif; 
+}
+
+/*global styling end*/
+
+/*service section styling start*/
+
+section{
+   margin: 50px 0;
+   padding: 0 0 30px 0;
+}
+
+.heading{
+   padding-bottom: 30px;
+   text-align: center;
+}
+
+.heading h2{
+   position: relative;
+   font-size: 32px;
+   font-weight: bold;
+   text-transform: uppercase;
+   color: #222;
+}
+
+.heading h2 ::before,
+.heading h2 ::after{
+   content: " ";
+   background: #1dbf73;
+   display: inline-block;
+   width: 50px;
+   height: 2px;
+
+}
+
+.heading h2 ::before{
+   margin: 0  15px 10px 0;
+}
+
+.heading p{} ::after{
+   margin: 0  0 10px 15px;
+
+}
+
+.heading p{
+   font-size: 15px;
+   margin-top: 15px;
+   line-height: 1.5;
+} 
+.row .icon_box{
+   position: relative;
+   padding: 30px;
+   background: #fff;
+   border-radius: 8px;
+   box-shadow: 0 0 30px 0 rgba(68, 88, 144, 0.5);
+   z-index: 1;
+   cursor: pointer;
+   overflow: hidden;
+   margin-bottom: 50px;
+}
+
+.row .icon_box ::before{
+
+   content: "";
+   position: absolute;
+   right: -60px;
+   top: -40px;
+   width: 100px;
+   height: 100px;
+   border-radius: 50px;
+   z-index: -1;
+   transition: all 0.3s;
+
+}
+.row .one ::before{
+
+   background: #59eebc;
+}
+
+.row .two ::before  {
+
+   background: #717cff;
+}
+
+.row .three ::before {
+
+   background: #fa706c;
+}
+
+.row .four ::before {
+
+   background: #70ce88;
+}
+
+.row .five ::before{
+
+   background: #44a171;
+}
+
+.row .six ::before{
+   background: #717cff;
+}
+
+
+
+.row .icon_box :hover ::before{
+   right: 0;
+   top: 0;
+   width: 100%;
+   height: 100%;
+   border-radius: 0;
+}
+
+.row .icon{
+
+   margin: 0 auto 20px auto;
+   padding-top: 10px;
+   display: inline-block;
+   text-align: center;
+   border-radius: 50%;
+   background: #000;
+   width: 60px;
+   height: 60px;
+   transition: all 0.3s ease-in-out;
+  
+}
+
+.row .one .icon{
+   background: #717cff;
+   
+   overflow:hidden;
+ 
+
+}
+
+.row .one .icon img {
+    width:2.2em;
+    height:auto;
+    margin:0 auto;
+ filter: invert(100%) sepia(100%) saturate(2%) hue-rotate(254deg) brightness(106%) contrast(101%);
+
+}
+
+
+.row .icon i{
+
+   font-size: 38px;
+   line-height: 1.1;
+   background-image: url("../imagenes/icono1.png");
+   color: #fff
+}
+
+.row .icon_box :hover .icon{
+
+   color: #fff;
+}
+
+.row .icon_box :hover .icon i{
+   color: #000;
+}
+
+.row .title{ 
+   font-size: 18px;
+   font-weight: 700;
+   margin-bottom: 15px;
+   transition: 0.5s ease-in-out;
+
+}
+
+.row .description{
+   font-size: 15px;
+   line-height: 28px;
+   margin-bottom: 0;
+   transition: 0.5s ease-in-out;
+
+}
+
+.row .icon_box :hover .title,
+.row .icon_box :hover .description{
+   color: #fff;
+}
+
+
+
