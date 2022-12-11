@@ -6,14 +6,16 @@
   "scripts": {
     "dev": "vite",
     "build": "vite build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "server": "json-server --watch ./src/assets/data/mock_data_gallery.json --port 3004"
   },
   "dependencies": {
     "@fortawesome/free-regular-svg-icons": "^6.2.1",
-    "bootstrap": "^5.2.3",
     "firebase": "^9.14.0",
+    "json-server": "^0.17.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "react-icons": "^4.7.1",
     "react-router-dom": "^6.4.4",
     "styled-components": "^5.3.6"
   },
