@@ -1,6 +1,7 @@
 .card_w {
     margin: 10px;
-    width: 15rem;
+    width: 18rem;
+    height: 25rem;
     align-items: center;
     background-color: rgba(255, 255, 255, 0.85);
     box-shadow: 0 0 15px 0 rgba(68, 88, 144, 0.5);
