@@ -1,8 +1,31 @@
-export default function Mascotas({ perros }) {
+import { useState, useEffect } from "react";
+
+export default function Mascotas() {
+
+  const [perros, setPerros] = useState([]);
+
+  //Url con todos los datos raw.
+  const URL = "http://localhost:3004/articulos";
+  //Funcion que trae toda la info 'personajes'
+  const fetchMascotas = (url) => {
+    fetch(url)
+      .then((response) => response.json())
+      .then((data) => {
+        console.log(data)
+        setPerros(data);
+      })
+      .catch((error) => console.log(error));
+  };
+
+  //Se ejecuta por defecto por primera vez al renderizar el componente y en cada updateting.
+  useEffect(() => {
+    fetchMascotas(URL);
+  }, []);
+
   return (
     <>
-    <h2 className="text-center pb-1 fw-bold Titulo-blog">Blog de las mascotas.</h2>
-    <h5 className="text-center pb-5 Subtitulo-blog">Cuidados, consejos y múltiples tips para que tú y tu amigo de cuatro patas lo pasen bomba.</h5>
+      <h2 className="text-center pb-1 fw-bold Titulo-blog">Blog de las mascotas.</h2>
+      <h5 className="text-center pb-5 Subtitulo-blog">Cuidados, consejos y múltiples tips para que tú y tu amigo de cuatro patas lo pasen bomba.</h5>
       <section>
         <div className="container-sm container-md container-lg container-xl">
           <div className="row">
