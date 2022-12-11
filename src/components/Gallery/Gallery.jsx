@@ -37,7 +37,7 @@ export default function Gallery() {
     // Carga de Array de Datos
     useEffect(() => {
         async function fetchData() {
-            const resp = await fetch(`http://localhost:3000/data`)
+            const resp = await fetch(`http://localhost:3004/data`)
             const json = await resp.json()
             setData(json)
         }
@@ -47,36 +47,31 @@ export default function Gallery() {
 
     // Funcion que retorna un map de un slice del array de datos
     const viewCards = data.slice(pagesRead, pagesRead + cardXPages)
-                          .map(item => {
-                                const index = Math.floor(Math.random() * 20);
-                                item.url = image[index].webformatURL;
-                                console.log(image[index]);
-                                return (
-                                    <GalleryCard item={item} />
-                                )
-                            }
-                        );
+        .map(item => {
+            const index = Math.floor(Math.random() * 20);
+            item.url = image[index].webformatURL;
+            console.log(image[index]);
+            return (
+                <GalleryCard item={item} />
+            )
+        }
+        );
 
     return (
-        <div className='gallery'>
-            <div className='items-gallery'>
-                {viewCards}
-            </div>
-            <div className='cont-paginator'>
-                {/* Componente ReactJS de paginado */}
-                <ReactPaginate
-                    previousLabel={"<<"}
-                    nextLabel={">>"}
-                    pageCount={Math.ceil(data.length / cardXPages)}
-                    onPageChange={changePage}
-                    containerClassName={"paginationBtns"}
-                    previusLinkClassName={"previousBtn"}
-                    nextLinkClassName={"nextBtn"}
-                    disabledClassName={"paginationDisabled"}
-                    activeClassName={"paginationActive"}
-                    activeLinkClassName={"paginationActive"}
-                />
-            </div>
-        </div>
+        <section className="gallery" >
+            {viewCards}
+            <ReactPaginate
+                previousLabel={"<<"}
+                nextLabel={">>"}
+                pageCount={Math.ceil(data.length / cardXPages)}
+                onPageChange={changePage}
+                containerClassName={"paginationBtns"}
+                previusLinkClassName={"previousBtn"}
+                nextLinkClassName={"nextBtn"}
+                disabledClassName={"paginationDisabled"}
+                activeClassName={"paginationActive"}
+                activeLinkClassName={"paginationActive"}
+            />
+        </section>
     );
 };
