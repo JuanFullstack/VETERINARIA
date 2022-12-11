@@ -17,23 +17,7 @@ export default function Testimonial() {
   }, [])
 
   return (
-    <div >
       <div className="testimonial-area">
-        <div className="container">
-          <div className="row">
-            <div className="col-sm-12">
-              <div className="section-header text-center">
-                <h4>Testimonios</h4>
-                <h2>Lo que opinan nuestros clientes</h2>
-              </div>
-            </div>
-            <div className="col-sm-12">
-              <div
-                id="carouselExampleIndicators"
-                className="carousel slide"
-                data-bs-ride="true"
-              >
-                <div className="carousel-indicators">
                   {testimony.map(item => {
                     return (
                       <CarrouselItem  key={item.id} props={item} />
@@ -60,8 +44,5 @@ export default function Testimonial() {
           </div>
         </div>
       </div>
-
-
-    </div>
   );
 };

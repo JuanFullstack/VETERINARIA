@@ -5,12 +5,14 @@ import Layout from './components/Layout'
 import Index from './Pages/Index'
 import Nosotros from './Pages/Nosotros'
 import Blog from './Pages/Blog'
-import Administrador from './Pages/Administrador'
 import Contacto from './Pages/Contacto'
 import Tienda from './Pages/Tienda'
 import Carrito from './components/Carrito'
 import './index.css'
 import Gallery from './components/Gallery/Gallery'
+import Login from './components/Login/Login'
+import Register from './components/Login/Register'
+import CrudTurnos from './components/Login/admin/CrudTurnos'
 
 const router = createBrowserRouter ([ 
   {
@@ -25,11 +27,6 @@ const router = createBrowserRouter ([
     {
       path: "/nosotros",
       element: <Nosotros/>
-     
-    },
-    {
-      path: "/administrador",
-      element: <Administrador/>
      
     },
     {
@@ -55,12 +52,21 @@ const router = createBrowserRouter ([
     {
       path: "/gallery",
       element: <Gallery/>
+    },
+    {
+      path: "/Login",
+      element: <Login/>
      
+    },
+    {
+      path: "/registro",
+      element: <Register/>
+    },
+    {
+      path: "/abmturnos",
+      element: <CrudTurnos/>
     }
- 
   ]}
-
-
 ])
 
 

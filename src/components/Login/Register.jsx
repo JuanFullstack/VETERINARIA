@@ -1,27 +1,62 @@
+
 import styled from 'styled-components'
+import pets from "/pets.png"
 import  { useState, useEffect } from 'react';
-import Error from '../components/Error';
-import TodaContendio from '../hooks/TodaContendio';
+import Error from '../Error';
+import TodaContendio from '../../hooks/TodaContendio';
+import { getAuth , createUserWithEmailAndPassword  } from 'firebase/auth';
+import { app } from '../Firebase/Firebase';
+
+function Register() {
+
+    const { guardargatos , mensaje2 , setmensaje2 } = TodaContendio()
+     
+    const [nombre, setnombre] = useState('');
+    const [apellido, setapellido] = useState('');
+    const [email, setemail] = useState('');
+    const [constraseña , setcontraseña] = useState('')
+    const [id, setid] = useState('')
+   
+    
 
 
-function Contacto() {
-
-  const { guardargatos , mensaje2 , setmensaje2 } = TodaContendio()
-  const [nombre, setnombre] = useState('');
-  const [apellido, setapellido] = useState('');
-  const [email, setemail] = useState('');
-  const [constraseña , setcontraseña] = useState('')
-  const [id, setid] = useState('')
- 
+   
 
 
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        if ([nombre, apellido, email,constraseña].includes('')) {
+          setmensaje2('Todos los campos son obligatorios ');
+          
+          setTimeout(() => {
+            setmensaje2('');
+          }, 2000);
+
+          return;
+        }
+        
+        const auth = getAuth();
+        createUserWithEmailAndPassword(auth, email, constraseña)
+        .then((userCredential) => {
+          // Signed in 
+          const user = userCredential.user;
+          console.log(user)
+        })
+        .catch((error) => {
+          const errorCode = error.code;
+          const errorMessage = error.message;
+          // ..
+        });
+
+      
+      };
 
 
   return (
- <>
-   <EstilosDiv>
+      <>
+          <EstilosDiv>
               <form 
-           
+              onSubmit={handleSubmit}
               >
                   <h2> Registro </h2>
                   {mensaje2 && <Error> {mensaje2} </Error> }
@@ -46,20 +81,11 @@ function Contacto() {
                   
               </form>
           </EstilosDiv>
- 
- 
- 
- 
- 
- </>
-
-
-  )
-
-
+      </>
+  );
 }
 
-export default Contacto
+export default Register
 
 
 
