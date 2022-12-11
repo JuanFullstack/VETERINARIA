@@ -12,36 +12,14 @@ function VeterProvider({ children }) {
   app
   const auth = getAuth();
 
-  const [perros, setPerros] = useState([]);
   const [clicked, setClicked] = useState(false)
-  // funcion datos 
   const navigate = useNavigate();
   const [datos, setdatos] = useState([])
   const [mensaje2, setmensaje2] = useState('');
-  // inicioSesion
-
   const [emailIS, setemailIS] = useState('');
   const [constraseñaIS, setconstraseñaIS] = useState('')
-  const [estado, setestado] = useState(false)
+  const [estado, setEstado] = useState(false)
 
-  //Url con todos los datos raw.
-  const URL = "http://localhost:3004/articulos";
-
-  //Funcion que trae toda la info 'personajes'
-  const fetchMascotas = (url) => {
-    fetch(url)
-      .then((response) => response.json())
-      .then((data) => {
-        console.log(data)
-        setPerros(data);
-      })
-      .catch((error) => console.log(error));
-  };
-
-  //Se ejecuta por defecto por primera vez al renderizar el componente y en cada updateting.
-  useEffect(() => {
-    fetchMascotas(URL);
-  }, []);
 
   const handleClick = () => {
     //cuando esta true lo pasa a false y vice versa
@@ -74,12 +52,7 @@ function VeterProvider({ children }) {
           setmensaje2("Datos incorrectos")
           setTimeout(() => setmensaje2(""), 3000)
         }
-
-
-        // ..
       });
-
-
   };
 
   useEffect(() => {
@@ -89,13 +62,13 @@ function VeterProvider({ children }) {
         // https://firebase.google.com/docs/reference/js/firebase.User
         const uid = user.uid;
         console.log("usurio conectado")
-        setestado(true)
+        setEstado(true)
         // ...
       } else {
         // User is signed out
         // ...
         console.log("desconectado")
-        setestado(false)
+        setEstado(false)
 
       }
     });
@@ -105,7 +78,7 @@ function VeterProvider({ children }) {
     e.preventDefault();
 
     signOut(auth).then(() => {
-
+      setEstado(false)
       navigate("/")
     }).catch((error) => {
       console.log("hubo un error", error)
