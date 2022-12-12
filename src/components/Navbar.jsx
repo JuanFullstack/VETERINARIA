@@ -13,13 +13,8 @@ import NavbarDos from './NavbarDos'
 import TodaContendio from '../hooks/TodaContendio'
 
 function Navbar() {
-
   const location = useLocation()
-  
   const { clicked , handleClick , CerrarSeccion , estado } = TodaContendio()
- 
-
-
   
   return (
     <>
