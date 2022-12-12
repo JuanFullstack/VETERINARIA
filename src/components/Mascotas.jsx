@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 
 export default function Mascotas() {
+
   const [perros, setPerros] = useState([]);
 
   //Url con todos los datos raw.
@@ -10,7 +11,9 @@ export default function Mascotas() {
     fetch(url)
       .then((response) => response.json())
       .then((data) => {
+
         //console.log(data)
+
         setPerros(data);
       })
       .catch((error) => console.log(error));
@@ -23,6 +26,7 @@ export default function Mascotas() {
 
   return (
     <>
+
       <h2 className="text-center pb-1 fw-bold Titulo-blog">
         Blog de las mascotas.
       </h2>
@@ -30,6 +34,7 @@ export default function Mascotas() {
         Cuidados, consejos y múltiples tips para que tú y tu amigo de cuatro
         patas lo pasen bomba.
       </h5>
+
       <section>
         <div className="container-sm container-md container-lg">
           <div className="row">
