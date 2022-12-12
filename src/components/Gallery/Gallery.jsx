@@ -2,8 +2,6 @@ import { useState, useEffect } from 'react';
 import GalleryCard from './GalleryCard';
 import './css/Gallery.css';
 import ReactPaginate from 'react-paginate';
-// import Data from "../data/mock_data_gallery.json"
-
 
 export default function Gallery() {
     // Varibles con Estados ReactJS
@@ -50,28 +48,33 @@ export default function Gallery() {
         .map(item => {
             const index = Math.floor(Math.random() * 20);
             item.url = image[index].webformatURL;
-            console.log(image[index]);
             return (
-                <GalleryCard item={item} />
+                <GalleryCard key={item.id} item={item} />
             )
         }
         );
 
     return (
-        <section className="gallery" >
-            {viewCards}
-            <ReactPaginate
-                previousLabel={"<<"}
-                nextLabel={">>"}
-                pageCount={Math.ceil(data.length / cardXPages)}
-                onPageChange={changePage}
-                containerClassName={"paginationBtns"}
-                previusLinkClassName={"previousBtn"}
-                nextLinkClassName={"nextBtn"}
-                disabledClassName={"paginationDisabled"}
-                activeClassName={"paginationActive"}
-                activeLinkClassName={"paginationActive"}
-            />
+        <section className='gallery'>
+            <div className='title text-center'>
+                <h4>Galeria de Mascotas</h4>
+                <h2 className='display-3'>Algunos de nuestros Pacientes</h2>
+            </div>
+            <div className="items-gallery">
+                {viewCards}
+                <ReactPaginate
+                    previousLabel={"<<"}
+                    nextLabel={">>"}
+                    pageCount={Math.ceil(data.length / cardXPages)}
+                    onPageChange={changePage}
+                    containerClassName={"paginationBtns"}
+                    previusLinkClassName={"previousBtn"}
+                    nextLinkClassName={"nextBtn"}
+                    disabledClassName={"paginationDisabled"}
+                    activeClassName={"paginationActive"}
+                    activeLinkClassName={"paginationActive"}
+                />
+            </div>
         </section>
     );
 };

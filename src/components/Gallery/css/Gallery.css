@@ -10,15 +10,30 @@
 }
 
 .gallery {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
     padding: 80px 0;
     background-color: #FDF8FF;
     background-image: url("../img/fondo.jpg");
     background-position: center;
     background-repeat: repeat;
     /* background-size: cover;     */
+}
+
+.items-gallery {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.title h4 {
+  color: #FF46A2;
+  font-weight: 600;
+}
+
+.title {
+  padding-bottom: 15px;
+}
+
+.title h2 {
+  font-weight: 700;
 }
 
 .cont-paginator {
