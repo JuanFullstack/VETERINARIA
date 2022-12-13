@@ -92,18 +92,11 @@ const EstilosDiv = styled.div`
     display: flex;
     padding-top: 5rem;
     justify-content: center;
-
-    & input:invalid {
-  animation: shake .3s;
-  color: red;
-}
-
-@keyframes shake {
-  25% { transform: translateX(6px ) }
-  50% { transform: translateX(-6px ) }
-  75% { transform: translateX(6px ) }
-}
-
+    background-image:url("../../../public/blog.jpg") ;
+    background-size: cover;
+    background-repeat:no-repeat;
+    padding: 15rem;
+    border-bottom: 2rem solid #0f4c75;
 
     @media(max-width: 780px){
           margin-top: rem;
@@ -111,7 +104,12 @@ const EstilosDiv = styled.div`
          align-items: center;
         } 
 
+   
 }
+
+    
+
+
 .reg {
 font-weight: 700;
 
@@ -175,6 +173,7 @@ footer {
         color: #070707;
         text-align: center;
         margin-top: 2rem;
+        font-size: 2rem;
       }
 
 

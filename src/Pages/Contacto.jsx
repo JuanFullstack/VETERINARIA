@@ -23,8 +23,13 @@ function Contacto() {
               <form 
            
               >
-                  <h2> Registro </h2>
+                  <h2> Contacto </h2>
                   {mensaje2 && <Error> {mensaje2} </Error> }
+               <div className='radio'>
+               <p> Consulta <input type="radio" name="inputradio" value="Consulta"  />  </p>
+                <p>Turnos <input type="radio" name="inputradio" value="Turno" />  </p>   
+                </div>
+               
                   <input 
                   value={nombre}
                   onChange={(e) => setnombre(e.target.value)}
@@ -66,14 +71,16 @@ export default Contacto
 const EstilosDiv = styled.div`
 
 padding-top: 4rem;
-background-image:url("../../../public/animal.jpg") ;
+background-image:url("../../../public/turnos.jpg") ;
 background-size: cover;
 background-repeat:no-repeat;
+padding:15rem;
 
 
 @media (max-width:480px) {
   padding-top: 1rem;
   margin-bottom: 2rem;
+  padding:0;
   background-image:none;
 }
 
@@ -108,10 +115,23 @@ input {
     font-size: 17px;
     border: none;
     border-radius: 0.5rem;
-
+         
 }
 
+.radio {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    border: 0.1rem solid black ;
+    margin-bottom:1rem ;
+    border-radius:1rem;
 
+    & p {
+      font-size: 1.5rem;
+
+
+    }
+}
 
 textarea {
     min-height: 100px;

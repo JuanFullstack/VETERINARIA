@@ -12,6 +12,7 @@ const NosotrosComponente = () => {
   };
   return (
     <div >
+       <div className="intermedio" > </div>
       <section className="nosotros" >
         <div className="container" data-aos="fade-down" >
           <div className="row ">

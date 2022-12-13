@@ -97,13 +97,15 @@ img {
 /*Imagenes cards mascotas*/
 
 .Blog {
-  background-image: url('./assets/img/fondo.jpg');
+  background-image: url("../../../public/blog.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   background-attachment: fixed;
   position: relative;
   z-index: -5;
 }
+
+
 
 .imagen-card {
   width: 100%;
@@ -190,7 +192,6 @@ img {
 
 .social{
   padding-top: 2%;
-
 }
 
 .social span{

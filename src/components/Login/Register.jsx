@@ -58,17 +58,17 @@ function Register() {
               <form 
               onSubmit={handleSubmit}
               >
-                  <h2> Registro </h2>
+                  <h2> Nuevo registro </h2>
                   {mensaje2 && <Error> {mensaje2} </Error> }
                   <input 
                   value={nombre}
                   onChange={(e) => setnombre(e.target.value)}
-                  type='text' name='nombre' placeholder='Nombre'  />
+                  type='text' name='nombre' placeholder='Nombre del Administrador'  />
                   <input  type='text' name='apellidos' placeholder='Apellidos' 
                   value={apellido}
                   onChange={(e) => setapellido(e.target.value)}
                    />
-                  <input type='text'  name='correo'   placeholder='Correo' 
+                  <input type='text'  name='correo'   placeholder='Correo de acceso' 
                    value={email}
                    onChange={(e) => setemail(e.target.value)}
                   />
@@ -92,15 +92,17 @@ export default Register
 const EstilosDiv = styled.div`
 
 padding-top: 4rem;
-background-image:url("../../../public/animal.jpg") ;
+background-image:url("../../../public/perfil.jpg") ;
 background-size: cover;
 background-repeat:no-repeat;
+padding: 12rem;
 
 
 @media (max-width:480px) {
   padding-top: 1rem;
   margin-bottom: 2rem;
   background-image:none;
+  padding:0;
 }
 
 form {

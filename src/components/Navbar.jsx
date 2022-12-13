@@ -85,8 +85,6 @@ function Navbar() {
         </div>
     </Navptes>):""}
 
-+
-
     </>
   )
 }
@@ -409,10 +407,10 @@ const Logo = styled.div `
    gap: 1rem;
    margin-left: 4rem;
    & h2 { 
-    font-size: 3rem;
+    font-size: 2rem;
+     align-items: flex-end;
     @media(max-width: 780px){
       font-size: 2rem;
-
       }
 
    }
@@ -423,6 +421,14 @@ const Logo = styled.div `
 
       } 
    }
+
+   & h2 span {
+    display: block;
+    font-size: 3rem;
+   font-family: Arial, Helvetica, sans-serif;
+   }
+
+   
 
 
 `
