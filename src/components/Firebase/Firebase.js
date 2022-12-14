@@ -1,29 +1,34 @@
-
-import firebase from "firebase/compat/app"
+//import firebase from "firebase/compat/app"
 import "firebase/compat/auth"
 import { initializeApp } from "firebase/app";
-// import {
-//   getFirestore,
-//   collection,
-//   addDoc,
-//   getDocs,
-//   doc,
-//   getDoc,
-//   query,
-//   where,
-//   setDoc,
-//   deleteDoc,
-// } from "firebase/firestore";
+
+/* Importamos las funciones propias de la base de datos como getFirestore etc... */
+import { getFirestore } from "@firebase/firestore";
+/*
+import {
+  getFirestore,
+  collection,
+  addDoc,
+  getDocs,
+  doc,
+  getDoc,
+  query,
+  where,
+  setDoc,
+  deleteDoc,
+} from "firebase/firestore";
+*/
 import { getAuth } from "firebase/auth";
 
-// import {
-//   getStorage,
-//   ref,
-//   uploadBytes,
-//   getDownloadURL,
-//   getBytes,
-// } from "firebase/storage";
-
+/*
+import {
+  getStorage,
+  ref,
+  uploadBytes,
+  getDownloadURL,
+  getBytes,
+} from "firebase/storage";
+*/
 
 const firebaseConfig = {
   apiKey: "AIzaSyAWxv2QAQR7_Lx8v3VyRFkM10InFJJnn5E",
@@ -39,7 +44,7 @@ const firebaseConfig = {
  // VARIABLES BASCICAS 
 export const app = initializeApp(firebaseConfig);
 export const auth = getAuth(app);
-// export const db = getFirestore();
+export const db = getFirestore(app);
 // export const storage = getStorage();
 
 
