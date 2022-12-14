@@ -13,6 +13,7 @@ import Gallery from './components/Gallery/Gallery'
 import Login from './components/Login/Login'
 import Register from './components/Login/Register'
 import CrudTurnos from './components/Login/admin/CrudTurnos'
+import Administrador from './Pages/Administrador'
 
 const router = createBrowserRouter ([ 
   {
@@ -63,8 +64,14 @@ const router = createBrowserRouter ([
       element: <Register/>
     },
     {
+      path: "/administrador",
+      element: <Administrador/>
+      
+    },
+    {
       path: "/abmturnos",
       element: <CrudTurnos/>
+
     }
   ]}
 ])

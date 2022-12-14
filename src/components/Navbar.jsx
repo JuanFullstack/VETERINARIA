@@ -50,7 +50,7 @@ function Navbar() {
           <Link className={ ` ${ location.pathname ==='/carrito' ? 'modificado' : ' normal' }  `}to="/carrito"> 
           <img  className='cart' onClick={handleClick} src={cart} /> </Link>
 
-          <Link className={ ` ${ location.pathname ==='/abmturnos' ? 'modificado' : ' normal' }  `}to="/abmturnos"> 
+          <Link className={ ` ${ location.pathname ==='/administrador' ? 'modificado' : ' normal' }  `}to="/administrador"> 
           <img  className={ estado ? 'agenda':'desconectado' }  onClick={handleClick} src={agenda} /> </Link>
           
           <img className='divi' src={divi}/>

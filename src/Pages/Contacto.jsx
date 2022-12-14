@@ -6,60 +6,112 @@ import TodaContendio from '../hooks/TodaContendio';
 
 function Contacto() {
 
-  const { guardargatos , mensaje2 , setmensaje2 } = TodaContendio()
+  const { guardarDatosContacto , mensaje2 , setmensaje2 } = TodaContendio()
+ 
   const [nombre, setnombre] = useState('');
   const [apellido, setapellido] = useState('');
   const [email, setemail] = useState('');
-  const [constraseña , setcontraseña] = useState('')
-  const [id, setid] = useState('')
- 
+  const [fecha , setfecha] = useState('')
+  const [categoria, setcategoria] = useState('');
+  const [sintomas, setsintomas] = useState('');
 
+  let hoy = new Date();
+  let dia = hoy.getDate();
+  dia = ("0"+dia).slice(-2)
+  let mes=hoy.getMonth()+1;
+  mes = ("0"+mes).slice(-2)
+  let agnio = hoy.getFullYear()
+  
+  //Formato AAAA-MM-DD
+  let FechaActual1=`${agnio}-${mes}-${dia}`;
+
+ //Formato DD-MM-AAA
+ let FechaActual2=`${dia}/${mes}/${agnio}`;
+
+ //Formato MM/DD ,AAAA
+ let FechaActual3=`${mes}/${dia},${agnio}`;
+
+
+ const handleSubmit = (e) => {
+    e.preventDefault();
+    if ([ nombre, apellido, email , fecha , categoria, sintomas].includes('')) {
+      setmensaje2('Todos los campos son obligatorios ');
+ 
+      setTimeout(() => {
+        setmensaje2('');
+      }, 3000);
+ 
+      return;
+    }
+    const NuevoObjeto  = { nombre, apellido, email , fecha , categoria, sintomas }
+
+    guardarDatosContacto(NuevoObjeto);
+    
+    console.log(NuevoObjeto)
+
+  };
 
 
 
   return (
- <>
-   <EstilosDiv>
-              <form 
-           
-              >
+      <>
+          <EstilosDiv>
+              <form onSubmit={handleSubmit} >
                   <h2> Contacto </h2>
-                  {mensaje2 && <Error> {mensaje2} </Error> }
-               <div className='radio'>
-               <p> Consulta <input type="radio" name="inputradio" value="Consulta"  />  </p>
-                <p>Turnos <input type="radio" name="inputradio" value="Turno" />  </p>   
-                </div>
-               
-                  <input 
-                  value={nombre}
-                  onChange={(e) => setnombre(e.target.value)}
-                  type='text' name='nombre' placeholder='Nombre'  />
-                  <input  type='text' name='apellidos' placeholder='Apellidos' 
-                  value={apellido}
-                  onChange={(e) => setapellido(e.target.value)}
-                   />
-                  <input type='text'  name='correo'   placeholder='Correo' 
-                   value={email}
-                   onChange={(e) => setemail(e.target.value)}
+                  {mensaje2 && <Error> {mensaje2} </Error>}
+
+                  <input
+                      value={nombre}
+                      onChange={(e) => setnombre(e.target.value)}
+                      type='text'
+                      name='nombre'
+                      placeholder='Nombre'
                   />
-                  <input 
-                  type='password' name='password' placeholder='password'
-                  value={constraseña}
-                   onChange={(e) => setcontraseña(e.target.value)}
+                  <input
+                      type='text'
+                      name='apellidos'
+                      placeholder='Apellidos'
+                      value={apellido}
+                      onChange={(e) => setapellido(e.target.value)}
                   />
+                  <input
+                      type='text'
+                      name='correo'
+                      placeholder='Correo'
+                      value={email}
+                      onChange={(e) => setemail(e.target.value)}
+                  />
+                  <input
+                      type='date'
+                      name='date'
+                      min={FechaActual1}
+                      onChange={(e) => setfecha(e.target.value)}
+                  />
+                  <select
+                      id='categoria'
+                      value={categoria}
+                      onChange={(e) => setcategoria(e.target.value)}>
+                      <option value=''> --Tipo de Mascota -- </option>
+                      <option value='Perro'> Perro </option>
+                      <option value='Gato'> Gato </option>
+                      <option value='Conejo'> Conejo </option>
+                      <option value='Haster'> Haster </option>
+                      <option value='Otra Raza'> Otra Raza </option>
+                  </select>
+
+                  <textarea
+                   name='sintomas' 
+                   placeholder='Resuma los sintomas'
+                   value={sintomas}
+                   onChange={(e) => setsintomas(e.target.value)}
+                   
+                   ></textarea>
+
                   <input type='submit' value='ENVIAR' id='boton' />
-                  
               </form>
           </EstilosDiv>
- 
- 
- 
- 
- 
- </>
-
-
-  )
+      </>
+  );
 
 
 }
@@ -71,7 +123,7 @@ export default Contacto
 const EstilosDiv = styled.div`
 
 padding-top: 4rem;
-background-image:url("../../../public/turnos.jpg") ;
+background-image:url("/turnos.jpg") ;
 background-size: cover;
 background-repeat:no-repeat;
 padding:15rem;
@@ -118,6 +170,13 @@ input {
          
 }
 
+select {
+    width: 100%;
+    margin-bottom: 20px;
+    border-radius: 0.5rem;
+    padding: 7px;
+}
+
 .radio {
     display: flex;
     justify-content: center;
@@ -134,6 +193,7 @@ input {
 }
 
 textarea {
+    width: 100%;
     min-height: 100px;
     max-height: 200px;
     max-width: 100%;

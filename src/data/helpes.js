@@ -10,3 +10,4 @@ export const generarID = () => {
      return   fechaActual.toLocaleDateString( "es-Es", opciones)
   }
   
+

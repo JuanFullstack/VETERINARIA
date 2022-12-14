@@ -3,20 +3,34 @@ import edit from "/edit.svg"
 import perfiladd from "/perfiladd.svg"
 import { Link } from "react-router-dom "
 
-function CrudTurnos() {
+
+function Administrador() {
 
 
   return (
-      <AdminSytyled>
-          
-          <h1> crudturnos</h1>
 
+<AdminSytyled>
+          <div className='disposicion'>
+
+            <Link   to="/abmturnos"  >
+              <button className='cliente'
+              >
+              
+               <img  src={edit} />
             
-      </AdminSytyled>
-  );
+                Administrar clientes</button>
+            </Link>
+            <Link   to="/registro"  >
+              <button className='personal'>
+              <img  src={perfiladd }/>
+                Administrar Personal</button>
+             </Link>
+          </div>
+ </AdminSytyled>
+  )
 }
 
-export default CrudTurnos
+export default Administrador
 
 
 

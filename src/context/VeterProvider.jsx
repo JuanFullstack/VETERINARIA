@@ -15,6 +15,7 @@ function VeterProvider({ children }) {
   const [clicked, setClicked] = useState(false)
   const navigate = useNavigate();
   const [datos, setdatos] = useState([])
+  const [datosContacto, setdatosContacto] = useState([])
   const [mensaje2, setmensaje2] = useState('');
   const [emailIS, setemailIS] = useState('');
   const [constraseñaIS, setconstraseñaIS] = useState('')
@@ -38,7 +39,7 @@ function VeterProvider({ children }) {
         // Signed in 
         const user = userCredential.user;
         console.log("iniciaste sesion correctamente")
-        navigate("/abmturnos")
+        navigate("/administrador")
       })
       .catch((error) => {
         const errorCode = error.code;
@@ -88,7 +89,7 @@ function VeterProvider({ children }) {
 
   }
 
-  const guardargatos = (Referencia) => {
+  const guardarDatos = (Referencia) => {
     if (datos.some((comparacion) => comparacion.id === Referencia.id)) {
       const datosActulizado = datos.map((comparacion) =>
         comparacion.id === Referencia.id ? Referencia : comparacion
@@ -98,8 +99,21 @@ function VeterProvider({ children }) {
 
       //agregar mas prop que las iniciales
       Referencia.id = generarID();
-      Referencia.fecha = Date.now();
       setdatos([...datos, Referencia]);
+    }
+  };
+
+  const guardarDatosContacto = (Referencia) => {
+    if (datos.some((comparacion) => comparacion.id === Referencia.id)) {
+      const datosActulizado = datosContacto.map((comparacion) =>
+        comparacion.id === Referencia.id ? Referencia : comparacion
+      );
+      setdatosContacto(datosActulizado);
+    } else {
+
+      //agregar mas prop que las iniciales
+      Referencia.id = generarID();
+      setdatosContacto([...datosContacto, Referencia]);
     }
   };
 
@@ -108,7 +122,7 @@ function VeterProvider({ children }) {
       value={{
         clicked,
         handleClick,
-        guardargatos,
+        guardarDatos,
         mensaje2,
         setmensaje2,
         InisionSesion,
@@ -117,7 +131,8 @@ function VeterProvider({ children }) {
         setemailIS,
         constraseñaIS,
         setconstraseñaIS,
-        CerrarSeccion
+        CerrarSeccion,
+        guardarDatosContacto
       }}>
       {children}
     </Contenido.Provider>
