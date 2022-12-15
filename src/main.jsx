@@ -16,6 +16,7 @@ import CrudTurnos from "./components/Login/admin/CrudTurnos";
 import Show from "./data/Show";
 import Edit from "./data/Edit";
 import Create from "./data/Create";
+import Administrador from './Pages/Administrador';
 
 const router = createBrowserRouter([
   {
@@ -73,6 +74,10 @@ const router = createBrowserRouter([
       {
         path: "/abmturnos",
         element: <CrudTurnos />,
+      },
+      {
+        path: "/administrador",
+        element: <Administrador />,
       },
     ],
   },
