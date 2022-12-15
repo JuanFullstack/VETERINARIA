@@ -5,6 +5,7 @@ function Nosotros() {
   return (
 
     <div>
+      
         <NosotrosComponente />
       
     </div>

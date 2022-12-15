@@ -18,7 +18,6 @@
   .contenedordos {
     flex-direction: row;
     justify-content: space-between;
-
     margin: 0 5rem;
   }
 }
@@ -41,17 +40,29 @@
   img {
     width: 12rem;
   }
-
-  .Articulo {
-    justify-content: center;
-    z-index: -5;
-  }
 }
 
 @media (min-width: 480px) {
-  .Articulo {
-    justify-content: center;
-    z-index: -5;
+  .Blog {
+    padding: 5px;
+  }
+
+  .card > .card-body {
+    font-size: 1rem;
+  }
+
+  .Titulo-articulo {
+    font-size: 1.8rem;
+    font-family: "Latto", sans-serif;
+  }
+
+  .Titulo-blog {
+    font-size: 3rem;
+  }
+
+  .Subtitulo-blog {
+    font-size: 0.6rem;
+    font-family: "Latto", sans-serif;
   }
 }
 
@@ -74,3 +85,185 @@ img {
   color: red;
   font-size: 2rem;
 }
+
+/*Imagenes cards mascotas*/
+
+.Blog {
+  background-image: url("./assets/img/fondo.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  position: relative;
+  z-index: -5;
+}
+
+.Tarjeta-fondo {
+  padding: 20px;
+  background-color: #fff !important;
+  border-radius: 8px;
+  box-shadow: 0 0 30px 0 rgb(138 68 144 / 50%);
+}
+
+.card-body>.Descripcion-articulo{
+  text-align: justify;
+}
+
+.imagen-card {
+  width: 100%;
+}
+
+.Categoria-articulo {
+  text-align: left !important;
+  padding: 10px 0 10px 5px;
+  background-color: #faf2f9;
+}
+
+.Titulo-articulo {
+  font-size: 1.6rem;
+  font-family: "Latto", sans-serif;
+}
+
+.Titulo-blog,
+h2 {
+  font-size: 5rem;
+}
+
+.Subtitulo-blog,
+h5 {
+  font-size: 2rem;
+  font-family: "Latto", sans-serif;
+  padding: 0 30px;
+}
+
+/* estilos footer*/
+.footer {
+  /* position: fixed ; */
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: rgb(226, 111, 193);
+  color: #fff;
+  text-align: center;
+  background-size: cover;
+  background-position: center center;
+  height: 20%;
+  padding-top: 14%;
+  padding-bottom: 8%;
+}
+
+.footer h4 {
+  font-size: 40px;
+  text-transform: capitalize;
+  font-family: dancing script;
+  margin: 10px 0;
+}
+
+.footer p {
+  width: 50%;
+  margin: auto;
+  line-height: 1.6;
+}
+
+
+
+
+.Subtitulo-blog, h5{
+  font-size: 2rem;
+  font-family: 'Latto', sans-serif;
+}
+
+/* estilos footer*/
+.footer{
+  /* position: fixed ; */
+  left:0;
+  bottom: 0;
+  width: 100%;
+  background-color: rgb(226, 111, 193);
+  color: #fff;
+  text-align: center;
+  background-size: cover;
+  background-position: center center;
+  height: 20%;
+  padding-top: 14%;
+  padding-bottom: 8%;
+}
+
+.footer h4{
+  font-size: 40px;
+  text-transform: capitalize;
+  font-family: dancing script;
+  margin: 10px 0;
+
+}
+
+.footer p{
+
+  width: 50%;
+  margin: auto;
+  line-height: 1.6;
+
+}
+
+
+.footer span{
+
+  width: 50px;
+  height: 50px;
+  display: inline-block;
+  background: #fff;
+  border-radius: 50%;
+  margin: 0 20px;
+}
+
+.social {
+  padding-top: 2%;
+}
+
+
+
+.social{
+  padding-top: 2%;
+}
+
+.social span{
+  color: #1b0c4f;
+  font-size: 25px;
+  line-height: 50px;
+}
+
+
+@media(max-width: 1000px){
+  .footer{
+      height: 30%;
+      padding-top: 19%;
+  }
+  .footer p{
+      width: 90%;
+  }
+}
+
+@media(max-width:600px){
+  .footer{
+      height: 40%;
+      padding-top: 45%;
+      padding-bottom: 0;
+  }
+
+  .footer p{
+      width: 90%;
+      line-height: 1.4;
+      font-size: 10px;
+  }
+
+  .footer span{
+      width: 35px;
+      height: 35px;
+      margin: 0 5px;
+  }
+
+  .social span i {
+      font-size: 18px;
+      line-height: 36px;
+  }
+}
+

@@ -1,25 +1,39 @@
 :root {
     /* Colores */
-    --btn-hover-back: rgb(255,255,255,0.6);
+    --btn-hover-back: rgb(255, 135, 225);
     --btn-hover-color: rgb(116, 0, 0);
     --btn-border: rgb(202, 195, 191);
-    --btn-active-color:rgb(255, 255, 255);
+    --btn-active-color:rgb(0, 0, 0);
     --btn-active-back:rgb(110, 0, 133);
     --btn-disable-color: rgb(0, 0, 0);
     --btn-disable-back: rgb(125, 125, 125);
 }
 
-
 .gallery {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    padding: 80px 0;
+    background-color: #FDF8FF;
+    background-image: url("../img/fondo.jpg");
+    background-position: center;
+    background-repeat: repeat;
+    /* background-size: cover;     */
 }
 
 .items-gallery {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.title h4 {
+  color: #FF46A2;
+  font-weight: 600;
+}
+
+.title {
+  padding-bottom: 15px;
+}
+
+.title h2 {
+  font-weight: 700;
 }
 
 .cont-paginator {
@@ -33,6 +47,7 @@
     list-style: none;
     display: flex;
     justify-content: center;
+    margin-top: 2rem;
   }
   
   
@@ -42,10 +57,11 @@
      border: 1px;
      border-style: solid;
      border-color: var(--btn-border);
-     border-radius: 15px;
+     border-radius: 5px;
      width: 50px;
      color: var(--btn-active-color);
      cursor: pointer;
+     text-decoration: none;
   }
   
   

@@ -17,7 +17,7 @@ export default function Testimonial() {
   }, [])
 
   return (
-    <div >
+<div >
       <div className="testimonial-area">
         <div className="container">
           <div className="row">
@@ -60,8 +60,6 @@ export default function Testimonial() {
           </div>
         </div>
       </div>
-
-
     </div>
   );
 };

@@ -36,8 +36,8 @@ const Veterinario = ({ foto, nombre, especialidad }) => {
             </div>
           </div>
           <div className="img-text">
-            <h4>{nombre}</h4>
-            <h5>{especialidad}</h5>
+            <h5>{nombre}</h5>
+            <h1>{especialidad}</h1>
           </div>
         </div>
       </div>

@@ -1,9 +1,7 @@
 import { useState, useEffect } from 'react';
-import GalleryCard from '../components/GalleryCard';
-import './Gallery.css';
+import GalleryCard from './GalleryCard';
+import './css/Gallery.css';
 import ReactPaginate from 'react-paginate';
-// import Data from "../data/mock_data_gallery.json"
-
 
 export default function Gallery() {
     // Varibles con Estados ReactJS
@@ -37,7 +35,7 @@ export default function Gallery() {
     // Carga de Array de Datos
     useEffect(() => {
         async function fetchData() {
-            const resp = await fetch(`http://localhost:3000/data`)
+            const resp = await fetch(`http://localhost:3004/data`)
             const json = await resp.json()
             setData(json)
         }
@@ -47,23 +45,23 @@ export default function Gallery() {
 
     // Funcion que retorna un map de un slice del array de datos
     const viewCards = data.slice(pagesRead, pagesRead + cardXPages)
-                          .map(item => {
-                                const index = Math.floor(Math.random() * 20);
-                                item.url = image[index].webformatURL;
-                                console.log(image[index]);
-                                return (
-                                    <GalleryCard item={item} />
-                                )
-                            }
-                        );
+        .map(item => {
+            const index = Math.floor(Math.random() * 20);
+            item.url = image[index].webformatURL;
+            return (
+                <GalleryCard key={item.id} item={item} />
+            )
+        }
+        );
 
     return (
-        <div className='gallery'>
-            <div className='items-gallery'>
-                {viewCards}
+        <section className='gallery'>
+            <div className='title text-center'>
+                <h4>Galeria de Mascotas</h4>
+                <h2 className='display-3'>Algunos de nuestros Pacientes</h2>
             </div>
-            <div className='cont-paginator'>
-                {/* Componente ReactJS de paginado */}
+            <div className="items-gallery">
+                {viewCards}
                 <ReactPaginate
                     previousLabel={"<<"}
                     nextLabel={">>"}
@@ -77,6 +75,6 @@ export default function Gallery() {
                     activeLinkClassName={"paginationActive"}
                 />
             </div>
-        </div>
+        </section>
     );
 };
