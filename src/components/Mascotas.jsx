@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { collection, getDocs } from "firebase/firestore";
 import { db } from "../components/Firebase/Firebase";
 
+
 export default function Mascotas() {
   //1- hooks
   const [articles, setArticles] = useState([]);
@@ -23,9 +24,10 @@ export default function Mascotas() {
     getArticles();
   }, []);
 
+
   return (
     <>
-      <div className="container">
+      <div className="container">        
         <h2 className="text-center pb-1 fw-bold Titulo-blog">
           Blog de las mascotas.
         </h2>

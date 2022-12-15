@@ -1,5 +1,5 @@
 //import firebase from "firebase/compat/app"
-import "firebase/compat/auth"
+import "firebase/compat/auth";
 import { initializeApp } from "firebase/app";
 
 /* Importamos las funciones propias de la base de datos como getFirestore etc... */
@@ -20,6 +20,7 @@ import {
 */
 import { getAuth } from "firebase/auth";
 
+
 /*
 import {
   getStorage,
@@ -29,6 +30,8 @@ import {
   getBytes,
 } from "firebase/storage";
 */
+
+//CONFIGURACION JUAN
 
 const firebaseConfig = {
   apiKey: "AIzaSyAWxv2QAQR7_Lx8v3VyRFkM10InFJJnn5E",
@@ -41,12 +44,10 @@ const firebaseConfig = {
   clientId :"790207131839-jeiipu6sujumqtk8j7m51f05csjgp3qv.apps.googleusercontent.com"
 };
 
- // VARIABLES BASCICAS 
+
+// VARIABLES BASCICAS
 export const app = initializeApp(firebaseConfig);
 export const auth = getAuth(app);
 export const db = getFirestore(app);
-// export const storage = getStorage();
-
-
-
+//export const storage = getStorage(app);
 

@@ -59,20 +59,21 @@ const Show = () => {
     <>
       <div className="container">
         <div className="row">
-          <div className="col">
-            <div className="d-grid gap-1">
-              <Link to="/create" className="btn btn-secondary mt-2 mb-2">
+          <div className="col mb-4">
+            <div className="d-flex justify-content-sm-center justify-content-center">
+              <Link to="/create" className="btn btn-primary m-4 w-50 fw-bold">
                 Crear Articulo
               </Link>
             </div>
 
             <table className="table table-hover">
-              <thead>
+              <thead className="bg-secondary">
                 <tr>
                   <th>Categoria</th>
                   <th>Imagen</th>
                   <th>Intro</th>
                   <th>Titulo</th>
+                  <th></th>
                 </tr>
               </thead>
 
@@ -86,13 +87,13 @@ const Show = () => {
                     <td>
                       <Link
                         to={`/edit/${article.id}`}
-                        className="btn btn-light"
+                        className="btn btn-warning m-1"
                       >
                         <i className="fas fa-solid fa-pen"></i>
                       </Link>
                       <button
                         onClick={() => confirmDelete(article.id)}
-                        className="btn btn-danger"
+                        className="btn btn-danger m-1"
                         type="button"
                       >
                         <i className="fas fa-solid fa-trash"></i>
