@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
+import { FaTrashAlt, FaEdit } from "react-icons/fa";
 
 import { collection, getDocs, doc, deleteDoc } from "firebase/firestore";
 import { db } from "../components/Firebase/Firebase";
@@ -89,14 +90,14 @@ const Show = () => {
                         to={`/edit/${article.id}`}
                         className="btn btn-warning m-1"
                       >
-                        <i className="fas fa-solid fa-pen"></i>
+                        <FaEdit size={20} />
                       </Link>
                       <button
                         onClick={() => confirmDelete(article.id)}
                         className="btn btn-danger m-1"
                         type="button"
                       >
-                        <i className="fas fa-solid fa-trash"></i>
+                        <FaTrashAlt size={20} />
                       </button>
                     </td>
                   </tr>
