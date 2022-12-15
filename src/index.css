@@ -97,7 +97,7 @@ img {
 /*Imagenes cards mascotas*/
 
 .Blog {
-  background-image: url("../../../public/blog.jpg");
+  background-image: url("/blog.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   background-attachment: fixed;

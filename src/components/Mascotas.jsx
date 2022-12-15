@@ -11,7 +11,6 @@ export default function Mascotas() {
     fetch(url)
       .then((response) => response.json())
       .then((data) => {
-        console.log(data)
         setPerros(data);
       })
       .catch((error) => console.log(error));
