@@ -16,7 +16,10 @@ import CrudTurnos from "./components/Login/admin/CrudTurnos";
 import Show from "./data/Show";
 import Edit from "./data/Edit";
 import Create from "./data/Create";
-import Administrador from './Pages/Administrador';
+import Administrador from "./Pages/Administrador";
+import Clientes from "./data/Clientes";
+import EditarClientes from "./data/EditarClientes";
+import CrearClientes from "./data/CrearClientes";
 
 const router = createBrowserRouter([
   {
@@ -50,6 +53,18 @@ const router = createBrowserRouter([
       {
         path: "/Contacto",
         element: <Contacto />,
+      },
+      {
+        path: "/clientes",
+        element: <Clientes />,
+      },
+      {
+        path: "/crearClientes",
+        element: <CrearClientes />,
+      },
+      {
+        path: "/editarClientes/:id",
+        element: <EditarClientes />,
       },
       {
         path: "/tienda",

@@ -1,57 +1,61 @@
-import React, { useState, useEffect, createContext } from 'react';
+import React, { useState, useEffect, createContext } from "react";
 import { useNavigate } from "react-router-dom";
-import { generarID } from '../data/helpes';
-import { formatearFecha } from '../data/helpes';
-import { app } from '../components/Firebase/Firebase';
-import { getAuth, signInWithEmailAndPassword, signInWithPopup, signOut, onAuthStateChanged } from "firebase/auth";
+import { generarID } from "../data/helpes";
+import { formatearFecha } from "../data/helpes";
+import { app } from "../components/Firebase/Firebase";
+import {
+  getAuth,
+  signInWithEmailAndPassword,
+  signInWithPopup,
+  signOut,
+  onAuthStateChanged,
+} from "firebase/auth";
 
 const Contenido = createContext();
 
 function VeterProvider({ children }) {
-
-  app
+  app;
   const auth = getAuth();
 
-  const [clicked, setClicked] = useState(false)
+  const [clicked, setClicked] = useState(false);
   const navigate = useNavigate();
-  const [datos, setdatos] = useState([])
-  const [datosContacto, setdatosContacto] = useState([])
-  const [mensaje2, setmensaje2] = useState('');
-  const [emailIS, setemailIS] = useState('');
-  const [constraseñaIS, setconstraseñaIS] = useState('')
-  const [estado, setEstado] = useState(false)
-
+  const [datos, setdatos] = useState([]);
+  const [datosContacto, setdatosContacto] = useState([]);
+  const [mensaje2, setmensaje2] = useState("");
+  const [emailIS, setemailIS] = useState("");
+  const [constraseñaIS, setconstraseñaIS] = useState("");
+  const [estado, setEstado] = useState(false);
 
   const handleClick = () => {
     //cuando esta true lo pasa a false y vice versa
-    if ((window.innerWidth) > 1280) {
-      setClicked(false)
+    if (window.innerWidth > 1280) {
+      setClicked(false);
     } else {
-      setClicked(!clicked)
+      setClicked(!clicked);
     }
-  }
+  };
 
   const InisionSesion = (e) => {
     e.preventDefault();
-    const { email, constraseña } = datos
+    const { email, constraseña } = datos;
     signInWithEmailAndPassword(auth, emailIS, constraseñaIS)
       .then((userCredential) => {
-        // Signed in 
+        // Signed in
         const user = userCredential.user;
-        console.log("iniciaste sesion correctamente")
-        navigate("/administrador")
+        console.log("iniciaste sesion correctamente");
+        navigate("/administrador");
       })
       .catch((error) => {
         const errorCode = error.code;
         const errorMessage = error.message;
 
         if ((emailIS == "") | (constraseñaIS == "")) {
-          setmensaje2("Todos los campos son obligatorios")
-          setTimeout(() => setmensaje2(""), 3000)
+          setmensaje2("Todos los campos son obligatorios");
+          setTimeout(() => setmensaje2(""), 3000);
         } else {
-          console.log("datos incorrecatos")
-          setmensaje2("Datos incorrectos")
-          setTimeout(() => setmensaje2(""), 3000)
+          console.log("datos incorrecatos");
+          setmensaje2("Datos incorrectos");
+          setTimeout(() => setmensaje2(""), 3000);
         }
       });
   };
@@ -62,15 +66,14 @@ function VeterProvider({ children }) {
         // User is signed in, see docs for a list of available properties
         // https://firebase.google.com/docs/reference/js/firebase.User
         const uid = user.uid;
-        console.log("usurio conectado")
-        setEstado(true)
+        console.log("usurio conectado");
+        setEstado(true);
         // ...
       } else {
         // User is signed out
         // ...
-        console.log("desconectado")
-        setEstado(false)
-
+        console.log("desconectado");
+        setEstado(false);
       }
     });
   }, [estado]);
@@ -78,16 +81,17 @@ function VeterProvider({ children }) {
   const CerrarSeccion = (e) => {
     e.preventDefault();
 
-    signOut(auth).then(() => {
-      setEstado(false)
-      navigate("/")
-    }).catch((error) => {
-      console.log("hubo un error", error)
-    });
+    signOut(auth)
+      .then(() => {
+        setEstado(false);
+        navigate("/");
+      })
+      .catch((error) => {
+        console.log("hubo un error", error);
+      });
 
-    return
-
-  }
+    return;
+  };
 
   const guardarDatos = (Referencia) => {
     if (datos.some((comparacion) => comparacion.id === Referencia.id)) {
@@ -96,7 +100,6 @@ function VeterProvider({ children }) {
       );
       setdatos(datosActulizado);
     } else {
-
       //agregar mas prop que las iniciales
       Referencia.id = generarID();
       setdatos([...datos, Referencia]);
@@ -110,7 +113,6 @@ function VeterProvider({ children }) {
       );
       setdatosContacto(datosActulizado);
     } else {
-
       //agregar mas prop que las iniciales
       Referencia.id = generarID();
       setdatosContacto([...datosContacto, Referencia]);
@@ -123,6 +125,7 @@ function VeterProvider({ children }) {
         clicked,
         handleClick,
         guardarDatos,
+        setdatosContacto,
         mensaje2,
         setmensaje2,
         InisionSesion,
@@ -132,11 +135,12 @@ function VeterProvider({ children }) {
         constraseñaIS,
         setconstraseñaIS,
         CerrarSeccion,
-        guardarDatosContacto
-      }}>
+        guardarDatosContacto,
+      }}
+    >
       {children}
     </Contenido.Provider>
-  )
+  );
 }
 
 export { VeterProvider };

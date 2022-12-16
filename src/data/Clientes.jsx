@@ -10,31 +10,31 @@ import Swal from "sweetalert2";
 import withReactContent from "sweetalert2-react-content";
 const MySwal = withReactContent(Swal);
 
-const Show = () => {
+const Clientes = () => {
   //1- hooks
-  const [articles, setArticles] = useState([]);
+  const [clientes, setClientes] = useState([]);
 
   //2- referencia a la db
-  const articlesCollection = collection(db, "articulos");
+  const clientesCollection = collection(db, "clientes");
 
   //3- funcion para mostrar todos los docs
-  const getArticles = async () => {
-    const data = await getDocs(articlesCollection);
-    setArticles(data.docs.map((doc) => ({ ...doc.data(), id: doc.id })));
-    //console.log(articles);
+  const getClientes = async () => {
+    const data = await getDocs(clientesCollection);
+    setClientes(data.docs.map((doc) => ({ ...doc.data(), id: doc.id })));
+    console.log(clientes);
   };
 
   //4- funcion para eliminar un doc
-  const deleteArticle = async (id) => {
-    const article = doc(db, "articulos", id);
-    await deleteDoc(article);
-    getArticles();
-  }; 
+  const deleteClientes = async (id) => {
+    const cliente = doc(db, "clientes", id);
+    await deleteDoc(cliente);
+    getClientes();
+  };
 
   //5- funcion de confirmacion para Sweet Alert 2
   const confirmDelete = (id) => {
     MySwal.fire({
-      title: "Eliminar el articulo?",
+      title: "Eliminar el cliente?",
       text: "No podrás revertirlo!",
       icon: "warning",
       showCancelButton: true,
@@ -43,15 +43,15 @@ const Show = () => {
       confirmButtonText: "Borrar",
     }).then((result) => {
       if (result.isConfirmed) {
-        deleteArticle(id);
-        Swal.fire("Borrado!", "El articulo fué elimnado con éxito", "success");
+        deleteClientes(id);
+        Swal.fire("Borrado!", "El cliente fué elimnado con éxito", "success");
       }
     });
   };
 
   //6- usamos useEffect
   useEffect(() => {
-    getArticles();
+    getClientes();
     //...
   }, []);
 
@@ -62,45 +62,48 @@ const Show = () => {
         <div className="row">
           <div className="col mb-4">
             <div className="d-flex justify-content-sm-center justify-content-center">
-              <Link to="/create" className="btn btn-primary m-4 w-50 fw-bold">
-                Crear Articulo
+              <Link to="/crearClientes" className="btn btn-primary m-4 w-50 fw-bold">
+                Crear Cliente
               </Link>
             </div>
 
             <table className="table table-hover">
               <thead className="bg-secondary">
                 <tr>
+                  <th>Nombre</th>
+                  <th>Apellido</th>
+                  <th>Email</th>
+                  <th>Fecha</th>
                   <th>Categoria</th>
-                  <th>Imagen</th>
-                  <th>Intro</th>
-                  <th>Titulo</th>
-                  <th></th>
+                  <th>Sintomas</th>
                 </tr>
               </thead>
 
               <tbody>
-                {articles.map((article) => (
-                  <tr key={article.id}>
-                    <td>{article.category}</td>
-                    <td>{article.image}</td>
-                    <td>{article.intro}</td>
-                    <td>{article.title}</td>
+                {clientes.map((cliente) => (
+                  <tr key={cliente.id}>
+                    <td>{cliente.nombre}</td>
+                    <td>{cliente.apellido}</td>
+                    <td>{cliente.email}</td>
+                    <td>{cliente.fecha}</td>
+                    <td>{cliente.categoria}</td>
+                    <td>{cliente.sintomas}</td>
                     <td>
                       <Link
-                        to={`/edit/${article.id}`}
+                        to={`/editarClientes/${cliente.id}`} 
                         className="btn btn-warning m-1"
                       >
                         <FaEdit size={20} />
                       </Link>
                       <button
-                        onClick={() => confirmDelete(article.id)}
+                        onClick={() => confirmDelete(cliente.id)}
                         className="btn btn-danger m-1"
                         type="button"
                       >
                         <FaTrashAlt size={20} />
                       </button>
                     </td>
-                  </tr>
+                  </tr> 
                 ))}
               </tbody>
             </table>
@@ -111,4 +114,4 @@ const Show = () => {
   );
 };
 
-export default Show;
+export default Clientes;

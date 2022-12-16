@@ -1,7 +1,7 @@
 import styled from 'styled-components'
-import edit from "/edit.svg"
-import perfiladd from "/perfiladd.svg"
-import { Link } from "react-router-dom "
+// import edit from "/edit.svg"
+// import perfiladd from "/perfiladd.svg"
+// import { Link } from "react-router-dom "
 
 function CrudTurnos() {
 
@@ -9,7 +9,7 @@ function CrudTurnos() {
   return (
       <AdminSytyled>
           
-          <h1> crudturnos</h1>
+          <Turnos />
 
             
       </AdminSytyled>

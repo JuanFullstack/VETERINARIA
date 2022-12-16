@@ -20,7 +20,6 @@ import {
 */
 import { getAuth } from "firebase/auth";
 
-
 /*
 import {
   getStorage,
@@ -32,7 +31,7 @@ import {
 */
 
 //CONFIGURACION JUAN
-
+/*
 const firebaseConfig = {
   apiKey: "AIzaSyAWxv2QAQR7_Lx8v3VyRFkM10InFJJnn5E",
   authDomain: "fir-p1-51846.firebaseapp.com",
@@ -41,7 +40,20 @@ const firebaseConfig = {
   messagingSenderId: "289222028009",
   appId: "1:289222028009:web:835ccdc1b1ab6f26791e78",
   measurementId: "G-TC2M3BLEKE",
-  clientId :"790207131839-jeiipu6sujumqtk8j7m51f05csjgp3qv.apps.googleusercontent.com"
+  clientId:
+    "790207131839-jeiipu6sujumqtk8j7m51f05csjgp3qv.apps.googleusercontent.com",
+};
+*/
+
+//CONFIGURACION CINTHIA
+
+const firebaseConfig = {
+  apiKey: "AIzaSyDN8RE5_1Cl54nFOjoyQ2Ww9aTo0d_MYM4",
+  authDomain: "crud-fire-react-2ded0.firebaseapp.com",
+  projectId: "crud-fire-react-2ded0",
+  storageBucket: "crud-fire-react-2ded0.appspot.com",
+  messagingSenderId: "140415912611",
+  appId: "1:140415912611:web:642aaf26221be9484d0d16",
 };
 
 
@@ -50,4 +62,3 @@ export const app = initializeApp(firebaseConfig);
 export const auth = getAuth(app);
 export const db = getFirestore(app);
 //export const storage = getStorage(app);
-

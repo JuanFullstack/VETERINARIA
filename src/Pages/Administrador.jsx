@@ -8,26 +8,23 @@ function Administrador() {
 
 
   return (
-
-<AdminSytyled>
-          <div className='disposicion'>
-
-            <Link   to="/abmturnos"  >
-              <button className='cliente'
-              >
-              
-               <img  src={edit} />
-            
-                Administrar clientes</button>
-            </Link>
-            <Link   to="/registro"  >
-              <button className='personal'>
-              <img  src={perfiladd }/>
-                Administrar Personal</button>
-             </Link>
-          </div>
- </AdminSytyled>
-  )
+    <AdminSytyled>
+      <div className="disposicion">
+        <Link to="/clientes">
+          <button className="cliente">
+            <img src={edit} />
+            Administrar clientes
+          </button>
+        </Link>
+        <Link to="/registro">
+          <button className="personal">
+            <img src={perfiladd} />
+            Administrar Personal
+          </button>
+        </Link>
+      </div>
+    </AdminSytyled>
+  );
 }
 
 export default Administrador
