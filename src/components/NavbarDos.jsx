@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 import cora from '/cora.svg'
 import TodaContendio from '../hooks/TodaContendio'
-
+import {Link } from "react-router-dom"
 
 const NavbarDos = () => {
 
@@ -12,9 +12,12 @@ const NavbarDos = () => {
           
               <img src={cora} />
               <h1> Cuidamos lo que mas quieres</h1>
+
+              <Link to="/solicitarturno">
               <button>
                 Solicita turno 
               </button>
+              </Link>
          
       </Titulogral>
   );

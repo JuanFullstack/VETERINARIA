@@ -10,12 +10,21 @@ function Administrador() {
   return (
     <AdminSytyled>
       <div className="disposicion">
+
         <Link to="/clientes">
           <button className="cliente">
             <img src={edit} />
             Administrar clientes
           </button>
         </Link>
+
+        <Link to="/turnos">
+          <button className="turnos">
+            <img src={edit} />
+            Administrar turnos
+          </button>
+        </Link>
+
         <Link to="/registro">
           <button className="personal">
             <img src={perfiladd} />
@@ -85,8 +94,8 @@ const AdminSytyled = styled.div `
   font-size: 1.5rem;
   border-radius: 15px;
   background: #a6f7cb;
-  box-shadow: inset -24px -24px 48px #69dfb1,
-              inset 24px 24px 48px #66998a;
+  box-shadow: inset -24px -24px 48px #1865A1,
+              inset 24px 24px 48px #1865A1;
   color: black;
   padding: 4rem;
   font-weight:600;
@@ -106,6 +115,59 @@ const AdminSytyled = styled.div `
  
   }
 
+
+  
+ .turnos {
+  
+  font-size: 1.5rem;
+  border-radius: 15px;
+  background: #33A5FF;
+  box-shadow: inset -24px -24px 48px #1C85D7,
+              inset 24px 24px 48px #1C85D7;
+  color: black;
+  padding: 4rem;
+  font-weight:600;
+ 
+    & img {
+     display: block;
+     width: 4rem;
+     margin: 0 auto;
+    }
+  
+  @media(max-width: 1279px){
+   margin-bottom:2.5rem 
+     
+       
+     }
+ 
+ 
+  }
+ 
+  .turnos:hover {
+   
+   font-size: 1.5rem;
+   border-radius: 15px;
+   background: #6FC0FF;
+   box-shadow: inset -24px -24px 48px #A6D5FA,
+               inset 24px 24px 48px #A6D5FA;
+   color: black;
+   padding: 4rem;
+   font-weight:600;
+  
+     & img {
+      display: block;
+      width: 4rem;
+      margin: 0 auto;
+     }
+   
+   @media(max-width: 1279px){
+    margin-bottom:2.5rem 
+      
+        
+      }
+  
+  
+   }
 
 
 

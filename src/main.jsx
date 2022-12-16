@@ -8,6 +8,9 @@ import Blog from "./Pages/Blog";
 import Contacto from "./Pages/Contacto";
 import Tienda from "./Pages/Tienda";
 import Carrito from "./components/Carrito";
+import SolicitarTurno from './components/Turnos/SolicitarTurno';
+import EditarTurno from './components/Turnos/EditarTurno';
+import Turnos from './components/Turnos/Turnos';
 import "./index.css";
 import Gallery from "./components/Gallery/Gallery";
 import Login from "./components/Login/Login";
@@ -94,6 +97,18 @@ const router = createBrowserRouter([
         path: "/administrador",
         element: <Administrador />,
       },
+      {
+        path: "/turnos",
+        element: <Turnos/>
+      },
+      {
+        path: "/solicitarturno",
+        element: <SolicitarTurno/>
+      },
+      {
+        path: "/editarturno/:id",
+        element: <EditarTurno/>
+      }
     ],
   },
 ]);

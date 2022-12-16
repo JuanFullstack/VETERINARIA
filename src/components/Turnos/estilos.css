@@ -1,0 +1,30 @@
+.col {
+    border: 1px;
+    border-style: solid;
+    border-color: #e2b4df;
+}
+
+.form-control:focus, .form-select:focus {
+    border-color: #e2b4df;
+    box-shadow: 0 0 0 0.1rem #e2b4df;
+}
+
+#colTurno {
+    background-color: #e2b4df;
+    color: white;
+}
+
+.btn,
+.btn:hover {
+    color: #724e708e;
+}
+
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+thead {
+    background-color: #e2b4df;
+    color: white;
+}
