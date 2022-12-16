@@ -96,11 +96,17 @@ const EstilosDiv = styled.div`
     background-size: cover;
     background-repeat:no-repeat;
     padding: 15rem;
-    border-bottom: 2rem solid #0f4c75;
+   
+    @media(max-width: 850px){
+        padding: 0;
+        margin-bottom:4rem
+      
+        } 
+    
 
-    @media(max-width: 780px){
-          margin-top: rem;
-         flex-direction: column;
+        @media(max-width: 400px){
+          padding: 0rem;
+          flex-direction: column;
          align-items: center;
         } 
 

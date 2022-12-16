@@ -31,7 +31,7 @@ import {
 */
 
 //CONFIGURACION JUAN
-/*
+
 const firebaseConfig = {
   apiKey: "AIzaSyAWxv2QAQR7_Lx8v3VyRFkM10InFJJnn5E",
   authDomain: "fir-p1-51846.firebaseapp.com",
@@ -43,18 +43,18 @@ const firebaseConfig = {
   clientId:
     "790207131839-jeiipu6sujumqtk8j7m51f05csjgp3qv.apps.googleusercontent.com",
 };
-*/
 
-//CONFIGURACION CINTHIA
 
-const firebaseConfig = {
-  apiKey: "AIzaSyDN8RE5_1Cl54nFOjoyQ2Ww9aTo0d_MYM4",
-  authDomain: "crud-fire-react-2ded0.firebaseapp.com",
-  projectId: "crud-fire-react-2ded0",
-  storageBucket: "crud-fire-react-2ded0.appspot.com",
-  messagingSenderId: "140415912611",
-  appId: "1:140415912611:web:642aaf26221be9484d0d16",
-};
+// CONFIGURACION CINTHIA
+
+// const firebaseConfig = {
+//   apiKey: "AIzaSyDN8RE5_1Cl54nFOjoyQ2Ww9aTo0d_MYM4",
+//   authDomain: "crud-fire-react-2ded0.firebaseapp.com",
+//   projectId: "crud-fire-react-2ded0",
+//   storageBucket: "crud-fire-react-2ded0.appspot.com",
+//   messagingSenderId: "140415912611",
+//   appId: "1:140415912611:web:642aaf26221be9484d0d16",
+// };
 
 
 // VARIABLES BASCICAS
