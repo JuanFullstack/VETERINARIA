@@ -58,37 +58,50 @@ const Turnos = () => {
 
     return (
         <div className='container'>
-            <div className='row text-center'>
-                <div className='col my-5 p-0'>
-                    <table className='table table-hover'>
-                        <thead>
-                            <tr>
-                                <th class="h4">Cliente</th>
-                                <th class="h4">Mascota</th>
-                                <th class="h4">Turno</th>
-                                <th class="h4">Motivo</th>
-                                <th class="h4">Acciones</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            {turnos.map((turno) => (
-                                <tr key={turno.id}>
-                                    <td class="lead">{turno.Nombre} {turno.Apellido}</td>
-                                    <td class="lead">{turno.NombreM} ({turno.EspecieM} - {turno.SexoM})</td>
-                                    <td class="lead">{turno.Dia} - {turno.Horario} </td>
-                                    <td class="lead">{turno.Motivo} </td>
+            <div className='row my-5'>
 
-                                    <td>
-                                        <div className='justify-content-around'>
-                                            <Link to={`/editarturno/${turno.id}`} className='btn btn-secondary text-light m-1'>Editar</Link>
-                                            <button onClick={() => { confirmDelete(turno.id) }} className="btn btn-danger text-light m-1">Eliminar</button>
-                                        </div>
-                                    </td>
-                                </tr>
-                            ))}
+                <div className="d-flex justify-content-center my-2">
+                    <Link to="/solicitarturno" className="btn btn-secondary text-light px-5">
+                        Crear turno
+                    </Link>
+                </div>
 
-                        </tbody>
-                    </table>
+                <div className='col p-0'>
+                    <div className='py-1 barraSuperior text-center'>
+                        <div class="h4 d-inline-block col-3 col-md-2 text-center">Cliente</div>
+                        <div class="h4 d-inline-block col-3 col-md-2 text-center">Mascota</div>
+                        <div class="h4 d-inline-block col-3 col-md-2 text-center">Turno</div>
+                        <div class="h4 d-inline-block col-3 col-md-2 text-center">Motivo</div>
+                        <div class="h4 d-none d-md-inline-block col-md-2 text-center">Acciones</div>
+                    </div>
+
+                    {turnos.map((turno) => (
+                        <div key={turno.id}>
+
+                            <div className='p-1 text-center d-flex d-md-block align-items-center'>
+                                <div class="lead d-inline-block col-3 col-md-2 text-center px-2">{turno.Nombre} {turno.Apellido}</div>
+
+                                <div class="lead d-inline-block col-3 col-md-2 text-center px-2">{turno.NombreM} ({turno.EspecieM} - {turno.SexoM})</div>
+
+                                <div class="lead d-inline-block col-3 col-md-2 text-center px-2">{turno.Dia} - {turno.Horario} </div>
+
+                                <div class="lead d-inline-block col-3 col-md-2 text-center px-2">{turno.Motivo} </div>
+
+                                <div className='d-none d-md-inline col-md-2 px-2'>
+                                    <Link to={`/editarturno/${turno.id}`} className='btn btn-secondary text-light m-1 px-4'>Editar</Link>
+                                    <button onClick={() => { confirmDelete(turno.id) }} className='btn btn-danger text-light m-1 px-4'>Eliminar</button>
+                                </div>
+                            </div>
+
+                            <div>
+                                <div className='d-md-none justify-content-around text-center pt-2'>
+                                    <Link to={`/editarturno/${turno.id}`} className='btn btn-secondary text-light m-1 mx-4 px-4'>Editar</Link>
+                                    <button onClick={() => { confirmDelete(turno.id) }} className='btn btn-danger text-light m-1 mx-4 px-4'>Eliminar</button>
+                                </div>
+                            </div>
+                            <hr class="hr my-md-0" />
+                        </div>
+                    ))}
                 </div>
             </div>
         </div>

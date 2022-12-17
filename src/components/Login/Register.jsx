@@ -52,124 +52,67 @@ function Register() {
       };
 
 
-  return (
-      <>
-          <EstilosDiv>
-              <form 
-              onSubmit={handleSubmit}
-              >
-                  <h2> Nuevo registro </h2>
-                  {mensaje2 && <Error> {mensaje2} </Error> }
-                  <input 
-                  value={nombre}
-                  onChange={(e) => setnombre(e.target.value)}
-                  type='text' name='nombre' placeholder='Nombre del Administrador'  />
-                  <input  type='text' name='apellidos' placeholder='Apellidos' 
-                  value={apellido}
-                  onChange={(e) => setapellido(e.target.value)}
-                   />
-                  <input type='text'  name='correo'   placeholder='Correo de acceso' 
-                   value={email}
-                   onChange={(e) => setemail(e.target.value)}
-                  />
-                  <input 
-                  type='password' name='password' placeholder='password'
-                  value={constraseña}
-                   onChange={(e) => setcontraseña(e.target.value)}
-                  />
-                  <input type='submit' value='ENVIAR' id='boton' />
-                  
-              </form>
-          </EstilosDiv>
-      </>
-  );
+      return (
+        <div className='container'>
+            <form onSubmit={handleSubmit} className='m-3 m-md-5'>
+                <div className='row justify-content-center'>
+
+                    <div className='col col-12 col-lg-4 p-4 my-1 mx-md-1' id="colCliente">
+                        <p className='display-6 text-center mb-4'><b>Nuevo personal</b></p>
+                        {mensaje2 && <Error> {mensaje2} </Error> }
+                        <div className='mb-3'>
+                            <label className='form-label h5'>Nombre</label>
+                            <input
+                                value={nombre}
+                                name="nombre"
+                                type="text"
+                                className='form-control'
+                                onChange={(e) => setNombre(e.target.value)}
+                            />
+                        </div>
+
+                        <div className='mb-3'>
+                            <label className='form-label h5'>Apellido</label>
+                            <input
+                                value={apellido}
+                                name="apellido"
+                                type="text"
+                                className='form-control'
+                                onChange={(e) => setApellido(e.target.value)}
+                            />
+                        </div>
+
+                        <div className='mb-3'>
+                            <label className='form-label h5'>Email</label>
+                            <input
+                                value={email}
+                                name="email"
+                                type="text"
+                                className='form-control'
+                                onChange={(e) => setEmail(e.target.value)}
+                            />
+                        </div>
+
+                        <div className='mb-3'>
+                            <label className='form-label h5'>Contraseña</label>
+                            <input
+                                value={email}
+                                name="password"
+                                type="password"
+                                className='form-control'
+                                onChange={(e) => setEmail(e.target.value)}
+                            />
+                        </div>
+                        <div className='text-center'>
+                            <button type="submit" className='btn btn-light btn-lg mt-3'>Guardar</button>
+                        </div>
+                    </div>
+                    </div>
+
+            </form>
+        </div>
+    )
 }
+
 
 export default Register
-
-
-
-const EstilosDiv = styled.div`
-
-padding-top: 4rem;
-background-image:url("../../../public/perfil.jpg") ;
-background-size: cover;
-background-repeat:no-repeat;
-padding: 12rem;
-
-
-@media (max-width:480px) {
-  padding-top: 1rem;
-  margin-bottom: 2rem;
-  background-image:none;
-  padding:0;
-}
-
-form {
-    width: 450px;
-    margin: auto;
-    background: rgb(59,162,250);
-background: linear-gradient(0deg, rgba(59,162,250,0.8519782913165266) 0%, rgba(57,173,232,0.773546918767507) 10%, rgba(73,197,249,0.7063200280112045) 100%);
-    padding: 10px 20px;
-    box-sizing: border-box;
-    margin-top: 20px;
-    border-radius: 2.5rem;
-    -webkit-box-shadow: -2px 31px 28px -6px rgba(0,0,0,0.75);
--moz-box-shadow: -2px 31px 28px -6px rgba(0,0,0,0.75);
-box-shadow: -2px 31px 28px -6px rgba(0,0,0,0.75);
-}
-
-
-h2 {
-    color: #fff;
-    text-align: center;
-    margin: 0;
-    font-size: 30px;
-    margin-bottom: 20px;
-}
-
-input {
-    width: 100%;
-    margin-bottom: 20px;
-    padding: 7px;
-    box-sizing: border-box;
-    font-size: 17px;
-    border: none;
-    border-radius: 0.5rem;
-
-}
-
-
-
-textarea {
-    min-height: 100px;
-    max-height: 200px;
-    max-width: 100%;
-}
-
-#boton{
-    background: #31384A;
-    color: #fff;
-    padding: 20px;
-}
-
-#boton:hover {
-    cursor: pointer;
-}
-
-
-@media (max-width:480px) {
-    form{
-        width: 100%;
-    }
-}
-
-h1 {
-    text-align: center;
-    color: #fff;
-    font-size: 40px;
-    background: rgba(0,0,0,0.4);
-    margin-top: 300px;
-}
-  
-`

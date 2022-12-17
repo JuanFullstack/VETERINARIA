@@ -8,6 +8,9 @@ import Blog from "./Pages/Blog";
 import Contacto from "./Pages/Contacto";
 import Tienda from "./Pages/Tienda";
 import Carrito from "./components/Carrito";
+import Clientes from "./components/Clientes/Clientes";
+import EditarCliente from "./components/Clientes/EditarCliente";
+import CrearCliente from "./components/Clientes/CrearCliente";
 import SolicitarTurno from './components/Turnos/SolicitarTurno';
 import EditarTurno from './components/Turnos/EditarTurno';
 import Turnos from './components/Turnos/Turnos';
@@ -15,14 +18,10 @@ import "./index.css";
 import Gallery from "./components/Gallery/Gallery";
 import Login from "./components/Login/Login";
 import Register from "./components/Login/Register";
-import CrudTurnos from "./components/Login/admin/CrudTurnos";
 import Show from "./data/Show";
 import Edit from "./data/Edit";
 import Create from "./data/Create";
 import Administrador from "./Pages/Administrador";
-import Clientes from "./data/Clientes";
-import EditarClientes from "./data/EditarClientes";
-import CrearClientes from "./data/CrearClientes";
 
 const router = createBrowserRouter([
   {
@@ -62,12 +61,24 @@ const router = createBrowserRouter([
         element: <Clientes />,
       },
       {
-        path: "/crearClientes",
-        element: <CrearClientes />,
+        path: "/crearcliente",
+        element: <CrearCliente />,
       },
       {
-        path: "/editarClientes/:id",
-        element: <EditarClientes />,
+        path: "/editarcliente/:id",
+        element: <EditarCliente />,
+      },
+      {
+        path: "/turnos",
+        element: <Turnos />
+      },
+      {
+        path: "/solicitarturno",
+        element: <SolicitarTurno />
+      },
+      {
+        path: "/editarturno/:id",
+        element: <EditarTurno />
       },
       {
         path: "/tienda",
@@ -90,24 +101,8 @@ const router = createBrowserRouter([
         element: <Register />,
       },
       {
-        path: "/abmturnos",
-        element: <CrudTurnos />,
-      },
-      {
         path: "/administrador",
         element: <Administrador />,
-      },
-      {
-        path: "/turnos",
-        element: <Turnos/>
-      },
-      {
-        path: "/solicitarturno",
-        element: <SolicitarTurno/>
-      },
-      {
-        path: "/editarturno/:id",
-        element: <EditarTurno/>
       }
     ],
   },

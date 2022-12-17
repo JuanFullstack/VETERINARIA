@@ -52,10 +52,10 @@ const SolicitarTurno = () => {
 
     return (
         <div className='container'>
-            <form onSubmit={turnoSolicitado} className='m-5'>
+            <form onSubmit={turnoSolicitado} className='m-3 m-md-5'>
                 <div className='row justify-content-center'>
 
-                    <div className='col col-12 col-lg-4 p-4 m-1'>
+                    <div className='col col-12 col-lg-4 p-4 my-1 mx-md-1'>
                         <p className='display-6 text-center mb-4'><b>Tus datos</b></p>
                         <div className='mb-3'>
                             <label className='form-label h5'>Nombre</label>
@@ -98,7 +98,7 @@ const SolicitarTurno = () => {
                         </div>
                     </div>
 
-                    <div className='col col-12 col-lg-4 p-4 m-1'>
+                    <div className='col col-12 col-lg-4 p-4 my-1 mx-md-1'>
                     <p className='display-6 text-center mb-4'><b>Tu mascota</b></p>
                         <div className='mb-3'>
                             <label className='form-label h5'>Nombre</label>
@@ -139,7 +139,7 @@ const SolicitarTurno = () => {
                         </div>
                     </div>
 
-                    <div className='col col-12 col-lg-3 p-4 m-1' id="colTurno">
+                    <div className='col col-12 col-lg-3 p-4 my-1 mx-md-1' id="colTurno">
                     <p className='display-6 text-center mb-4'><b>Turno</b></p>
                         <div className='mb-3'>
                             <label className='form-label h5'>Dia</label>

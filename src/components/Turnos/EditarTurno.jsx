@@ -96,10 +96,10 @@ const EditarTurno = () => {
 
     return (
         <div className='container'>
-            <form onSubmit={update} className="mt-5">
+            <form onSubmit={update} className="m-3 m-md-5">
                 <div className='row justify-content-center'>
 
-                    <div className='col col-12 col-lg-4 p-4 m-1'>
+                    <div className='col col-12 col-lg-4 p-4 my-1 mx-md-1'>
                         <p className='display-6 text-center mb-4'><b>Cliente</b></p>
                         <div className='mb-3'>
                             <label className='form-label h5'>Nombre</label>
@@ -146,7 +146,7 @@ const EditarTurno = () => {
                         </div>
                     </div>
 
-                    <div className='col col-12 col-lg-4 p-4 m-1'>
+                    <div className='col col-12 col-lg-4 p-4 my-1 mx-md-1'>
                         <p className='display-6 text-center mb-4'><b>Mascota</b></p>
                         <div className='mb-3'>
                             <label className='form-label h5'>Nombre</label>
@@ -189,7 +189,7 @@ const EditarTurno = () => {
                         </div>
                     </div>
 
-                    <div className='col col-12 col-lg-3 p-4 m-1' id="colTurno">
+                    <div className='col col-12 col-lg-3 p-4 my-1 mx-md-1' id="colTurno">
                         <p className='display-6 text-center mb-4'><b>Turno</b></p>
                         <div className='mb-3'>
                             <label className='form-label h5'>Dia</label>
@@ -226,7 +226,7 @@ const EditarTurno = () => {
                         </div>
 
                         <div className='text-center'>
-                            <button type="submit" className='btn btn-light btn-lg mt-3'>Editar</button>
+                            <button type="submit" className='btn btn-light btn-lg mt-3'>Guardar</button>
                         </div>
                     </div>
                 </div>

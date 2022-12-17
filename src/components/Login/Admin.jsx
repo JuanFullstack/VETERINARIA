@@ -1,25 +1,17 @@
-import styled from 'styled-components'
-// import edit from "/edit.svg"
-// import perfiladd from "/perfiladd.svg"
-// import { Link } from "react-router-dom "
+import React from 'react'
 
-function CrudTurnos() {
-
-
+function Admin() {
   return (
-      <AdminSytyled>
-          
-          <Turnos />
+    <AdminSytyled>
+        
+        <Turnos />
 
-            
-      </AdminSytyled>
-  );
+          
+    </AdminSytyled>
+);
 }
 
-export default CrudTurnos
-
-
-
+export default Admin
 
 
 const AdminSytyled = styled.div `

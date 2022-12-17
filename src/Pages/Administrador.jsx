@@ -9,24 +9,24 @@ function Administrador() {
 
   return (
     <AdminSytyled>
-      <div className="disposicion">
+      <div className="disposicion p-5 d-block text-center">
 
         <Link to="/clientes">
-          <button className="cliente">
+          <button className="cliente m-md-5">
             <img src={edit} />
             Administrar clientes
           </button>
         </Link>
 
         <Link to="/turnos">
-          <button className="turnos">
+          <button className="turnos m-md-5">
             <img src={edit} />
             Administrar turnos
           </button>
         </Link>
 
         <Link to="/registro">
-          <button className="personal">
+          <button className="personal m-md-5">
             <img src={perfiladd} />
             Administrar Personal
           </button>
@@ -43,12 +43,6 @@ export default Administrador
 
 
 const AdminSytyled = styled.div `
-    background-image: url("/blog.jpg");
-    background-size:cover;
-    background-repeat:no-repeat;
-    padding:20rem;
-    padding-top:4rem;
-  
     .disposicion{
    display: flex;
    gap:4rem;
@@ -65,41 +59,14 @@ const AdminSytyled = styled.div `
 
  .cliente {
   
- font-size: 1.5rem;
- border-radius: 15px;
- background: #45e98f;
- box-shadow: inset -24px -24px 48px #0f583c,
-             inset 24px 24px 48px #21a17b;
- color: black;
- padding: 4rem;
- font-weight:600;
-
-   & img {
-    display: block;
-    width: 4rem;
-    margin: 0 auto;
-   }
- 
- @media(max-width: 1279px){
-  margin-bottom:2.5rem 
-    
-      
-    }
-
-
- }
-
- .cliente:hover {
-  
   font-size: 1.5rem;
   border-radius: 15px;
-  background: #a6f7cb;
-  box-shadow: inset -24px -24px 48px #1865A1,
-              inset 24px 24px 48px #1865A1;
+  background: #45e98f;
+  box-shadow: inset -24px -24px 48px #0f583c,
+              inset 24px 24px 48px #21a17b;
   color: black;
   padding: 4rem;
   font-weight:600;
- 
     & img {
      display: block;
      width: 4rem;
@@ -111,9 +78,33 @@ const AdminSytyled = styled.div `
      
        
      }
- 
- 
   }
+  .cliente:hover {
+   
+   font-size: 1.5rem;
+   border-radius: 15px;
+   background: #a6f7cb;
+   box-shadow: inset -24px -24px 48px #69dfb1,
+               inset 24px 24px 48px #66998a;
+   color: black;
+   padding: 4rem;
+   font-weight:600;
+  
+     & img {
+      display: block;
+      width: 4rem;
+      margin: 0 auto;
+     }
+   
+   @media(max-width: 1279px){
+    margin-bottom:2.5rem 
+      
+        
+      }
+  
+  
+   }
+ 
 
 
   
@@ -122,7 +113,7 @@ const AdminSytyled = styled.div `
   font-size: 1.5rem;
   border-radius: 15px;
   background: #33A5FF;
-  box-shadow: inset -24px -24px 48px #1C85D7,
+  box-shadow: inset -24px -24px 48px #20537B,
               inset 24px 24px 48px #1C85D7;
   color: black;
   padding: 4rem;
@@ -149,7 +140,7 @@ const AdminSytyled = styled.div `
    border-radius: 15px;
    background: #6FC0FF;
    box-shadow: inset -24px -24px 48px #A6D5FA,
-               inset 24px 24px 48px #A6D5FA;
+               inset 24px 24px 48px #5893C0;
    color: black;
    padding: 4rem;
    font-weight:600;
