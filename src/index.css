@@ -22,6 +22,8 @@
   }
 }
 
+
+
 .navegaciondos {
   display: flex;
   margin-top: 5rem;
@@ -135,7 +137,7 @@ h5 {
   padding: 0 30px;
 }
 
-/* estilos footer*/
+/* estilos footer PARTE1 */
 .footer {
   /* position: fixed ; */
   left: 0;
@@ -146,9 +148,16 @@ h5 {
   text-align: center;
   background-size: cover;
   background-position: center center;
-  height: 20%;
-  padding-top: 14%;
-  padding-bottom: 8%;
+  height: 10%;
+  padding-top: 2%;
+  padding-bottom: 2%;
+
+  @media(max-width: 480px) {
+ 
+  }
+
+
+
 }
 
 .footer h4 {
@@ -156,6 +165,7 @@ h5 {
   text-transform: capitalize;
   font-family: dancing script;
   margin: 10px 0;
+
 }
 
 .footer p {
@@ -172,37 +182,9 @@ h5 {
   font-family: 'Latto', sans-serif;
 }
 
-/* estilos footer*/
-.footer{
-  /* position: fixed ; */
-  left:0;
-  bottom: 0;
-  width: 100%;
-  background-color: rgb(226, 111, 193);
-  color: #fff;
-  text-align: center;
-  background-size: cover;
-  background-position: center center;
-  height: 20%;
-  padding-top: 14%;
-  padding-bottom: 8%;
-}
 
-.footer h4{
-  font-size: 40px;
-  text-transform: capitalize;
-  font-family: dancing script;
-  margin: 10px 0;
 
-}
 
-.footer p{
-
-  width: 50%;
-  margin: auto;
-  line-height: 1.6;
-
-}
 
 
 .footer span{
@@ -234,8 +216,9 @@ h5 {
 
 @media(max-width: 1000px){
   .footer{
-      height: 30%;
-      padding-top: 19%;
+      height: 10%;
+      padding-top:4%;
+      padding-bottom: 4%;
   }
   .footer p{
       width: 90%;
@@ -244,9 +227,9 @@ h5 {
 
 @media(max-width:600px){
   .footer{
-      height: 40%;
-      padding-top: 45%;
-      padding-bottom: 0;
+      height: 10%;
+      padding-top: 10%;
+      padding-bottom: 2rem;
   }
 
   .footer p{
@@ -267,3 +250,35 @@ h5 {
   }
 }
 
+
+@media(max-width:400px){
+  .footer{
+      height: 10%;
+      padding-top: 10%;
+      padding-bottom: 4%;
+  }
+
+  .footer p{
+      width: 90%;
+      line-height: 1.5;
+      font-size: 0.8rem;
+      text-align: center;
+      margin-bottom: 1rem;
+  }
+
+  .footer span{
+      width: 40px;
+      height: 40px;
+      margin: 1rem;
+      background-color: rgb(226, 111, 193);
+    
+  }
+
+  .social span i {
+      font-size: 2rem;
+      color: white;
+      
+     
+    
+  }
+}

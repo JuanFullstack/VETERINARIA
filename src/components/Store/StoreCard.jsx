@@ -6,7 +6,7 @@ import { MdAddShoppingCart } from "react-icons/md";
 export default function GalleyCard({item}) {
     // Funcion que llama al sweetalert con la info de la Card
     const handleClick = (params) => {
-        console.log('Add to Card');
+        console.log('Add to Card' , item.id);
     }
 
     return (
@@ -21,7 +21,7 @@ export default function GalleyCard({item}) {
                     onClick={() => {
                         handleClick(item)
                     }}>
-                    <MdAddShoppingCart size={'3em'}></MdAddShoppingCart>
+                    <p className='agregar'> Agregar</p>
                 </button>
             </div>
         </div>

@@ -23,3 +23,19 @@
     text-align: center;
     font-size: 1.25em;
 }
+
+.agregar {
+
+    font-size: 1.3rem;
+    color: white;
+    text-align: center;
+    margin-top: 0.3rem;
+}
+
+.btn-success {
+    width:7rem;
+    background-color: black;
+    padding: 0.2rem;
+    padding-bottom: 0;
+    
+}

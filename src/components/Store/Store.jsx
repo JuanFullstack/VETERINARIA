@@ -12,7 +12,7 @@ export default function () {
     const [image, setImage] = useState([]);
 
     // Cantidad de Card's que se muestran por pagina
-    const cardXPages = 4;
+    const cardXPages = 15;
     // Valor desde el cual se muestran los datos
     const pagesRead = page * cardXPages;
     // Funcion que cambia de Pagina.
