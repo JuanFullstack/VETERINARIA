@@ -4,105 +4,15 @@ import Error from "../components/Error";
 import TodaContendio from "../hooks/TodaContendio";
 
 function Contacto() {
-  const { guardarDatosContacto, mensaje2, setmensaje2 } = TodaContendio();
-
-  const [nombre, setnombre] = useState("");
-  const [apellido, setapellido] = useState("");
-  const [email, setemail] = useState("");
-  const [fecha, setfecha] = useState("");
-  const [categoria, setcategoria] = useState("");
-  const [sintomas, setsintomas] = useState("");
-
-  let hoy = new Date();
-  let dia = hoy.getDate();
-  dia = ("0" + dia).slice(-2);
-  let mes = hoy.getMonth() + 1;
-  mes = ("0" + mes).slice(-2);
-  let agnio = hoy.getFullYear();
-
-  //Formato AAAA-MM-DD
-  let FechaActual1 = `${agnio}-${mes}-${dia}`;
-
-  //Formato DD-MM-AAA
-  let FechaActual2 = `${dia}/${mes}/${agnio}`;
-
-  //Formato MM/DD ,AAAA
-  let FechaActual3 = `${mes}/${dia},${agnio}`;
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    if ([nombre, apellido, email, fecha, categoria, sintomas].includes("")) {
-      setmensaje2("Todos los campos son obligatorios ");
-
-      setTimeout(() => {
-        setmensaje2("");
-      }, 3000);
-
-      return;
-    }
-    const NuevoObjeto = { nombre, apellido, email, fecha, categoria, sintomas };
-
-    guardarDatosContacto(NuevoObjeto);
-
-    //console.log(NuevoObjeto)
-  };
+  
 
   return (
     <>
       <EstilosDiv>
-        <form onSubmit={handleSubmit}>
-          <h2> Contacto </h2>
-          {mensaje2 && <Error> {mensaje2} </Error>}
+      <button class="custom-btn btn-14"><span>Click!</span></button>
 
-          <input
-            value={nombre}
-            onChange={(e) => setnombre(e.target.value)}
-            type="text"
-            name="nombre"
-            placeholder="Nombre"
-          />
-          <input
-            type="text"
-            name="apellidos"
-            placeholder="Apellidos"
-            value={apellido}
-            onChange={(e) => setapellido(e.target.value)}
-          />
-          <input
-            type="text"
-            name="correo"
-            placeholder="Correo"
-            value={email}
-            onChange={(e) => setemail(e.target.value)}
-          />
-          <input
-            type="date"
-            name="date"
-            min={FechaActual1}
-            onChange={(e) => setfecha(e.target.value)}
-          />
-          <select
-            id="categoria"
-            value={categoria}
-            onChange={(e) => setcategoria(e.target.value)}
-          >
-            <option value=""> --Tipo de Mascota -- </option>
-            <option value="Perro"> Perro </option>
-            <option value="Gato"> Gato </option>
-            <option value="Conejo"> Conejo </option>
-            <option value="Haster"> Haster </option>
-            <option value="Otra Raza"> Otra Raza </option>
-          </select>
+      <button class="custom-btn btn-15"><span>Click!</span></button>
 
-          <textarea
-            name="sintomas"
-            placeholder="Resuma los sintomas"
-            value={sintomas}
-            onChange={(e) => setsintomas(e.target.value)}
-          ></textarea>
-
-          <input type="submit" value="ENVIAR" id="boton" />
-        </form>
       </EstilosDiv>
     </>
   );
@@ -111,104 +21,103 @@ function Contacto() {
 export default Contacto;
 
 const EstilosDiv = styled.div`
-  padding-top: 4rem;
-  background-image: url("/turnos.jpg");
-  background-size: cover;
-  background-repeat: no-repeat;
-  padding: 15rem;
+display: flex;
+ padding: 15rem;
+ gap:4rem;
+ align-items: center;
+ justify-content:center;
+ padding-top:8rem;
 
-  @media (max-width: 480px) {
-    padding-top: 1rem;
-    margin-bottom: 2rem;
-    padding: 0;
-    background-image: none;
-  }
 
-  form {
-    width: 450px;
-    margin: auto;
-    background: rgb(59, 162, 250);
-    background: linear-gradient(
-      0deg,
-      rgba(59, 162, 250, 0.8519782913165266) 0%,
-      rgba(57, 173, 232, 0.773546918767507) 10%,
-      rgba(73, 197, 249, 0.7063200280112045) 100%
-    );
-    padding: 10px 20px;
-    box-sizing: border-box;
-    margin-top: 20px;
-    border-radius: 2.5rem;
-    -webkit-box-shadow: -2px 31px 28px -6px rgba(0, 0, 0, 0.75);
-    -moz-box-shadow: -2px 31px 28px -6px rgba(0, 0, 0, 0.75);
-    box-shadow: -2px 31px 28px -6px rgba(0, 0, 0, 0.75);
-  }
 
-  h2 {
-    color: #fff;
-    text-align: center;
-    margin: 0;
-    font-size: 30px;
-    margin-bottom: 20px;
-  }
+ .custom-btn {
+  width: 300px;
+  height: 150px;
+  color: #fff;
+  border-radius: 5px;
+  padding: 10px 25px;
+  font-family: 'Lato', sans-serif;
+  font-weight: 500;
+  background: transparent;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  display: inline-block;
+   box-shadow:inset 2px 2px 2px 0px rgba(255,255,255,.5),
+   7px 7px 20px 0px rgba(0,0,0,.1),
+   4px 4px 5px 0px rgba(0,0,0,.1);
+  outline: none;
+}
 
-  input {
-    width: 100%;
-    margin-bottom: 20px;
-    padding: 7px;
-    box-sizing: border-box;
-    font-size: 17px;
-    border: none;
-    border-radius: 0.5rem;
-  }
+.btn-14 {
+  background: rgb(255,151,0);
+  border: none;
+  z-index: 1;
+}
+.btn-14:after {
+  position: absolute;
+  content: "";
+  width: 100%;
+  height: 0;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  border-radius: 5px;
+  background-color: #eaf818;
+  background-image: linear-gradient(315deg, #eaf818 0%, #f6fc9c 74%);
+   box-shadow:inset 2px 2px 2px 0px rgba(255,255,255,.5)
+   7px 7px 20px 0px rgba(0,0,0,.1)
+   4px 4px 5px 0px rgba(0,0,0,.1);
+  transition: all 0.3s ease;
+}
+.btn-14:hover {
+  color: #000;
+}
+.btn-14:hover:after {
+  top: auto;
+  bottom: 0;
+  height: 100%;
+}
+.btn-14:active {
+  top: 2px;
+}
 
-  select {
-    width: 100%;
-    margin-bottom: 20px;
-    border-radius: 0.5rem;
-    padding: 7px;
-  }
 
-  .radio {
-    display: flex;
-    justify-content: center;
-    gap: 2rem;
-    border: 0.1rem solid black;
-    margin-bottom: 1rem;
-    border-radius: 1rem;
+//bt 15
 
-    & p {
-      font-size: 1.5rem;
-    }
-  }
+.btn-15 {
+  background: #0060ce;
+  border: none;
+  z-index: 1;
+}
+.btn-15:after {
+  position: absolute;
+  content: "";
+  width: 100%;
+  height: 0;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  border-radius: 5px;
+  background-color: #1d56f0;
+  background-image: linear-gradient(315deg, #99f8f0 0%, #08f5d5 74%);
+   box-shadow:inset 2px 2px 2px 0px rgba(255,255,255,.5)
+   7px 7px 20px 0px rgba(0,0,0,.1)
+   4px 4px 5px 0px rgba(0,0,0,.1);
+  transition: all 0.3s ease;
+}
+.btn-15:hover {
+  color: #000;
+}
+.btn-15:hover:after {
+  top: auto;
+  bottom: 0;
+  height: 100%;
+}
+.btn-15:active {
+  top: 2px;
+}
 
-  textarea {
-    width: 100%;
-    min-height: 100px;
-    max-height: 200px;
-    max-width: 100%;
-  }
 
-  #boton {
-    background: #31384a;
-    color: #fff;
-    padding: 20px;
-  }
 
-  #boton:hover {
-    cursor: pointer;
-  }
-
-  @media (max-width: 480px) {
-    form {
-      width: 100%;
-    }
-  }
-
-  h1 {
-    text-align: center;
-    color: #fff;
-    font-size: 40px;
-    background: rgba(0, 0, 0, 0.4);
-    margin-top: 300px;
-  }
 `;

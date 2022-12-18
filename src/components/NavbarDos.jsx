@@ -27,20 +27,28 @@ export default NavbarDos
 
 
 
+
 const Titulogral = styled.div `
   
   img{
     position: absolute;
-    top: 5%;
+    top: 2%;
     left: 45%;
     transform: translate(-45%,-50%);
     z-index:1;
     animation: heart 0.6s linear infinite ;
     transform: translate(-70%,-40%);
-    @media(max-width: 750px){
+    @media(max-width: 770px){
       width: 6.5rem;
-      left: 15%;
-      top: 12%;
+      left: 45%;
+      top: 6%;
+    transform: translate(-70%,-40%);
+      } 
+
+      @media(max-width: 400px){
+      width: 6.5rem;
+      left: 30%;
+      top: 2%;
     transform: translate(-70%,-40%);
       } 
 
@@ -61,22 +69,34 @@ const Titulogral = styled.div `
 
    h1{
     position: absolute;
-    top: 25%;
+    top: 22%;
     left: 50%;
+    text-align: center;
     transform: translate(-55%,-50%);
     text-transform: uppercase;
     font-weight: 200;
     background-color:white;
-    border : 0.3rem inset black;
+    border : 0.2rem inset black;
     border-radius: 1rem;
-    padding: 2rem;
+    padding: 1.1rem;
     z-index:2;
     animation:  3s ease-out infinite ;
-    @media(max-width: 750px){
-      left: 33%;
+    @media(max-width: 780px){
+      left: 56%;
+      top: 20%;
       font-size: 1.3rem;
       padding: 1rem;
     transform: translate(-70%,-40%);
+      } 
+
+      @media(max-width: 400px){
+      left: 33%;
+      top: 25%;
+      font-size: 1.2rem;
+      padding: 0.5rem;
+      border : 0.1rem inset black;
+      width: 85%;
+    transform: translate(-30%,-40%);
       } 
    }
 
@@ -102,6 +122,14 @@ const Titulogral = styled.div `
       padding: 1rem;
     transform: translate(-70%,-40%);
       } 
+
+      @media(max-width: 400px){
+      left: 15%;
+      top: 85%;
+      font-size: 1.3rem;
+      padding: 1rem;
+    transform: translate(-50%,-70%);
+      } 
    }
 
    @keyframes tituloefecto {
@@ -114,6 +142,5 @@ const Titulogral = styled.div `
     
       }
     
-  
 
 `
