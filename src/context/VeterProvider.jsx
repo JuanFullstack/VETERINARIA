@@ -25,6 +25,7 @@ function VeterProvider({ children }) {
   const [emailIS, setemailIS] = useState("");
   const [constraseñaIS, setconstraseñaIS] = useState("");
   const [estado, setEstado] = useState(false);
+  const [carrito ,setcarrito] = useState([])
 
   const handleClick = () => {
     //cuando esta true lo pasa a false y vice versa
@@ -119,6 +120,49 @@ function VeterProvider({ children }) {
     }
   };
 
+// carrito 
+
+const agregarcarrito = (guitarra) => {
+
+  if (carrito.some((GuitarraState) => GuitarraState.id === guitarra.id)) 
+  
+  {
+      const carritoActulizado = carrito.map((GuitarraState) => {
+          if (GuitarraState.id === guitarra.id) {
+              GuitarraState.cantidad = guitarra.cantidad;
+          }
+          return GuitarraState
+      });
+      setcarrito(carritoActulizado)
+  } else {
+      setcarrito([...carrito, guitarra]);
+  }
+};
+
+const actulizarvalor = guitarra => {
+
+  const cantidadactulizada = carrito.map((GuitarraState) => {
+    if (GuitarraState.id === guitarra.id) {
+        GuitarraState.cantidad = guitarra.cantidad;
+    }
+    return GuitarraState
+});
+
+setcarrito(cantidadactulizada)
+
+}
+
+const eliminadoguitarra = (id) => {
+
+const cantidadactulizada = carrito.filter((GuitarraState) => GuitarraState.id != id);
+
+setcarrito(cantidadactulizada);
+};
+
+
+
+
+
   return (
     <Contenido.Provider
       value={{
@@ -136,6 +180,10 @@ function VeterProvider({ children }) {
         setconstraseñaIS,
         CerrarSeccion,
         guardarDatosContacto,
+        agregarcarrito,
+        carrito,
+        actulizarvalor,
+        eliminadoguitarra
       }}
     >
       {children}

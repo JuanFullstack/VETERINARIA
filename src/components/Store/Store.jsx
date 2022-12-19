@@ -3,7 +3,11 @@ import StoreCard from './StoreCard';
 import './css/Store.css';
 import ReactPaginate from 'react-paginate';
 
+
 export default function () {
+
+
+
     // Set de Datos tomados de archio JSON local a traves de JSON-Server (npm i --save json-server)
     const [data, setData] = useState([])
     // Pagina Actual del Paginador
@@ -23,7 +27,7 @@ export default function () {
     // Carga de Array de Imagenes
     useEffect(() => {
         async function fetchImage() {
-            const resp = await fetch(`https://pixabay.com/api/?key=31804785-7d2f4dc8a1e4079b6587c1a03&q=products&image_type=photo&pretty=true`)
+            const resp = await fetch(`https://pixabay.com/api/?key=31804785-7d2f4dc8a1e4079b6587c1a03&q=pill+tablet&image_type=photo&pretty=true`)
             const json = await resp.json()
             setImage(json.hits)
         }

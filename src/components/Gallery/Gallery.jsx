@@ -25,6 +25,7 @@ export default function Gallery() {
     useEffect(() => {
         async function fetchImage() {
             const resp = await fetch(`https://pixabay.com/api/?key=31804785-7d2f4dc8a1e4079b6587c1a03&q=animals+cat&image_type=photo&pretty=true`)
+            
             const json = await resp.json()
             setImage(json.hits)
         }

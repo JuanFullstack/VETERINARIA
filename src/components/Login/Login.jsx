@@ -3,7 +3,6 @@ import fb from "/fb.svg"
 import google from "/google.svg"
 import email from "/email.svg"
 import pets from "/pets.png"
-import medico from "/medico.webp"
 import { Link , useLocation  } from "react-router-dom "
 import { useState } from 'react'
 import TodaContendio from '../../hooks/TodaContendio'

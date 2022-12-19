@@ -1,5 +1,4 @@
-.card_w {
-    margin: 10px;
+.cardw {
     width: 28rem;
     height: 35rem;
     align-items: center;
@@ -8,34 +7,69 @@
     border-radius: 8px;
 }
 
-.card-img-top{
-    padding-top: 2em;
-    width: 15rem;
+.configimg{
+    margin-top: 0;
+    padding-bottom: 0;
+    width: 13rem;
     aspect-ratio: 1/1;
-    object-fit: contain;
+    object-fit: contain; 
+   
 }
 
-.card-title-h {
-    height: 4em;
+.cardtitleh {
+    height: 0.5rem;
+    margin-top: -1.3rem;
+    margin-bottom: 4rem;
 }
 
-.card-title {
+.fwbolder{
+    font-weight: 900;
+    color: rgb(196, 65, 32);
+}
+
+
+.cardtitle {
     text-align: center;
     font-size: 1.25em;
 }
 
 .agregar {
 
-    font-size: 1.3rem;
+    font-size: 1.2rem;
     color: white;
     text-align: center;
-    margin-top: 0.3rem;
+    text-transform: uppercase;
+    margin-top: 0.5rem;
+  
+
+   
 }
 
-.btn-success {
-    width:7rem;
-    background-color: black;
-    padding: 0.2rem;
-    padding-bottom: 0;
+.btnsuccess {
     
+    background-color: black;
+    border-radius: 0.5rem;
+    margin-top: 0.5rem;
+    padding-left: 1rem; 
+    padding-right: 1rem;
+   
+    
+}
+
+.card-body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap:0.5rem;
+}
+
+.cantidad {
+    display: flex;
+    gap:1rem;
+}
+
+.opcion {
+    padding-left: 1rem;
+    padding-right: 1rem;
+    background-color: aquamarine;
 }
