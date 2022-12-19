@@ -12,8 +12,7 @@
     padding-bottom: 0;
     width: 13rem;
     aspect-ratio: 1/1;
-    object-fit: contain; 
-   
+    object-fit: contain;   
 }
 
 .cardtitleh {
@@ -27,33 +26,9 @@
     color: rgb(196, 65, 32);
 }
 
-
 .cardtitle {
     text-align: center;
     font-size: 1.25em;
-}
-
-.agregar {
-
-    font-size: 1.2rem;
-    color: white;
-    text-align: center;
-    text-transform: uppercase;
-    margin-top: 0.5rem;
-  
-
-   
-}
-
-.btnsuccess {
-    
-    background-color: black;
-    border-radius: 0.5rem;
-    margin-top: 0.5rem;
-    padding-left: 1rem; 
-    padding-right: 1rem;
-   
-    
 }
 
 .card-body {
@@ -63,13 +38,11 @@
     gap:0.5rem;
 }
 
-.cantidad {
-    display: flex;
-    gap:1rem;
+.input-cant {
+    max-width: 3em;
+    text-align: center;
 }
 
-.opcion {
-    padding-left: 1rem;
-    padding-right: 1rem;
-    background-color: aquamarine;
+.button-cant {
+    min-width: 3em;
 }

@@ -16,7 +16,7 @@ export default function () {
     const [image, setImage] = useState([]);
 
     // Cantidad de Card's que se muestran por pagina
-    const cardXPages = 15;
+    const cardXPages = 8;
     // Valor desde el cual se muestran los datos
     const pagesRead = page * cardXPages;
     // Funcion que cambia de Pagina.
@@ -38,7 +38,7 @@ export default function () {
     // Carga de Array de Datos
     useEffect(() => {
         async function fetchData() {
-            const resp = await fetch(`https://my.api.mockaroo.com/products.json?key=edb702b0`)
+            const resp = await fetch(`http://localhost:3004/products`)
             const json = await resp.json()
             setData(json)
         }

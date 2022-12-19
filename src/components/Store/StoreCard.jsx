@@ -2,28 +2,41 @@ import './css/StoreCard.css';
 import imgDefault from './img/images.png';
 import { MdAddShoppingCart } from "react-icons/md";
 import TodaContendio from '../../hooks/TodaContendio';
-import  { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 
 
-export default function GalleyCard({item}) {
- 
-    const { agregarcarrito  } = TodaContendio()
-    const [cantidad , setcantidad] = useState(0)
+export default function GalleyCard({ item }) {
+
+    const { agregarcarrito } = TodaContendio()
+    const [cantidad, setCantidad] = useState(0)
     // Funcion que llama al sweetalert con la info de la Card
     const handleClick = (params) => {
 
-        
+
         const guitarraSleccionada = {
             id: params.id,
             imagen: params.url,
-            nombre : params.name,
-            precio: (parseFloat((params.price).replace('$',''))),
+            nombre: params.name,
+            precio: (parseFloat((params.price).replace('$', ''))),
             cantidad
         }
 
         agregarcarrito(guitarraSleccionada)
-        console.log( guitarraSleccionada)
+        console.log(guitarraSleccionada)
 
+    }
+
+
+    const handleCantClick = (oper, cant) => {
+        const maxsale = 10
+        const minsale = 0
+        console.log(oper, cant);
+        if (oper === '+' && cant < maxsale) {
+            setCantidad(cant + 1)
+        }
+        if (oper === '-' && cant > minsale) {
+            setCantidad(cant - 1)
+        }
     }
 
     return (
@@ -34,26 +47,16 @@ export default function GalleyCard({item}) {
                 <h5 className="cardtitle fwbolder">{((item.price))}</h5>
             </div>
             <div className="card-body">
-                <div  className='cantidad' >
-                 <label htmlFor='cantidad'>Cantidad : </label>
-                  <select  
-                  onChange={e=> setcantidad(parseInt(e.target.value))}
-                  id='cantidad'
-                  className='opcion'
-                  >
-                      
-                      <option   value='1'> 1 </option>
-                      <option value='2'> 2 </option>
-                      <option value='3'> 3 </option>
-                      <option  value='4'> 4 </option>
-                      <option  value='5'> 5 </option>
-                  </select>
-               </div>
-                <button className=' btnsuccess'
+                <div className="btn-group" role="group" aria-label="Basic example">
+                    <button type="button" className="btn btn-secondary text-black button-cant" onClick={() => { handleCantClick('-', cantidad) }}>-</button>
+                    <input className='input-cant' type="text" readOnly value={cantidad} />
+                    <button type="button" className="btn btn-secondary text-black button-cant" onClick={() => { handleCantClick('+', cantidad) }}>+</button>
+                </div>
+                <button className='btn btn-success text-white'
                     onClick={() => {
                         handleClick(item)
-                    }}>   
-                    <p className='agregar'> Agregar</p>
+                    }}>
+                    <MdAddShoppingCart size={'2em'}></MdAddShoppingCart>Agregar
                 </button>
             </div>
         </div>
